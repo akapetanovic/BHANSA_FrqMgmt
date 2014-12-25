@@ -1,7 +1,114 @@
 ﻿<?xml version='1.0' encoding='utf-8'?>
-<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)">
-  <Profiles>
-    <Profile Name="(Default)" />
-  </Profiles>
-  <Settings />
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="BHANSA_FrqMgmt.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="CCL_US_Checked" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">False</Value>
+    </Setting>
+    <Setting Name="CCL_UN_Checked" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">True</Value>
+    </Setting>
+    <Setting Name="CCL_UW_Checked" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">False</Value>
+    </Setting>
+    <Setting Name="CCL_LS_Checked" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">False</Value>
+    </Setting>
+    <Setting Name="CCL_LN_Checked" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">False</Value>
+    </Setting>
+    <Setting Name="CCL_US_Value" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="CCL_UN_Value" Type="System.String" Scope="User">
+      <Value Profile="(Default)">135.800</Value>
+    </Setting>
+    <Setting Name="CCL_UW_Value" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="CCL_LS_Value" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="CCL_LN_Value" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="Division_Level" Type="System.String" Scope="User">
+      <Value Profile="(Default)">325</Value>
+    </Setting>
+    <Setting Name="SMATSA_UW_Checked" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">True</Value>
+    </Setting>
+    <Setting Name="SMATSA_UN_Checked" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">False</Value>
+    </Setting>
+    <Setting Name="SMATSA_UW_Value" Type="System.String" Scope="User">
+      <Value Profile="(Default)">123.775</Value>
+    </Setting>
+    <Setting Name="SMATSA_UN_Value" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="SMATSA_Lower_Value" Type="System.String" Scope="User">
+      <Value Profile="(Default)">136.650</Value>
+    </Setting>
+    <Setting Name="SMATSA_Lower_Checked" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">False</Value>
+    </Setting>
+    <Setting Name="LDZA" Type="System.String" Scope="User">
+      <Value Profile="(Default)">120.700</Value>
+    </Setting>
+    <Setting Name="LDDU" Type="System.String" Scope="User">
+      <Value Profile="(Default)">123.600</Value>
+    </Setting>
+    <Setting Name="LDSP" Type="System.String" Scope="User">
+      <Value Profile="(Default)">120.875</Value>
+    </Setting>
+    <Setting Name="LDOS" Type="System.String" Scope="User">
+      <Value Profile="(Default)">118.800</Value>
+    </Setting>
+    <Setting Name="ZGFIC" Type="System.String" Scope="User">
+      <Value Profile="(Default)">135.050</Value>
+    </Setting>
+    <Setting Name="LQSA" Type="System.String" Scope="User">
+      <Value Profile="(Default)">136.450</Value>
+    </Setting>
+    <Setting Name="LQMO" Type="System.String" Scope="User">
+      <Value Profile="(Default)">120.225</Value>
+    </Setting>
+    <Setting Name="LQTZ" Type="System.String" Scope="User">
+      <Value Profile="(Default)">120.350</Value>
+    </Setting>
+    <Setting Name="LQBK" Type="System.String" Scope="User">
+      <Value Profile="(Default)">118.950</Value>
+    </Setting>
+    <Setting Name="FIC" Type="System.String" Scope="User">
+      <Value Profile="(Default)">135.575</Value>
+    </Setting>
+    <Setting Name="LYBE" Type="System.String" Scope="User">
+      <Value Profile="(Default)">119.100</Value>
+    </Setting>
+    <Setting Name="LQPG" Type="System.String" Scope="User">
+      <Value Profile="(Default)">135.150</Value>
+    </Setting>
+    <Setting Name="Sector_LYPG" Type="System.String" Scope="User">
+      <Value Profile="(Default)">[+382 20 414 005]</Value>
+    </Setting>
+    <Setting Name="Free_Text_1" Type="System.String" Scope="User">
+      <Value Profile="(Default)">Free text</Value>
+    </Setting>
+    <Setting Name="Free_Text_2" Type="System.String" Scope="User">
+      <Value Profile="(Default)">Free text</Value>
+    </Setting>
+    <Setting Name="Free_Text_3" Type="System.String" Scope="User">
+      <Value Profile="(Default)">Free text</Value>
+    </Setting>
+    <Setting Name="Chief_Sup_Ext" Type="System.String" Scope="User">
+      <Value Profile="(Default)">325</Value>
+    </Setting>
+    <Setting Name="CCL_LW_Checked" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">False</Value>
+    </Setting>
+    <Setting Name="CCL_LW_Value" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+  </Settings>
 </SettingsFile>

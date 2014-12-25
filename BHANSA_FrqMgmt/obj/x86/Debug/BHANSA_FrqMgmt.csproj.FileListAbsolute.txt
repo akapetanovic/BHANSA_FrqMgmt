@@ -5,3 +5,11 @@ C:\Users\Amer.Kapetanovic\Documents\Visual Studio 2013\Projects\BHANSA_FrqMgmt\B
 C:\Users\Amer.Kapetanovic\Documents\Visual Studio 2013\Projects\BHANSA_FrqMgmt\BHANSA_FrqMgmt\obj\x86\Debug\BHANSA_FrqMgmt.csproj.GenerateResource.Cache
 C:\Users\Amer.Kapetanovic\Documents\Visual Studio 2013\Projects\BHANSA_FrqMgmt\BHANSA_FrqMgmt\obj\x86\Debug\BHANSA_FrqMgmt.exe
 C:\Users\Amer.Kapetanovic\Documents\Visual Studio 2013\Projects\BHANSA_FrqMgmt\BHANSA_FrqMgmt\obj\x86\Debug\BHANSA_FrqMgmt.pdb
+C:\Users\Amer\Documents\Visual Studio 2010\Projects\BHANSA_FrqMgmt\BHANSA_FrqMgmt\obj\x86\Debug\BHANSA_FrqMgmt.exe
+C:\Users\Amer\Documents\Visual Studio 2010\Projects\BHANSA_FrqMgmt\BHANSA_FrqMgmt\obj\x86\Debug\BHANSA_FrqMgmt.pdb
+C:\Users\Amer\Documents\Visual Studio 2010\Projects\BHANSA_FrqMgmt\BHANSA_FrqMgmt\bin\Debug\BHANSA_FrqMgmt.exe
+C:\Users\Amer\Documents\Visual Studio 2010\Projects\BHANSA_FrqMgmt\BHANSA_FrqMgmt\bin\Debug\BHANSA_FrqMgmt.pdb
+C:\Users\Amer\Documents\Visual Studio 2010\Projects\BHANSA_FrqMgmt\BHANSA_FrqMgmt\obj\x86\Debug\BHANSA_FrqMgmt.Main.resources
+C:\Users\Amer\Documents\Visual Studio 2010\Projects\BHANSA_FrqMgmt\BHANSA_FrqMgmt\obj\x86\Debug\BHANSA_FrqMgmt.Properties.Resources.resources
+C:\Users\Amer\Documents\Visual Studio 2010\Projects\BHANSA_FrqMgmt\BHANSA_FrqMgmt\obj\x86\Debug\BHANSA_FrqMgmt.csproj.GenerateResource.Cache
+C:\Users\Amer\Documents\Visual Studio 2010\Projects\BHANSA_FrqMgmt\BHANSA_FrqMgmt\bin\Debug\BHANSA_FrqMgmt.exe.config
