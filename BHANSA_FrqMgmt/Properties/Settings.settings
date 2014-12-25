@@ -86,7 +86,7 @@
     <Setting Name="LYBE" Type="System.String" Scope="User">
       <Value Profile="(Default)">119.100</Value>
     </Setting>
-    <Setting Name="LQPG" Type="System.String" Scope="User">
+    <Setting Name="LYPG" Type="System.String" Scope="User">
       <Value Profile="(Default)">135.150</Value>
     </Setting>
     <Setting Name="Sector_LYPG" Type="System.String" Scope="User">

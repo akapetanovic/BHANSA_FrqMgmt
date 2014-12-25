@@ -120,6 +120,28 @@ namespace BHANSA_FrqMgmt
             }
 
             this.textBox_Division_Level.Text = Properties.Settings.Default.Division_Level;
+
+            this.textBoxLDZA.Text = Properties.Settings.Default.LDZA;
+            this.textBoxLDDU.Text = Properties.Settings.Default.LDDU;
+            this.textBoxLDSP.Text = Properties.Settings.Default.LDSP;
+            this.textBoxLDOS.Text = Properties.Settings.Default.LDOS;
+            this.textBoxZGFIC.Text = Properties.Settings.Default.ZGFIC;
+
+            this.textBoxLQSA.Text = Properties.Settings.Default.LQSA;
+            this.textBoxLQMO.Text = Properties.Settings.Default.LQMO;
+            this.textBoxLQTZ.Text = Properties.Settings.Default.LQTZ;
+            this.textBoxLQBK.Text = Properties.Settings.Default.LQBK;
+            this.textBoxFIC.Text = Properties.Settings.Default.FIC;
+
+            this.textBoxLYBE.Text = Properties.Settings.Default.LYBE;
+            this.textBoxLYPG.Text = Properties.Settings.Default.LYPG;
+
+            this.textBoxSectorLYPG.Text = Properties.Settings.Default.Chief_Sup_Ext;
+            this.textBoxChief_Sup.Text = Properties.Settings.Default.Sector_LYPG;
+
+            this.textBoxFree_One.Text = Properties.Settings.Default.Free_Text_1;
+            this.textBoxFree_Two.Text = Properties.Settings.Default.Free_Text_2;
+            this.textBoxFree_Three.Text = Properties.Settings.Default.Free_Text_3;
         }
 
         private void Main_Paint(object sender, PaintEventArgs e)
@@ -240,6 +262,8 @@ namespace BHANSA_FrqMgmt
             }
             else
             {
+
+                Properties.Settings.Default.CCL_UN_Value = this.textBox_CCL_UN_Value.Text;
                 this.textBox_CCL_UN_Value.Text = "";
                 this.textBox_CCL_UN_Value.Enabled = false;
             }
@@ -257,14 +281,15 @@ namespace BHANSA_FrqMgmt
             }
             else
             {
-                
+
+                Properties.Settings.Default.CCL_US_Value = this.textBox_CCL_US_Value.Text;
                 this.textBox_CCL_US_Value.Text = "";
                 this.textBox_CCL_US_Value.Enabled = false;
             }
 
             Properties.Settings.Default.CCL_US_Checked = this.checkBox_US_ZG.Checked;
             Properties.Settings.Default.Save();
-          
+
         }
 
         private void checkBox_UW_ZG_CheckedChanged(object sender, EventArgs e)
@@ -276,6 +301,7 @@ namespace BHANSA_FrqMgmt
             }
             else
             {
+                Properties.Settings.Default.CCL_UW_Value = this.textBox_CCL_UW_Value.Text;
                 this.textBox_CCL_UW_Value.Text = "";
                 this.textBox_CCL_UW_Value.Enabled = false;
             }
@@ -293,6 +319,7 @@ namespace BHANSA_FrqMgmt
             }
             else
             {
+                Properties.Settings.Default.CCL_LS_Value = this.textBox_CCL_LS_Value.Text;
                 this.textBox_CCL_LS_Value.Text = "";
                 this.textBox_CCL_LS_Value.Enabled = false;
             }
@@ -311,6 +338,7 @@ namespace BHANSA_FrqMgmt
             }
             else
             {
+                Properties.Settings.Default.CCL_LN_Value = this.textBox_CCL_LN_Value.Text;
                 this.textBox_CCL_LN_Value.Text = "";
                 this.textBox_CCL_LN_Value.Enabled = false;
             }
@@ -328,6 +356,7 @@ namespace BHANSA_FrqMgmt
             }
             else
             {
+                Properties.Settings.Default.CCL_LW_Value = this.textBox_CCL_LW_Value.Text;
                 this.textBox_CCL_LW_Value.Text = "";
                 this.textBox_CCL_LW_Value.Enabled = false;
             }
@@ -345,6 +374,7 @@ namespace BHANSA_FrqMgmt
             }
             else
             {
+                Properties.Settings.Default.SMATSA_UW_Value = this.textBox_SMATSA_UW.Text;
                 this.textBox_SMATSA_UW.Text = "";
                 this.textBox_SMATSA_UW.Enabled = false;
             }
@@ -362,6 +392,7 @@ namespace BHANSA_FrqMgmt
             }
             else
             {
+                Properties.Settings.Default.SMATSA_UN_Value = this.textBox_SMATSA_UN.Text;
                 this.textBox_SMATSA_UN.Text = "";
                 this.textBox_SMATSA_UN.Enabled = false;
             }
@@ -379,6 +410,7 @@ namespace BHANSA_FrqMgmt
             }
             else
             {
+                Properties.Settings.Default.SMATSA_Lower_Value = this.textBox_SMATSA_LOWER.Text;
                 this.textBox_SMATSA_LOWER.Text = "";
                 this.textBox_SMATSA_LOWER.Enabled = false;
             }
@@ -387,7 +419,7 @@ namespace BHANSA_FrqMgmt
             Properties.Settings.Default.Save();
         }
 
-        
+
 
         private void Update_And_Save()
         {
@@ -430,8 +462,30 @@ namespace BHANSA_FrqMgmt
             {
                 Properties.Settings.Default.SMATSA_UN_Value = this.textBox_SMATSA_UN.Text;
             }
-            
+
             Properties.Settings.Default.Division_Level = this.textBox_Division_Level.Text;
+
+            Properties.Settings.Default.LDZA = this.textBoxLDZA.Text;
+            Properties.Settings.Default.LDDU = this.textBoxLDDU.Text;
+            Properties.Settings.Default.LDSP = this.textBoxLDSP.Text;
+            Properties.Settings.Default.LDOS = this.textBoxLDOS.Text;
+            Properties.Settings.Default.ZGFIC = this.textBoxZGFIC.Text;
+
+            Properties.Settings.Default.LQSA = this.textBoxLQSA.Text;
+            Properties.Settings.Default.LQMO = this.textBoxLQMO.Text;
+            Properties.Settings.Default.LQTZ = this.textBoxLQTZ.Text;
+            Properties.Settings.Default.LQBK = this.textBoxLQBK.Text;
+            Properties.Settings.Default.FIC = this.textBoxFIC.Text;
+
+            Properties.Settings.Default.LYBE = this.textBoxLYBE.Text;
+            Properties.Settings.Default.LYPG = this.textBoxLYPG.Text;
+
+            Properties.Settings.Default.Chief_Sup_Ext = this.textBoxSectorLYPG.Text;
+            Properties.Settings.Default.Sector_LYPG = this.textBoxChief_Sup.Text;
+
+            Properties.Settings.Default.Free_Text_1 = this.textBoxFree_One.Text;
+            Properties.Settings.Default.Free_Text_2 = this.textBoxFree_Two.Text;
+            Properties.Settings.Default.Free_Text_3 = this.textBoxFree_Three.Text;
 
             Properties.Settings.Default.Save();
         }
@@ -441,7 +495,23 @@ namespace BHANSA_FrqMgmt
             Update_And_Save();
         }
 
-      
-       
+        private void backgroundColorToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ColorDialog colorDialog1 = new ColorDialog();
+            // Show the color dialog.
+            DialogResult result = colorDialog1.ShowDialog();
+            // See if user pressed ok.
+            if (result == DialogResult.OK)
+            {
+                // Set form background to the selected color.
+                this.BackColor = colorDialog1.Color;
+            }
+        }
+
+        private void aboutToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+            MessageBox.Show("Amer Kapetanovic\namer.kapetanovic@bhansa.gov.ba\nVersion 1.0\n25.12.2014");
+        }
     }
 }

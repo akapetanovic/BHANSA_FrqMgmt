@@ -362,12 +362,12 @@ namespace BHANSA_FrqMgmt.Properties {
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("135.150")]
-        public string LQPG {
+        public string LYPG {
             get {
-                return ((string)(this["LQPG"]));
+                return ((string)(this["LYPG"]));
             }
             set {
-                this["LQPG"] = value;
+                this["LYPG"] = value;
             }
         }
         

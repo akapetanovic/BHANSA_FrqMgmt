@@ -55,16 +55,16 @@
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
-            this.textBox11 = new System.Windows.Forms.TextBox();
-            this.textBox12 = new System.Windows.Forms.TextBox();
-            this.textBox13 = new System.Windows.Forms.TextBox();
-            this.textBox14 = new System.Windows.Forms.TextBox();
-            this.textBox15 = new System.Windows.Forms.TextBox();
-            this.textBox16 = new System.Windows.Forms.TextBox();
-            this.textBox17 = new System.Windows.Forms.TextBox();
-            this.textBox18 = new System.Windows.Forms.TextBox();
-            this.textBox19 = new System.Windows.Forms.TextBox();
-            this.textBox20 = new System.Windows.Forms.TextBox();
+            this.textBoxZGFIC = new System.Windows.Forms.TextBox();
+            this.textBoxLDDU = new System.Windows.Forms.TextBox();
+            this.textBoxLDSP = new System.Windows.Forms.TextBox();
+            this.textBoxLDOS = new System.Windows.Forms.TextBox();
+            this.textBoxLDZA = new System.Windows.Forms.TextBox();
+            this.textBoxLQSA = new System.Windows.Forms.TextBox();
+            this.textBoxLQBK = new System.Windows.Forms.TextBox();
+            this.textBoxLQTZ = new System.Windows.Forms.TextBox();
+            this.textBoxLQMO = new System.Windows.Forms.TextBox();
+            this.textBoxFIC = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
@@ -72,22 +72,27 @@
             this.label13 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.label14 = new System.Windows.Forms.Label();
-            this.textBox21 = new System.Windows.Forms.TextBox();
-            this.textBox22 = new System.Windows.Forms.TextBox();
+            this.textBoxLYBE = new System.Windows.Forms.TextBox();
+            this.textBoxLYPG = new System.Windows.Forms.TextBox();
             this.label15 = new System.Windows.Forms.Label();
-            this.textBox23 = new System.Windows.Forms.TextBox();
+            this.textBoxSectorLYPG = new System.Windows.Forms.TextBox();
             this.label16 = new System.Windows.Forms.Label();
             this.textBoxFree_One = new System.Windows.Forms.TextBox();
-            this.textBox25 = new System.Windows.Forms.TextBox();
+            this.textBoxFree_Two = new System.Windows.Forms.TextBox();
             this.End_X_UP_ZG = new System.Windows.Forms.Label();
             this.End_X_DOWN_ZG = new System.Windows.Forms.Label();
             this.textBox_Division_Level = new System.Windows.Forms.TextBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.textBox26 = new System.Windows.Forms.TextBox();
-            this.textBox24 = new System.Windows.Forms.TextBox();
-            this.textBox27 = new System.Windows.Forms.TextBox();
+            this.textBoxChief_Sup = new System.Windows.Forms.TextBox();
+            this.textBoxFree_Three = new System.Windows.Forms.TextBox();
+            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.toolsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.backgroundColorToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.groupBox1.SuspendLayout();
             this.panel1.SuspendLayout();
+            this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // openFileDialog1
@@ -119,9 +124,9 @@
             this.checkBox_UN_ZG.AutoSize = true;
             this.checkBox_UN_ZG.Location = new System.Drawing.Point(165, 41);
             this.checkBox_UN_ZG.Name = "checkBox_UN_ZG";
-            this.checkBox_UN_ZG.Size = new System.Drawing.Size(42, 17);
+            this.checkBox_UN_ZG.Size = new System.Drawing.Size(45, 17);
             this.checkBox_UN_ZG.TabIndex = 6;
-            this.checkBox_UN_ZG.Text = "UN";
+            this.checkBox_UN_ZG.Text = "UW";
             this.checkBox_UN_ZG.UseVisualStyleBackColor = true;
             this.checkBox_UN_ZG.CheckedChanged += new System.EventHandler(this.checkBox_UN_ZG_CheckedChanged);
             // 
@@ -130,9 +135,9 @@
             this.checkBox_UW_ZG.AutoSize = true;
             this.checkBox_UW_ZG.Location = new System.Drawing.Point(304, 41);
             this.checkBox_UW_ZG.Name = "checkBox_UW_ZG";
-            this.checkBox_UW_ZG.Size = new System.Drawing.Size(45, 17);
+            this.checkBox_UW_ZG.Size = new System.Drawing.Size(42, 17);
             this.checkBox_UW_ZG.TabIndex = 7;
-            this.checkBox_UW_ZG.Text = "UW";
+            this.checkBox_UW_ZG.Text = "UN";
             this.checkBox_UW_ZG.UseVisualStyleBackColor = true;
             this.checkBox_UW_ZG.CheckedChanged += new System.EventHandler(this.checkBox_UW_ZG_CheckedChanged);
             // 
@@ -191,16 +196,15 @@
             this.textBox_CCL_LN_Value.Size = new System.Drawing.Size(120, 42);
             this.textBox_CCL_LN_Value.TabIndex = 11;
             this.textBox_CCL_LN_Value.WordWrap = false;
-           
             // 
             // checkBox_LW_ZG
             // 
             this.checkBox_LW_ZG.AutoSize = true;
             this.checkBox_LW_ZG.Location = new System.Drawing.Point(304, 139);
             this.checkBox_LW_ZG.Name = "checkBox_LW_ZG";
-            this.checkBox_LW_ZG.Size = new System.Drawing.Size(43, 17);
+            this.checkBox_LW_ZG.Size = new System.Drawing.Size(40, 17);
             this.checkBox_LW_ZG.TabIndex = 16;
-            this.checkBox_LW_ZG.Text = "LW";
+            this.checkBox_LW_ZG.Text = "LN";
             this.checkBox_LW_ZG.UseVisualStyleBackColor = true;
             this.checkBox_LW_ZG.CheckedChanged += new System.EventHandler(this.checkBox_LW_ZG_CheckedChanged);
             // 
@@ -209,9 +213,9 @@
             this.checkBox_LN_ZG.AutoSize = true;
             this.checkBox_LN_ZG.Location = new System.Drawing.Point(165, 139);
             this.checkBox_LN_ZG.Name = "checkBox_LN_ZG";
-            this.checkBox_LN_ZG.Size = new System.Drawing.Size(40, 17);
+            this.checkBox_LN_ZG.Size = new System.Drawing.Size(43, 17);
             this.checkBox_LN_ZG.TabIndex = 15;
-            this.checkBox_LN_ZG.Text = "LN";
+            this.checkBox_LN_ZG.Text = "LW";
             this.checkBox_LN_ZG.UseVisualStyleBackColor = true;
             this.checkBox_LN_ZG.CheckedChanged += new System.EventHandler(this.checkBox_LN_ZG_CheckedChanged);
             // 
@@ -352,125 +356,125 @@
             this.label8.TabIndex = 32;
             this.label8.Text = "LDZA";
             // 
-            // textBox11
+            // textBoxZGFIC
             // 
-            this.textBox11.BackColor = System.Drawing.SystemColors.Control;
-            this.textBox11.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.textBox11.ForeColor = System.Drawing.Color.Red;
-            this.textBox11.Location = new System.Drawing.Point(93, 381);
-            this.textBox11.Name = "textBox11";
-            this.textBox11.Size = new System.Drawing.Size(89, 30);
-            this.textBox11.TabIndex = 33;
-            this.textBox11.Text = "135.050";
-            this.textBox11.WordWrap = false;
+            this.textBoxZGFIC.BackColor = System.Drawing.SystemColors.Control;
+            this.textBoxZGFIC.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.textBoxZGFIC.ForeColor = System.Drawing.Color.Red;
+            this.textBoxZGFIC.Location = new System.Drawing.Point(93, 381);
+            this.textBoxZGFIC.Name = "textBoxZGFIC";
+            this.textBoxZGFIC.Size = new System.Drawing.Size(89, 30);
+            this.textBoxZGFIC.TabIndex = 33;
+            this.textBoxZGFIC.Text = "135.050";
+            this.textBoxZGFIC.WordWrap = false;
             // 
-            // textBox12
+            // textBoxLDDU
             // 
-            this.textBox12.BackColor = System.Drawing.SystemColors.Control;
-            this.textBox12.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.textBox12.ForeColor = System.Drawing.Color.Red;
-            this.textBox12.Location = new System.Drawing.Point(93, 291);
-            this.textBox12.Name = "textBox12";
-            this.textBox12.Size = new System.Drawing.Size(89, 30);
-            this.textBox12.TabIndex = 34;
-            this.textBox12.Text = "123.600";
-            this.textBox12.WordWrap = false;
+            this.textBoxLDDU.BackColor = System.Drawing.SystemColors.Control;
+            this.textBoxLDDU.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.textBoxLDDU.ForeColor = System.Drawing.Color.Red;
+            this.textBoxLDDU.Location = new System.Drawing.Point(93, 291);
+            this.textBoxLDDU.Name = "textBoxLDDU";
+            this.textBoxLDDU.Size = new System.Drawing.Size(89, 30);
+            this.textBoxLDDU.TabIndex = 34;
+            this.textBoxLDDU.Text = "123.600";
+            this.textBoxLDDU.WordWrap = false;
             // 
-            // textBox13
+            // textBoxLDSP
             // 
-            this.textBox13.BackColor = System.Drawing.SystemColors.Control;
-            this.textBox13.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.textBox13.ForeColor = System.Drawing.Color.Red;
-            this.textBox13.Location = new System.Drawing.Point(93, 321);
-            this.textBox13.Name = "textBox13";
-            this.textBox13.Size = new System.Drawing.Size(89, 30);
-            this.textBox13.TabIndex = 35;
-            this.textBox13.Text = "120.875";
-            this.textBox13.WordWrap = false;
+            this.textBoxLDSP.BackColor = System.Drawing.SystemColors.Control;
+            this.textBoxLDSP.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.textBoxLDSP.ForeColor = System.Drawing.Color.Red;
+            this.textBoxLDSP.Location = new System.Drawing.Point(93, 321);
+            this.textBoxLDSP.Name = "textBoxLDSP";
+            this.textBoxLDSP.Size = new System.Drawing.Size(89, 30);
+            this.textBoxLDSP.TabIndex = 35;
+            this.textBoxLDSP.Text = "120.875";
+            this.textBoxLDSP.WordWrap = false;
             // 
-            // textBox14
+            // textBoxLDOS
             // 
-            this.textBox14.BackColor = System.Drawing.SystemColors.Control;
-            this.textBox14.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.textBox14.ForeColor = System.Drawing.Color.Red;
-            this.textBox14.Location = new System.Drawing.Point(93, 351);
-            this.textBox14.Name = "textBox14";
-            this.textBox14.Size = new System.Drawing.Size(89, 30);
-            this.textBox14.TabIndex = 36;
-            this.textBox14.Text = "118.800";
-            this.textBox14.WordWrap = false;
+            this.textBoxLDOS.BackColor = System.Drawing.SystemColors.Control;
+            this.textBoxLDOS.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.textBoxLDOS.ForeColor = System.Drawing.Color.Red;
+            this.textBoxLDOS.Location = new System.Drawing.Point(93, 351);
+            this.textBoxLDOS.Name = "textBoxLDOS";
+            this.textBoxLDOS.Size = new System.Drawing.Size(89, 30);
+            this.textBoxLDOS.TabIndex = 36;
+            this.textBoxLDOS.Text = "118.800";
+            this.textBoxLDOS.WordWrap = false;
             // 
-            // textBox15
+            // textBoxLDZA
             // 
-            this.textBox15.BackColor = System.Drawing.SystemColors.Control;
-            this.textBox15.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.textBox15.ForeColor = System.Drawing.Color.Red;
-            this.textBox15.Location = new System.Drawing.Point(93, 261);
-            this.textBox15.Name = "textBox15";
-            this.textBox15.Size = new System.Drawing.Size(89, 30);
-            this.textBox15.TabIndex = 37;
-            this.textBox15.Text = "120.700";
-            this.textBox15.WordWrap = false;
+            this.textBoxLDZA.BackColor = System.Drawing.SystemColors.Control;
+            this.textBoxLDZA.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.textBoxLDZA.ForeColor = System.Drawing.Color.Red;
+            this.textBoxLDZA.Location = new System.Drawing.Point(93, 261);
+            this.textBoxLDZA.Name = "textBoxLDZA";
+            this.textBoxLDZA.Size = new System.Drawing.Size(89, 30);
+            this.textBoxLDZA.TabIndex = 37;
+            this.textBoxLDZA.Text = "120.700";
+            this.textBoxLDZA.WordWrap = false;
             // 
-            // textBox16
+            // textBoxLQSA
             // 
-            this.textBox16.BackColor = System.Drawing.SystemColors.Control;
-            this.textBox16.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.textBox16.ForeColor = System.Drawing.Color.Green;
-            this.textBox16.Location = new System.Drawing.Point(87, 31);
-            this.textBox16.Name = "textBox16";
-            this.textBox16.Size = new System.Drawing.Size(89, 30);
-            this.textBox16.TabIndex = 47;
-            this.textBox16.Text = "136.450";
-            this.textBox16.WordWrap = false;
+            this.textBoxLQSA.BackColor = System.Drawing.SystemColors.Control;
+            this.textBoxLQSA.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.textBoxLQSA.ForeColor = System.Drawing.Color.Green;
+            this.textBoxLQSA.Location = new System.Drawing.Point(87, 31);
+            this.textBoxLQSA.Name = "textBoxLQSA";
+            this.textBoxLQSA.Size = new System.Drawing.Size(89, 30);
+            this.textBoxLQSA.TabIndex = 47;
+            this.textBoxLQSA.Text = "136.450";
+            this.textBoxLQSA.WordWrap = false;
             // 
-            // textBox17
+            // textBoxLQBK
             // 
-            this.textBox17.BackColor = System.Drawing.SystemColors.Control;
-            this.textBox17.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.textBox17.ForeColor = System.Drawing.Color.Green;
-            this.textBox17.Location = new System.Drawing.Point(87, 121);
-            this.textBox17.Name = "textBox17";
-            this.textBox17.Size = new System.Drawing.Size(89, 30);
-            this.textBox17.TabIndex = 46;
-            this.textBox17.Text = "118.950";
-            this.textBox17.WordWrap = false;
+            this.textBoxLQBK.BackColor = System.Drawing.SystemColors.Control;
+            this.textBoxLQBK.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.textBoxLQBK.ForeColor = System.Drawing.Color.Green;
+            this.textBoxLQBK.Location = new System.Drawing.Point(87, 121);
+            this.textBoxLQBK.Name = "textBoxLQBK";
+            this.textBoxLQBK.Size = new System.Drawing.Size(89, 30);
+            this.textBoxLQBK.TabIndex = 46;
+            this.textBoxLQBK.Text = "118.950";
+            this.textBoxLQBK.WordWrap = false;
             // 
-            // textBox18
+            // textBoxLQTZ
             // 
-            this.textBox18.BackColor = System.Drawing.SystemColors.Control;
-            this.textBox18.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.textBox18.ForeColor = System.Drawing.Color.Green;
-            this.textBox18.Location = new System.Drawing.Point(87, 91);
-            this.textBox18.Name = "textBox18";
-            this.textBox18.Size = new System.Drawing.Size(89, 30);
-            this.textBox18.TabIndex = 45;
-            this.textBox18.Text = "120.350";
-            this.textBox18.WordWrap = false;
+            this.textBoxLQTZ.BackColor = System.Drawing.SystemColors.Control;
+            this.textBoxLQTZ.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.textBoxLQTZ.ForeColor = System.Drawing.Color.Green;
+            this.textBoxLQTZ.Location = new System.Drawing.Point(87, 91);
+            this.textBoxLQTZ.Name = "textBoxLQTZ";
+            this.textBoxLQTZ.Size = new System.Drawing.Size(89, 30);
+            this.textBoxLQTZ.TabIndex = 45;
+            this.textBoxLQTZ.Text = "120.350";
+            this.textBoxLQTZ.WordWrap = false;
             // 
-            // textBox19
+            // textBoxLQMO
             // 
-            this.textBox19.BackColor = System.Drawing.SystemColors.Control;
-            this.textBox19.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.textBox19.ForeColor = System.Drawing.Color.Green;
-            this.textBox19.Location = new System.Drawing.Point(87, 61);
-            this.textBox19.Name = "textBox19";
-            this.textBox19.Size = new System.Drawing.Size(89, 30);
-            this.textBox19.TabIndex = 44;
-            this.textBox19.Text = "120.225";
-            this.textBox19.WordWrap = false;
+            this.textBoxLQMO.BackColor = System.Drawing.SystemColors.Control;
+            this.textBoxLQMO.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.textBoxLQMO.ForeColor = System.Drawing.Color.Green;
+            this.textBoxLQMO.Location = new System.Drawing.Point(87, 61);
+            this.textBoxLQMO.Name = "textBoxLQMO";
+            this.textBoxLQMO.Size = new System.Drawing.Size(89, 30);
+            this.textBoxLQMO.TabIndex = 44;
+            this.textBoxLQMO.Text = "120.225";
+            this.textBoxLQMO.WordWrap = false;
             // 
-            // textBox20
+            // textBoxFIC
             // 
-            this.textBox20.BackColor = System.Drawing.SystemColors.Control;
-            this.textBox20.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.textBox20.ForeColor = System.Drawing.Color.Green;
-            this.textBox20.Location = new System.Drawing.Point(87, 151);
-            this.textBox20.Name = "textBox20";
-            this.textBox20.Size = new System.Drawing.Size(89, 30);
-            this.textBox20.TabIndex = 43;
-            this.textBox20.Text = "135.575";
-            this.textBox20.WordWrap = false;
+            this.textBoxFIC.BackColor = System.Drawing.SystemColors.Control;
+            this.textBoxFIC.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.textBoxFIC.ForeColor = System.Drawing.Color.Green;
+            this.textBoxFIC.Location = new System.Drawing.Point(87, 151);
+            this.textBoxFIC.Name = "textBoxFIC";
+            this.textBoxFIC.Size = new System.Drawing.Size(89, 30);
+            this.textBoxFIC.TabIndex = 43;
+            this.textBoxFIC.Text = "135.575";
+            this.textBoxFIC.WordWrap = false;
             // 
             // label9
             // 
@@ -530,15 +534,15 @@
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.label10);
-            this.groupBox1.Controls.Add(this.textBox16);
+            this.groupBox1.Controls.Add(this.textBoxLQSA);
             this.groupBox1.Controls.Add(this.label13);
-            this.groupBox1.Controls.Add(this.textBox17);
+            this.groupBox1.Controls.Add(this.textBoxLQBK);
             this.groupBox1.Controls.Add(this.label12);
-            this.groupBox1.Controls.Add(this.textBox18);
+            this.groupBox1.Controls.Add(this.textBoxLQTZ);
             this.groupBox1.Controls.Add(this.label11);
-            this.groupBox1.Controls.Add(this.textBox19);
+            this.groupBox1.Controls.Add(this.textBoxLQMO);
             this.groupBox1.Controls.Add(this.label9);
-            this.groupBox1.Controls.Add(this.textBox20);
+            this.groupBox1.Controls.Add(this.textBoxFIC);
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.groupBox1.ForeColor = System.Drawing.Color.Green;
             this.groupBox1.Location = new System.Drawing.Point(238, 235);
@@ -559,29 +563,29 @@
             this.label14.TabIndex = 49;
             this.label14.Text = "LYPG";
             // 
-            // textBox21
+            // textBoxLYBE
             // 
-            this.textBox21.BackColor = System.Drawing.SystemColors.Control;
-            this.textBox21.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.textBox21.ForeColor = System.Drawing.Color.Blue;
-            this.textBox21.Location = new System.Drawing.Point(633, 235);
-            this.textBox21.Name = "textBox21";
-            this.textBox21.Size = new System.Drawing.Size(89, 30);
-            this.textBox21.TabIndex = 52;
-            this.textBox21.Text = "119.100";
-            this.textBox21.WordWrap = false;
+            this.textBoxLYBE.BackColor = System.Drawing.SystemColors.Control;
+            this.textBoxLYBE.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.textBoxLYBE.ForeColor = System.Drawing.Color.Blue;
+            this.textBoxLYBE.Location = new System.Drawing.Point(633, 235);
+            this.textBoxLYBE.Name = "textBoxLYBE";
+            this.textBoxLYBE.Size = new System.Drawing.Size(89, 30);
+            this.textBoxLYBE.TabIndex = 52;
+            this.textBoxLYBE.Text = "119.100";
+            this.textBoxLYBE.WordWrap = false;
             // 
-            // textBox22
+            // textBoxLYPG
             // 
-            this.textBox22.BackColor = System.Drawing.SystemColors.Control;
-            this.textBox22.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.textBox22.ForeColor = System.Drawing.Color.Blue;
-            this.textBox22.Location = new System.Drawing.Point(633, 265);
-            this.textBox22.Name = "textBox22";
-            this.textBox22.Size = new System.Drawing.Size(89, 30);
-            this.textBox22.TabIndex = 51;
-            this.textBox22.Text = "135.150";
-            this.textBox22.WordWrap = false;
+            this.textBoxLYPG.BackColor = System.Drawing.SystemColors.Control;
+            this.textBoxLYPG.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.textBoxLYPG.ForeColor = System.Drawing.Color.Blue;
+            this.textBoxLYPG.Location = new System.Drawing.Point(633, 265);
+            this.textBoxLYPG.Name = "textBoxLYPG";
+            this.textBoxLYPG.Size = new System.Drawing.Size(89, 30);
+            this.textBoxLYPG.TabIndex = 51;
+            this.textBoxLYPG.Text = "135.150";
+            this.textBoxLYPG.WordWrap = false;
             // 
             // label15
             // 
@@ -594,17 +598,17 @@
             this.label15.TabIndex = 50;
             this.label15.Text = "LYBE";
             // 
-            // textBox23
+            // textBoxSectorLYPG
             // 
-            this.textBox23.BackColor = System.Drawing.SystemColors.Control;
-            this.textBox23.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.textBox23.ForeColor = System.Drawing.Color.Blue;
-            this.textBox23.Location = new System.Drawing.Point(472, 298);
-            this.textBox23.Name = "textBox23";
-            this.textBox23.Size = new System.Drawing.Size(252, 27);
-            this.textBox23.TabIndex = 53;
-            this.textBox23.Text = "[+382 20 414 005] ";
-            this.textBox23.WordWrap = false;
+            this.textBoxSectorLYPG.BackColor = System.Drawing.SystemColors.Control;
+            this.textBoxSectorLYPG.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.textBoxSectorLYPG.ForeColor = System.Drawing.Color.Blue;
+            this.textBoxSectorLYPG.Location = new System.Drawing.Point(472, 298);
+            this.textBoxSectorLYPG.Name = "textBoxSectorLYPG";
+            this.textBoxSectorLYPG.Size = new System.Drawing.Size(252, 27);
+            this.textBoxSectorLYPG.TabIndex = 53;
+            this.textBoxSectorLYPG.Text = "[+382 20 414 005] ";
+            this.textBoxSectorLYPG.WordWrap = false;
             // 
             // label16
             // 
@@ -629,17 +633,17 @@
             this.textBoxFree_One.Text = "FREE TEXT";
             this.textBoxFree_One.WordWrap = false;
             // 
-            // textBox25
+            // textBoxFree_Two
             // 
-            this.textBox25.BackColor = System.Drawing.SystemColors.Control;
-            this.textBox25.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.textBox25.ForeColor = System.Drawing.Color.Black;
-            this.textBox25.Location = new System.Drawing.Point(454, 392);
-            this.textBox25.Name = "textBox25";
-            this.textBox25.Size = new System.Drawing.Size(268, 30);
-            this.textBox25.TabIndex = 56;
-            this.textBox25.Text = "FREE TEXT";
-            this.textBox25.WordWrap = false;
+            this.textBoxFree_Two.BackColor = System.Drawing.SystemColors.Control;
+            this.textBoxFree_Two.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.textBoxFree_Two.ForeColor = System.Drawing.Color.Black;
+            this.textBoxFree_Two.Location = new System.Drawing.Point(454, 392);
+            this.textBoxFree_Two.Name = "textBoxFree_Two";
+            this.textBoxFree_Two.Size = new System.Drawing.Size(268, 30);
+            this.textBoxFree_Two.TabIndex = 56;
+            this.textBoxFree_Two.Text = "FREE TEXT";
+            this.textBoxFree_Two.WordWrap = false;
             // 
             // End_X_UP_ZG
             // 
@@ -697,53 +701,87 @@
             this.textBox26.Text = "FL";
             this.textBox26.WordWrap = false;
             // 
-            // textBox24
+            // textBoxChief_Sup
             // 
-            this.textBox24.BackColor = System.Drawing.SystemColors.Control;
-            this.textBox24.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.textBox24.ForeColor = System.Drawing.Color.Purple;
-            this.textBox24.Location = new System.Drawing.Point(93, 436);
-            this.textBox24.Name = "textBox24";
-            this.textBox24.Size = new System.Drawing.Size(341, 30);
-            this.textBox24.TabIndex = 59;
-            this.textBox24.Text = "CHIEF/SUP 325";
-            this.textBox24.WordWrap = false;
+            this.textBoxChief_Sup.BackColor = System.Drawing.SystemColors.Control;
+            this.textBoxChief_Sup.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.textBoxChief_Sup.ForeColor = System.Drawing.Color.Purple;
+            this.textBoxChief_Sup.Location = new System.Drawing.Point(93, 436);
+            this.textBoxChief_Sup.Name = "textBoxChief_Sup";
+            this.textBoxChief_Sup.Size = new System.Drawing.Size(341, 30);
+            this.textBoxChief_Sup.TabIndex = 59;
+            this.textBoxChief_Sup.Text = "CHIEF/SUP 325";
+            this.textBoxChief_Sup.WordWrap = false;
             // 
-            // textBox27
+            // textBoxFree_Three
             // 
-            this.textBox27.BackColor = System.Drawing.SystemColors.Control;
-            this.textBox27.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.textBox27.ForeColor = System.Drawing.Color.Black;
-            this.textBox27.Location = new System.Drawing.Point(453, 427);
-            this.textBox27.Name = "textBox27";
-            this.textBox27.Size = new System.Drawing.Size(268, 30);
-            this.textBox27.TabIndex = 60;
-            this.textBox27.Text = "FREE TEXT";
-            this.textBox27.WordWrap = false;
+            this.textBoxFree_Three.BackColor = System.Drawing.SystemColors.Control;
+            this.textBoxFree_Three.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.textBoxFree_Three.ForeColor = System.Drawing.Color.Black;
+            this.textBoxFree_Three.Location = new System.Drawing.Point(453, 427);
+            this.textBoxFree_Three.Name = "textBoxFree_Three";
+            this.textBoxFree_Three.Size = new System.Drawing.Size(268, 30);
+            this.textBoxFree_Three.TabIndex = 60;
+            this.textBoxFree_Three.Text = "FREE TEXT";
+            this.textBoxFree_Three.WordWrap = false;
+            // 
+            // menuStrip1
+            // 
+            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolsToolStripMenuItem,
+            this.aboutToolStripMenuItem});
+            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
+            this.menuStrip1.Name = "menuStrip1";
+            this.menuStrip1.Size = new System.Drawing.Size(734, 24);
+            this.menuStrip1.TabIndex = 61;
+            this.menuStrip1.Text = "menuStrip1";
+            // 
+            // toolsToolStripMenuItem
+            // 
+            this.toolsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.backgroundColorToolStripMenuItem});
+            this.toolsToolStripMenuItem.Name = "toolsToolStripMenuItem";
+            this.toolsToolStripMenuItem.Size = new System.Drawing.Size(48, 20);
+            this.toolsToolStripMenuItem.Text = "Tools";
+            // 
+            // backgroundColorToolStripMenuItem
+            // 
+            this.backgroundColorToolStripMenuItem.Name = "backgroundColorToolStripMenuItem";
+            this.backgroundColorToolStripMenuItem.Size = new System.Drawing.Size(168, 22);
+            this.backgroundColorToolStripMenuItem.Text = "Background color";
+            this.backgroundColorToolStripMenuItem.Click += new System.EventHandler(this.backgroundColorToolStripMenuItem_Click);
+            // 
+            // aboutToolStripMenuItem
+            // 
+            this.aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
+            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(52, 20);
+            this.aboutToolStripMenuItem.Text = "About";
+            this.aboutToolStripMenuItem.Click += new System.EventHandler(this.aboutToolStripMenuItem_Click);
             // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.Control;
             this.ClientSize = new System.Drawing.Size(734, 476);
-            this.Controls.Add(this.textBox27);
-            this.Controls.Add(this.textBox24);
+            this.Controls.Add(this.textBoxFree_Three);
+            this.Controls.Add(this.textBoxChief_Sup);
             this.Controls.Add(this.End_X_DOWN_ZG);
             this.Controls.Add(this.End_X_UP_ZG);
-            this.Controls.Add(this.textBox25);
+            this.Controls.Add(this.textBoxFree_Two);
             this.Controls.Add(this.textBoxFree_One);
             this.Controls.Add(this.label16);
-            this.Controls.Add(this.textBox23);
+            this.Controls.Add(this.textBoxSectorLYPG);
             this.Controls.Add(this.label14);
-            this.Controls.Add(this.textBox21);
-            this.Controls.Add(this.textBox22);
+            this.Controls.Add(this.textBoxLYBE);
+            this.Controls.Add(this.textBoxLYPG);
             this.Controls.Add(this.label15);
             this.Controls.Add(this.groupBox1);
-            this.Controls.Add(this.textBox15);
-            this.Controls.Add(this.textBox14);
-            this.Controls.Add(this.textBox13);
-            this.Controls.Add(this.textBox12);
-            this.Controls.Add(this.textBox11);
+            this.Controls.Add(this.textBoxLDZA);
+            this.Controls.Add(this.textBoxLDOS);
+            this.Controls.Add(this.textBoxLDSP);
+            this.Controls.Add(this.textBoxLDDU);
+            this.Controls.Add(this.textBoxZGFIC);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label6);
@@ -770,11 +808,13 @@
             this.Controls.Add(this.checkBox_US_ZG);
             this.Controls.Add(this.textBox_CCL_UN_Value);
             this.Controls.Add(this.panel1);
+            this.Controls.Add(this.menuStrip1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MainMenuStrip = this.menuStrip1;
             this.MaximizeBox = false;
             this.Name = "Main";
-            this.Text = "CC";
+            this.Text = "BHANSA - Frequency Managament";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Main_FormClosing);
             this.Load += new System.EventHandler(this.Main_Load);
             this.Paint += new System.Windows.Forms.PaintEventHandler(this.Main_Paint);
@@ -782,6 +822,8 @@
             this.groupBox1.PerformLayout();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            this.menuStrip1.ResumeLayout(false);
+            this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -815,16 +857,16 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.TextBox textBox11;
-        private System.Windows.Forms.TextBox textBox12;
-        private System.Windows.Forms.TextBox textBox13;
-        private System.Windows.Forms.TextBox textBox14;
-        private System.Windows.Forms.TextBox textBox15;
-        private System.Windows.Forms.TextBox textBox16;
-        private System.Windows.Forms.TextBox textBox17;
-        private System.Windows.Forms.TextBox textBox18;
-        private System.Windows.Forms.TextBox textBox19;
-        private System.Windows.Forms.TextBox textBox20;
+        private System.Windows.Forms.TextBox textBoxZGFIC;
+        private System.Windows.Forms.TextBox textBoxLDDU;
+        private System.Windows.Forms.TextBox textBoxLDSP;
+        private System.Windows.Forms.TextBox textBoxLDOS;
+        private System.Windows.Forms.TextBox textBoxLDZA;
+        private System.Windows.Forms.TextBox textBoxLQSA;
+        private System.Windows.Forms.TextBox textBoxLQBK;
+        private System.Windows.Forms.TextBox textBoxLQTZ;
+        private System.Windows.Forms.TextBox textBoxLQMO;
+        private System.Windows.Forms.TextBox textBoxFIC;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label11;
@@ -832,20 +874,24 @@
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Label label14;
-        private System.Windows.Forms.TextBox textBox21;
-        private System.Windows.Forms.TextBox textBox22;
+        private System.Windows.Forms.TextBox textBoxLYBE;
+        private System.Windows.Forms.TextBox textBoxLYPG;
         private System.Windows.Forms.Label label15;
-        private System.Windows.Forms.TextBox textBox23;
+        private System.Windows.Forms.TextBox textBoxSectorLYPG;
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.TextBox textBoxFree_One;
-        private System.Windows.Forms.TextBox textBox25;
+        private System.Windows.Forms.TextBox textBoxFree_Two;
         private System.Windows.Forms.Label End_X_UP_ZG;
         private System.Windows.Forms.Label End_X_DOWN_ZG;
         private System.Windows.Forms.TextBox textBox_Division_Level;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.TextBox textBox26;
-        private System.Windows.Forms.TextBox textBox24;
-        private System.Windows.Forms.TextBox textBox27;
+        private System.Windows.Forms.TextBox textBoxChief_Sup;
+        private System.Windows.Forms.TextBox textBoxFree_Three;
+        private System.Windows.Forms.MenuStrip menuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem toolsToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem backgroundColorToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem aboutToolStripMenuItem;
     }
 }
 
