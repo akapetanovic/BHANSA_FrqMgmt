@@ -6,7 +6,7 @@
       <Value Profile="(Default)">False</Value>
     </Setting>
     <Setting Name="CCL_UN_Checked" Type="System.Boolean" Scope="User">
-      <Value Profile="(Default)">True</Value>
+      <Value Profile="(Default)">False</Value>
     </Setting>
     <Setting Name="CCL_UW_Checked" Type="System.Boolean" Scope="User">
       <Value Profile="(Default)">False</Value>
@@ -21,7 +21,7 @@
       <Value Profile="(Default)" />
     </Setting>
     <Setting Name="CCL_UN_Value" Type="System.String" Scope="User">
-      <Value Profile="(Default)">135.800</Value>
+      <Value Profile="(Default)" />
     </Setting>
     <Setting Name="CCL_UW_Value" Type="System.String" Scope="User">
       <Value Profile="(Default)" />
@@ -33,22 +33,22 @@
       <Value Profile="(Default)" />
     </Setting>
     <Setting Name="Division_Level" Type="System.String" Scope="User">
-      <Value Profile="(Default)">325</Value>
+      <Value Profile="(Default)" />
     </Setting>
     <Setting Name="SMATSA_UW_Checked" Type="System.Boolean" Scope="User">
-      <Value Profile="(Default)">True</Value>
+      <Value Profile="(Default)">False</Value>
     </Setting>
     <Setting Name="SMATSA_UN_Checked" Type="System.Boolean" Scope="User">
       <Value Profile="(Default)">False</Value>
     </Setting>
     <Setting Name="SMATSA_UW_Value" Type="System.String" Scope="User">
-      <Value Profile="(Default)">123.775</Value>
+      <Value Profile="(Default)" />
     </Setting>
     <Setting Name="SMATSA_UN_Value" Type="System.String" Scope="User">
       <Value Profile="(Default)" />
     </Setting>
     <Setting Name="SMATSA_Lower_Value" Type="System.String" Scope="User">
-      <Value Profile="(Default)">136.650</Value>
+      <Value Profile="(Default)" />
     </Setting>
     <Setting Name="SMATSA_Lower_Checked" Type="System.Boolean" Scope="User">
       <Value Profile="(Default)">False</Value>

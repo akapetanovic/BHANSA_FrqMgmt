@@ -37,7 +37,7 @@ namespace BHANSA_FrqMgmt.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("True")]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
         public bool CCL_UN_Checked {
             get {
                 return ((bool)(this["CCL_UN_Checked"]));
@@ -97,7 +97,7 @@ namespace BHANSA_FrqMgmt.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("135.800")]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
         public string CCL_UN_Value {
             get {
                 return ((string)(this["CCL_UN_Value"]));
@@ -145,7 +145,7 @@ namespace BHANSA_FrqMgmt.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("325")]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
         public string Division_Level {
             get {
                 return ((string)(this["Division_Level"]));
@@ -157,7 +157,7 @@ namespace BHANSA_FrqMgmt.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("True")]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
         public bool SMATSA_UW_Checked {
             get {
                 return ((bool)(this["SMATSA_UW_Checked"]));
@@ -181,7 +181,7 @@ namespace BHANSA_FrqMgmt.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("123.775")]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
         public string SMATSA_UW_Value {
             get {
                 return ((string)(this["SMATSA_UW_Value"]));
@@ -205,7 +205,7 @@ namespace BHANSA_FrqMgmt.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("136.650")]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
         public string SMATSA_Lower_Value {
             get {
                 return ((string)(this["SMATSA_Lower_Value"]));

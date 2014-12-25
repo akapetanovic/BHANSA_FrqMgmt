@@ -84,6 +84,42 @@ namespace BHANSA_FrqMgmt
                 this.textBox_CCL_LW_Value.Text = "";
                 this.textBox_CCL_LW_Value.Enabled = false;
             }
+
+            this.checkBox_SMATSA_LOWER.Checked = Properties.Settings.Default.SMATSA_Lower_Checked;
+            this.checkBox_SMATSA_UW.Checked = Properties.Settings.Default.SMATSA_UW_Checked;
+            this.checkBox_SMATSA_UN.Checked = Properties.Settings.Default.SMATSA_UN_Checked;
+
+            if (this.checkBox_SMATSA_LOWER.Checked)
+            {
+                this.textBox_SMATSA_LOWER.Text = Properties.Settings.Default.SMATSA_Lower_Value;
+            }
+            else
+            {
+                this.textBox_SMATSA_LOWER.Text = "";
+                this.textBox_SMATSA_LOWER.Enabled = false;
+            }
+
+            if (this.checkBox_SMATSA_UW.Checked)
+            {
+                this.textBox_SMATSA_UW.Text = Properties.Settings.Default.SMATSA_UW_Value;
+            }
+            else
+            {
+                this.textBox_SMATSA_UW.Text = "";
+                this.textBox_SMATSA_UW.Enabled = false;
+            }
+
+            if (this.checkBox_SMATSA_UN.Checked)
+            {
+                this.textBox_SMATSA_UN.Text = Properties.Settings.Default.SMATSA_UN_Value;
+            }
+            else
+            {
+                this.textBox_SMATSA_UN.Text = "";
+                this.textBox_SMATSA_UN.Enabled = false;
+            }
+
+            this.textBox_Division_Level.Text = Properties.Settings.Default.Division_Level;
         }
 
         private void Main_Paint(object sender, PaintEventArgs e)
@@ -154,8 +190,8 @@ namespace BHANSA_FrqMgmt
             e.Graphics.DrawLine(bluePen, p1, p2);
 
             // Draw line using Point structure
-            p1 = new Point(checkBoxBG_UN.Location.X - 10, 32);
-            p2 = new Point(checkBoxBG_UN.Location.X - 10, checkBox_LS_ZG.Location.Y - 15);
+            p1 = new Point(checkBox_SMATSA_UN.Location.X - 10, 32);
+            p2 = new Point(checkBox_SMATSA_UN.Location.X - 10, checkBox_LS_ZG.Location.Y - 15);
             e.Graphics.DrawLine(bluePen, p1, p2);
 
             // Draw line using Point structure
@@ -195,22 +231,217 @@ namespace BHANSA_FrqMgmt
 
         }
 
-        private void textBox24_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
         private void checkBox_UN_ZG_CheckedChanged(object sender, EventArgs e)
         {
             if (this.checkBox_UN_ZG.Checked)
             {
                 this.textBox_CCL_UN_Value.Text = Properties.Settings.Default.CCL_UN_Value;
+                this.textBox_CCL_UN_Value.Enabled = true;
             }
             else
             {
                 this.textBox_CCL_UN_Value.Text = "";
                 this.textBox_CCL_UN_Value.Enabled = false;
             }
+
+            Properties.Settings.Default.CCL_UN_Checked = this.checkBox_UN_ZG.Checked;
+            Properties.Settings.Default.Save();
         }
+
+        private void checkBox_US_ZG_CheckedChanged(object sender, EventArgs e)
+        {
+            if (this.checkBox_US_ZG.Checked)
+            {
+                this.textBox_CCL_US_Value.Text = Properties.Settings.Default.CCL_US_Value;
+                this.textBox_CCL_US_Value.Enabled = true;
+            }
+            else
+            {
+                
+                this.textBox_CCL_US_Value.Text = "";
+                this.textBox_CCL_US_Value.Enabled = false;
+            }
+
+            Properties.Settings.Default.CCL_US_Checked = this.checkBox_US_ZG.Checked;
+            Properties.Settings.Default.Save();
+          
+        }
+
+        private void checkBox_UW_ZG_CheckedChanged(object sender, EventArgs e)
+        {
+            if (this.checkBox_UW_ZG.Checked)
+            {
+                this.textBox_CCL_UW_Value.Text = Properties.Settings.Default.CCL_UW_Value;
+                this.textBox_CCL_UW_Value.Enabled = true;
+            }
+            else
+            {
+                this.textBox_CCL_UW_Value.Text = "";
+                this.textBox_CCL_UW_Value.Enabled = false;
+            }
+
+            Properties.Settings.Default.CCL_UW_Checked = this.checkBox_UW_ZG.Checked;
+            Properties.Settings.Default.Save();
+        }
+
+        private void checkBox_LS_ZG_CheckedChanged(object sender, EventArgs e)
+        {
+            if (this.checkBox_LS_ZG.Checked)
+            {
+                this.textBox_CCL_LS_Value.Text = Properties.Settings.Default.CCL_LS_Value;
+                this.textBox_CCL_LS_Value.Enabled = true;
+            }
+            else
+            {
+                this.textBox_CCL_LS_Value.Text = "";
+                this.textBox_CCL_LS_Value.Enabled = false;
+            }
+
+            Properties.Settings.Default.CCL_LS_Checked = this.checkBox_LS_ZG.Checked;
+            Properties.Settings.Default.Save();
+
+        }
+
+        private void checkBox_LN_ZG_CheckedChanged(object sender, EventArgs e)
+        {
+            if (this.checkBox_LN_ZG.Checked)
+            {
+                this.textBox_CCL_LN_Value.Text = Properties.Settings.Default.CCL_LN_Value;
+                this.textBox_CCL_LN_Value.Enabled = true;
+            }
+            else
+            {
+                this.textBox_CCL_LN_Value.Text = "";
+                this.textBox_CCL_LN_Value.Enabled = false;
+            }
+
+            Properties.Settings.Default.CCL_LN_Checked = this.checkBox_LN_ZG.Checked;
+            Properties.Settings.Default.Save();
+        }
+
+        private void checkBox_LW_ZG_CheckedChanged(object sender, EventArgs e)
+        {
+            if (this.checkBox_LW_ZG.Checked)
+            {
+                this.textBox_CCL_LW_Value.Text = Properties.Settings.Default.CCL_LW_Value;
+                this.textBox_CCL_LW_Value.Enabled = true;
+            }
+            else
+            {
+                this.textBox_CCL_LW_Value.Text = "";
+                this.textBox_CCL_LW_Value.Enabled = false;
+            }
+
+            Properties.Settings.Default.CCL_LW_Checked = this.checkBox_LW_ZG.Checked;
+            Properties.Settings.Default.Save();
+        }
+
+        private void checkBox8_CheckedChanged(object sender, EventArgs e)
+        {
+            if (this.checkBox_SMATSA_UW.Checked)
+            {
+                this.textBox_SMATSA_UW.Text = Properties.Settings.Default.SMATSA_UW_Value;
+                this.textBox_SMATSA_UW.Enabled = true;
+            }
+            else
+            {
+                this.textBox_SMATSA_UW.Text = "";
+                this.textBox_SMATSA_UW.Enabled = false;
+            }
+
+            Properties.Settings.Default.SMATSA_UW_Checked = this.checkBox_SMATSA_UW.Checked;
+            Properties.Settings.Default.Save();
+        }
+
+        private void checkBoxBG_UN_CheckedChanged(object sender, EventArgs e)
+        {
+            if (this.checkBox_SMATSA_UN.Checked)
+            {
+                this.textBox_SMATSA_UN.Text = Properties.Settings.Default.SMATSA_UN_Value;
+                this.textBox_SMATSA_UN.Enabled = true;
+            }
+            else
+            {
+                this.textBox_SMATSA_UN.Text = "";
+                this.textBox_SMATSA_UN.Enabled = false;
+            }
+
+            Properties.Settings.Default.SMATSA_UN_Checked = this.checkBox_SMATSA_UN.Checked;
+            Properties.Settings.Default.Save();
+        }
+
+        private void checkBox_SMATSA_LOWER_CheckedChanged(object sender, EventArgs e)
+        {
+            if (this.checkBox_SMATSA_LOWER.Checked)
+            {
+                this.textBox_SMATSA_LOWER.Text = Properties.Settings.Default.SMATSA_Lower_Value;
+                this.textBox_SMATSA_LOWER.Enabled = true;
+            }
+            else
+            {
+                this.textBox_SMATSA_LOWER.Text = "";
+                this.textBox_SMATSA_LOWER.Enabled = false;
+            }
+
+            Properties.Settings.Default.SMATSA_Lower_Checked = this.checkBox_SMATSA_LOWER.Checked;
+            Properties.Settings.Default.Save();
+        }
+
+        
+
+        private void Update_And_Save()
+        {
+
+            if (this.checkBox_UN_ZG.Checked)
+            {
+                Properties.Settings.Default.CCL_UN_Value = this.textBox_CCL_UN_Value.Text;
+            }
+            if (this.checkBox_US_ZG.Checked)
+            {
+                Properties.Settings.Default.CCL_US_Value = this.textBox_CCL_US_Value.Text;
+            }
+            if (this.checkBox_UW_ZG.Checked)
+            {
+                Properties.Settings.Default.CCL_UW_Value = this.textBox_CCL_UW_Value.Text;
+            }
+            if (this.checkBox_LS_ZG.Checked)
+            {
+                Properties.Settings.Default.CCL_LS_Value = this.textBox_CCL_LS_Value.Text;
+            }
+            if (this.checkBox_LN_ZG.Checked)
+            {
+                Properties.Settings.Default.CCL_LN_Value = this.textBox_CCL_LN_Value.Text;
+            }
+            if (this.checkBox_LW_ZG.Checked)
+            {
+                Properties.Settings.Default.CCL_LW_Value = this.textBox_CCL_LW_Value.Text;
+            }
+
+
+            if (this.checkBox_SMATSA_LOWER.Checked)
+            {
+                Properties.Settings.Default.SMATSA_Lower_Value = this.textBox_SMATSA_LOWER.Text;
+            }
+            if (this.checkBox_SMATSA_UW.Checked)
+            {
+                Properties.Settings.Default.SMATSA_UW_Value = this.textBox_SMATSA_UW.Text;
+            }
+            if (this.checkBox_SMATSA_UN.Checked)
+            {
+                Properties.Settings.Default.SMATSA_UN_Value = this.textBox_SMATSA_UN.Text;
+            }
+            
+            Properties.Settings.Default.Division_Level = this.textBox_Division_Level.Text;
+
+            Properties.Settings.Default.Save();
+        }
+
+        private void Main_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Update_And_Save();
+        }
+
+      
+       
     }
 }
