@@ -11,6 +11,9 @@ namespace BHANSA_FrqMgmt
 {
     public partial class Main : Form
     {
+        public static Server_Connection_Settings Server_Connection_Settings_Form = new Server_Connection_Settings();
+        public static Client_Connection_Settings Clinet_Connection_Settings_Form = new Client_Connection_Settings();
+
         public Main()
         {
             InitializeComponent();
@@ -512,6 +515,21 @@ namespace BHANSA_FrqMgmt
         {
 
             MessageBox.Show("Amer Kapetanovic\namer.kapetanovic@bhansa.gov.ba\nVersion 1.0\n25.12.2014");
+        }
+
+        private void connectionSettingsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Server_Connection_Settings_Form.Show();
+        }
+
+        private void clientConnectionSettingsToolStripMenuItem_Click_1(object sender, EventArgs e)
+        {
+            Clinet_Connection_Settings_Form.Show();
+        }
+
+        private void toolsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
