@@ -16,14 +16,10 @@ namespace BHANSA_FrqMgmt
     public partial class Server_Connection_Settings : Form
     {
         private static bool KeepGoing = true;
-        private static bool RequestStop = false;
-
         private static bool KeepGoingCWP1 = true;
-        private static bool RequestStopCWP1 = false;
         private static bool KeepGoingCWP2 = true;
-        private static bool RequestStopCWP2 = false;
         private static bool KeepGoingCWP3 = true;
-        private static bool RequestStopCWP3 = false;
+
 
         // Define the main listener thread
         private static Thread ListenForDataThread;
@@ -116,7 +112,7 @@ namespace BHANSA_FrqMgmt
                     else // Add a check that this is a valid multicast address
                     {
                         UdpClient TempSock;
-                        TempSock = new UdpClient(2224);// Port does not matter
+                        TempSock = new UdpClient(4000);// Port does not matter
                         // Open up a new socket with the net IP address and port number   
                         try
                         {
@@ -164,6 +160,7 @@ namespace BHANSA_FrqMgmt
                 KeepGoing = false;
                 this.btnConnectServerBroadcast.Text = "Connect";
                 this.btnConnectServerBroadcast.BackColor = Color.Red;
+                Cleanup();
 
             }
         }
@@ -197,23 +194,16 @@ namespace BHANSA_FrqMgmt
         {
             while (KeepGoing)
             {
-                
-                // OK user requested that we terminate 
-                // recording, so lets do it
-                if (RequestStop == true)
-                    KeepGoing = false;
-                else
+
+                try
                 {
-                    try
-                    {
-                        byte[] byData = System.Text.Encoding.ASCII.GetBytes("TEST STRING");
-                        tx_sock.Send(byData, byData.Length, tx_iep);
+                    byte[] byData = System.Text.Encoding.ASCII.GetBytes("TEST STRING");
+                    tx_sock.Send(byData, byData.Length, tx_iep);
 
-                    }
-                    catch
-                    {
+                }
+                catch
+                {
 
-                    }
                 }
 
                 Thread.Sleep(1000);
@@ -227,6 +217,7 @@ namespace BHANSA_FrqMgmt
 
             if (tx_sock != null)
                 tx_sock.Close();
+
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)
@@ -256,7 +247,7 @@ namespace BHANSA_FrqMgmt
                     else // Add a check that this is a valid multicast address
                     {
                         UdpClient TempSock;
-                        TempSock = new UdpClient(2224);// Port does not matter
+                        TempSock = new UdpClient(4001);// Port does not matter
                         // Open up a new socket with the net IP address and port number   
                         try
                         {
@@ -272,7 +263,7 @@ namespace BHANSA_FrqMgmt
                     }
 
                     int PortNumber;
-                    if (int.TryParse(this.textboxPort.Text, out PortNumber) && (PortNumber >= 1 && PortNumber <= 65535))
+                    if (int.TryParse(this.txtPortCWP1.Text, out PortNumber) && (PortNumber >= 1 && PortNumber <= 65535))
                     {
                     }
                     else
@@ -290,8 +281,8 @@ namespace BHANSA_FrqMgmt
                 if (Input_Validated == true)
                 {
                     if (StartListening_CWP1(IPAddress.Parse(this.comboBoxNetworkInterface.Items[this.comboBoxNetworkInterface.SelectedIndex].ToString()),
-                                 IPAddress.Parse(this.txtboxIPAddress.Text),
-                                 int.Parse(this.textboxPort.Text)) == true)
+                                 IPAddress.Parse(this.txtMulticastCWP1.Text),
+                                 int.Parse(this.txtPortCWP1.Text)) == true)
                     {
                         this.btnConnectCWP1.Text = "Disconnect";
                         this.btnConnectCWP1.BackColor = Color.Green;
@@ -303,6 +294,9 @@ namespace BHANSA_FrqMgmt
                 KeepGoingCWP1 = false;
                 this.btnConnectCWP1.Text = "Connect";
                 this.btnConnectCWP1.BackColor = Color.Red;
+                // Do a cleanup
+                if (rcv_sock_CWP1 != null)
+                    rcv_sock_CWP1.Close();
             }
         }
 
@@ -327,7 +321,6 @@ namespace BHANSA_FrqMgmt
             }
 
             KeepGoingCWP1 = true;
-            RequestStopCWP1 = false;
             ListenForDataThread_CWP1 = new Thread(new ThreadStart(DOWork_CWP1));
             ListenForDataThread_CWP1.Start();
 
@@ -338,30 +331,287 @@ namespace BHANSA_FrqMgmt
         {
             while (KeepGoingCWP1)
             {
-                // OK user requested that we terminate 
-                // recording, so lets do it
-                if (RequestStop == true)
-                    KeepGoing = false;
-                else
+
+                try
                 {
-                    try
-                    {
-                        // Lets receive data in an array of bytes 
-                        // (an octet, of course composed of 8bits)
-                        UDPBuffer_CWP1 = rcv_sock_CWP1.Receive(ref rcv_iep_CWP1);
-                        Shared_Data.Received_Data_List_From_CWP1.Add(System.Text.Encoding.Default.GetString(UDPBuffer_CWP1));
-                        Shared_Data.New_Data_Has_Arrived = true;
-                    }
-                    catch
-                    {
-                        MessageBox.Show("Issue in DoWork_CWP1");
-                    }
+                    // Lets receive data in an array of bytes 
+                    // (an octet, of course composed of 8bits)
+                    UDPBuffer_CWP1 = rcv_sock_CWP1.Receive(ref rcv_iep_CWP1);
+                    Shared_Data.Received_Data_List_From_CWP1.Add(System.Text.Encoding.Default.GetString(UDPBuffer_CWP1));
+                    Shared_Data.New_Data_Has_Arrived = true;
                 }
+                catch
+                {
+                    if (KeepGoingCWP1 == true)
+                        MessageBox.Show("Issue in DoWork_CWP1");
+                }
+
             }
 
             // Do a cleanup
             if (rcv_sock_CWP1 != null)
                 rcv_sock_CWP1.Close();
+        }
+
+        private void btnConnectCWP2_Click(object sender, EventArgs e)
+        {
+            if (this.btnConnectCWP2.Text == "Connect")
+            {
+                bool Input_Validated = true;
+
+                // First make sure that all boxes are filled out
+                if ((!string.IsNullOrEmpty(this.txtMulticastCWP2.Text)) &&
+                     (!string.IsNullOrEmpty(this.comboBoxNetworkInterface.Text)) &&
+                    (!string.IsNullOrEmpty(this.txtPortCWP2.Text)))
+                {
+                    IPAddress IP;
+                    IPAddress Multicast;
+                    // Validate that a valid IP address is entered
+                    if ((IPAddress.TryParse(this.txtMulticastCWP2.Text, out Multicast) != true) || (IPAddress.TryParse(this.comboBoxNetworkInterface.Text, out IP) != true))
+                    {
+                        MessageBox.Show("Not a valid IP address");
+                        Input_Validated = false;
+                    }
+                    else // Add a check that this is a valid multicast address
+                    {
+                        UdpClient TempSock;
+                        TempSock = new UdpClient(4002);// Port does not matter
+                        // Open up a new socket with the net IP address and port number   
+                        try
+                        {
+                            TempSock.JoinMulticastGroup(Multicast, 50); // 50 is TTL value
+                        }
+                        catch
+                        {
+                            MessageBox.Show("Not valid Multicast address (has to be in range 224.0.0.0 to 239.255.255.255");
+                            Input_Validated = false;
+                            TempSock.Close();
+                        }
+                        TempSock.Close();
+                    }
+
+                    int PortNumber;
+                    if (int.TryParse(this.txtPortCWP2.Text, out PortNumber) && (PortNumber >= 1 && PortNumber <= 65535))
+                    {
+                    }
+                    else
+                    {
+                        MessageBox.Show("Invalid Port number");
+                        Input_Validated = false;
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Please fill out all data fileds");
+                    Input_Validated = false;
+                }
+
+                if (Input_Validated == true)
+                {
+                    if (StartListening_CWP2(IPAddress.Parse(this.comboBoxNetworkInterface.Items[this.comboBoxNetworkInterface.SelectedIndex].ToString()),
+                                 IPAddress.Parse(this.txtMulticastCWP2.Text),
+                                 int.Parse(this.txtPortCWP2.Text)) == true)
+                    {
+                        this.btnConnectCWP2.Text = "Disconnect";
+                        this.btnConnectCWP2.BackColor = Color.Green;
+                    }
+                }
+            }
+            else
+            {
+                KeepGoingCWP2 = false;
+                this.btnConnectCWP2.Text = "Connect";
+                this.btnConnectCWP2.BackColor = Color.Red;
+                // Do a cleanup
+                if (rcv_sock_CWP2 != null)
+                    rcv_sock_CWP2.Close();
+            }
+        }
+
+        public static bool StartListening_CWP2(IPAddress Interface_Addres,  // IP address of the interface where the data is expected
+                                              IPAddress Multicast_Address, // Multicast address of the expected data
+                                              int PortNumber)              // Port number of the forwarded data
+        {
+
+
+
+            // Open up a new socket with the net IP address and port number   
+            try
+            {
+                rcv_sock_CWP2 = new UdpClient(PortNumber);
+                rcv_sock_CWP2.JoinMulticastGroup(Multicast_Address, Interface_Addres);
+                rcv_iep_CWP2 = new IPEndPoint(IPAddress.Any, PortNumber);
+            }
+            catch
+            {
+                MessageBox.Show("Not possible! Make sure given IP address/port is a valid one on your system or not already used by some other process");
+                return false;
+            }
+
+            KeepGoingCWP2 = true;
+            ListenForDataThread_CWP2 = new Thread(new ThreadStart(DOWork_CWP2));
+            ListenForDataThread_CWP2.Start();
+
+            return true;
+        }
+
+        private static void DOWork_CWP2()
+        {
+            while (KeepGoingCWP2)
+            {
+
+                try
+                {
+                    // Lets receive data in an array of bytes 
+                    // (an octet, of course composed of 8bits)
+                    UDPBuffer_CWP2 = rcv_sock_CWP2.Receive(ref rcv_iep_CWP2);
+                    Shared_Data.Received_Data_List_From_CWP2.Add(System.Text.Encoding.Default.GetString(UDPBuffer_CWP2));
+                    Shared_Data.New_Data_Has_Arrived = true;
+                }
+                catch
+                {
+                    if (KeepGoingCWP2 == true)
+                        MessageBox.Show("Issue in DoWork_CWP2");
+                }
+
+            }
+
+            // Do a cleanup
+            if (rcv_sock_CWP2 != null)
+                rcv_sock_CWP2.Close();
+        }
+
+        private void btnConnectCWP3_Click(object sender, EventArgs e)
+        {
+            if (this.btnConnectCWP3.Text == "Connect")
+            {
+                bool Input_Validated = true;
+
+                // First make sure that all boxes are filled out
+                if ((!string.IsNullOrEmpty(this.txtMulticastCWP3.Text)) &&
+                     (!string.IsNullOrEmpty(this.comboBoxNetworkInterface.Text)) &&
+                    (!string.IsNullOrEmpty(this.txtPortCWP3.Text)))
+                {
+                    IPAddress IP;
+                    IPAddress Multicast;
+                    // Validate that a valid IP address is entered
+                    if ((IPAddress.TryParse(this.txtMulticastCWP3.Text, out Multicast) != true) || (IPAddress.TryParse(this.comboBoxNetworkInterface.Text, out IP) != true))
+                    {
+                        MessageBox.Show("Not a valid IP address");
+                        Input_Validated = false;
+                    }
+                    else // Add a check that this is a valid multicast address
+                    {
+                        UdpClient TempSock;
+                        TempSock = new UdpClient(2225);// Port does not matter
+                        // Open up a new socket with the net IP address and port number   
+                        try
+                        {
+                            TempSock.JoinMulticastGroup(Multicast, 50); // 50 is TTL value
+                        }
+                        catch
+                        {
+                            MessageBox.Show("Not valid Multicast address (has to be in range 224.0.0.0 to 239.255.255.255");
+                            Input_Validated = false;
+                            TempSock.Close();
+                        }
+                        TempSock.Close();
+                    }
+
+                    int PortNumber;
+                    if (int.TryParse(this.txtPortCWP3.Text, out PortNumber) && (PortNumber >= 1 && PortNumber <= 65535))
+                    {
+                    }
+                    else
+                    {
+                        MessageBox.Show("Invalid Port number");
+                        Input_Validated = false;
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Please fill out all data fileds");
+                    Input_Validated = false;
+                }
+
+                if (Input_Validated == true)
+                {
+                    if (StartListening_CWP3(IPAddress.Parse(this.comboBoxNetworkInterface.Items[this.comboBoxNetworkInterface.SelectedIndex].ToString()),
+                                 IPAddress.Parse(this.txtMulticastCWP3.Text),
+                                 int.Parse(this.txtPortCWP3.Text)) == true)
+                    {
+                        this.btnConnectCWP3.Text = "Disconnect";
+                        this.btnConnectCWP3.BackColor = Color.Green;
+                    }
+                }
+            }
+            else
+            {
+                KeepGoingCWP3 = false;
+                this.btnConnectCWP3.Text = "Connect";
+                this.btnConnectCWP3.BackColor = Color.Red;
+                // Do a cleanup
+                if (rcv_sock_CWP3 != null)
+                    rcv_sock_CWP3.Close();
+            }
+        }
+
+        public static bool StartListening_CWP3(IPAddress Interface_Addres,  // IP address of the interface where the data is expected
+                                             IPAddress Multicast_Address, // Multicast address of the expected data
+                                             int PortNumber)              // Port number of the forwarded data
+        {
+
+
+
+            // Open up a new socket with the net IP address and port number   
+            try
+            {
+                rcv_sock_CWP3 = new UdpClient(PortNumber);
+                rcv_sock_CWP3.JoinMulticastGroup(Multicast_Address, Interface_Addres);
+                rcv_iep_CWP3 = new IPEndPoint(IPAddress.Any, PortNumber);
+            }
+            catch
+            {
+                MessageBox.Show("Not possible! Make sure given IP address/port is a valid one on your system or not already used by some other process");
+                return false;
+            }
+
+            KeepGoingCWP3 = true;
+            ListenForDataThread_CWP3 = new Thread(new ThreadStart(DOWork_CWP3));
+            ListenForDataThread_CWP3.Start();
+
+            return true;
+        }
+
+        private static void DOWork_CWP3()
+        {
+            while (KeepGoingCWP3)
+            {
+
+                try
+                {
+                    // Lets receive data in an array of bytes 
+                    // (an octet, of course composed of 8bits)
+                    UDPBuffer_CWP3 = rcv_sock_CWP3.Receive(ref rcv_iep_CWP3);
+                    Shared_Data.Received_Data_List_From_CWP3.Add(System.Text.Encoding.Default.GetString(UDPBuffer_CWP3));
+                    Shared_Data.New_Data_Has_Arrived = true;
+                }
+                catch
+                {
+                    if (KeepGoingCWP3 == true)
+                        MessageBox.Show("Issue in DoWork_CWP3");
+                }
+
+            }
+
+            // Do a cleanup
+            if (rcv_sock_CWP3 != null)
+                rcv_sock_CWP3.Close();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            this.Visible = false;
         }
     }
 }

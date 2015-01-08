@@ -88,9 +88,9 @@
             this.textBoxFree_Three = new System.Windows.Forms.TextBox();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.toolsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.backgroundColorToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.connectionSettingsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.clientConnectionSettingsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.backgroundColorToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.groupBox1.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -702,18 +702,16 @@
             this.End_X_UP_ZG.AutoSize = true;
             this.End_X_UP_ZG.Location = new System.Drawing.Point(568, 45);
             this.End_X_UP_ZG.Name = "End_X_UP_ZG";
-            this.End_X_UP_ZG.Size = new System.Drawing.Size(105, 17);
+            this.End_X_UP_ZG.Size = new System.Drawing.Size(0, 17);
             this.End_X_UP_ZG.TabIndex = 57;
-            this.End_X_UP_ZG.Text = "End_X_UP_ZG";
             // 
             // End_X_DOWN_ZG
             // 
             this.End_X_DOWN_ZG.AutoSize = true;
             this.End_X_DOWN_ZG.Location = new System.Drawing.Point(568, 333);
             this.End_X_DOWN_ZG.Name = "End_X_DOWN_ZG";
-            this.End_X_DOWN_ZG.Size = new System.Drawing.Size(130, 17);
+            this.End_X_DOWN_ZG.Size = new System.Drawing.Size(0, 17);
             this.End_X_DOWN_ZG.TabIndex = 58;
-            this.End_X_DOWN_ZG.Text = "End_X_DOWN_ZG";
             // 
             // textBox_Division_Level
             // 
@@ -803,13 +801,6 @@
             this.toolsToolStripMenuItem.Text = "Settings";
             this.toolsToolStripMenuItem.Click += new System.EventHandler(this.toolsToolStripMenuItem_Click);
             // 
-            // backgroundColorToolStripMenuItem
-            // 
-            this.backgroundColorToolStripMenuItem.Name = "backgroundColorToolStripMenuItem";
-            this.backgroundColorToolStripMenuItem.Size = new System.Drawing.Size(255, 24);
-            this.backgroundColorToolStripMenuItem.Text = "Background color";
-            this.backgroundColorToolStripMenuItem.Click += new System.EventHandler(this.backgroundColorToolStripMenuItem_Click);
-            // 
             // connectionSettingsToolStripMenuItem
             // 
             this.connectionSettingsToolStripMenuItem.Name = "connectionSettingsToolStripMenuItem";
@@ -823,6 +814,13 @@
             this.clientConnectionSettingsToolStripMenuItem.Size = new System.Drawing.Size(255, 24);
             this.clientConnectionSettingsToolStripMenuItem.Text = "Client Connection Settings";
             this.clientConnectionSettingsToolStripMenuItem.Click += new System.EventHandler(this.clientConnectionSettingsToolStripMenuItem_Click_1);
+            // 
+            // backgroundColorToolStripMenuItem
+            // 
+            this.backgroundColorToolStripMenuItem.Name = "backgroundColorToolStripMenuItem";
+            this.backgroundColorToolStripMenuItem.Size = new System.Drawing.Size(255, 24);
+            this.backgroundColorToolStripMenuItem.Text = "Background color";
+            this.backgroundColorToolStripMenuItem.Click += new System.EventHandler(this.backgroundColorToolStripMenuItem_Click);
             // 
             // aboutToolStripMenuItem
             // 

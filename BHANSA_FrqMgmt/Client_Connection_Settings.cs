@@ -214,5 +214,10 @@ namespace BHANSA_FrqMgmt
                 Shared_Data.New_Data_Has_Arrived = false;
             }
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            this.Visible = false;
+        }
     }
 }

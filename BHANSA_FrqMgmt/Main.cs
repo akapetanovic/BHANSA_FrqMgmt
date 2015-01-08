@@ -21,6 +21,12 @@ namespace BHANSA_FrqMgmt
 
         private void Main_Load(object sender, EventArgs e)
         {
+           
+            Server_Connection_Settings_Form.Show();
+            Clinet_Connection_Settings_Form.Show();
+            Server_Connection_Settings_Form.Visible = false;
+            Clinet_Connection_Settings_Form.Visible = false;
+
             this.checkBox_US_ZG.Checked = Properties.Settings.Default.CCL_US_Checked;
             this.checkBox_UN_ZG.Checked = Properties.Settings.Default.CCL_UN_Checked;
             this.checkBox_UW_ZG.Checked = Properties.Settings.Default.CCL_UW_Checked;
@@ -519,12 +525,12 @@ namespace BHANSA_FrqMgmt
 
         private void connectionSettingsToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Server_Connection_Settings_Form.Show();
+            Server_Connection_Settings_Form.Visible = true;
         }
 
         private void clientConnectionSettingsToolStripMenuItem_Click_1(object sender, EventArgs e)
         {
-            Clinet_Connection_Settings_Form.Show();
+            Clinet_Connection_Settings_Form.Visible = true;
         }
 
         private void toolsToolStripMenuItem_Click(object sender, EventArgs e)
