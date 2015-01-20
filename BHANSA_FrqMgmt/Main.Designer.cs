@@ -28,20 +28,21 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Main));
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.textBox_CCL_UN_Value = new System.Windows.Forms.TextBox();
             this.checkBox_US_ZG = new System.Windows.Forms.CheckBox();
-            this.checkBox_UN_ZG = new System.Windows.Forms.CheckBox();
             this.checkBox_UW_ZG = new System.Windows.Forms.CheckBox();
+            this.checkBox_UN_ZG = new System.Windows.Forms.CheckBox();
             this.label1 = new System.Windows.Forms.Label();
             this.textBox_CCL_UW_Value = new System.Windows.Forms.TextBox();
             this.textBox_CCL_US_Value = new System.Windows.Forms.TextBox();
             this.textBox_CCL_LS_Value = new System.Windows.Forms.TextBox();
             this.textBox_CCL_LW_Value = new System.Windows.Forms.TextBox();
             this.textBox_CCL_LN_Value = new System.Windows.Forms.TextBox();
-            this.checkBox_LW_ZG = new System.Windows.Forms.CheckBox();
             this.checkBox_LN_ZG = new System.Windows.Forms.CheckBox();
+            this.checkBox_LW_ZG = new System.Windows.Forms.CheckBox();
             this.checkBox_LS_ZG = new System.Windows.Forms.CheckBox();
             this.checkBox_SMATSA_UN = new System.Windows.Forms.CheckBox();
             this.textBox_SMATSA_UW = new System.Windows.Forms.TextBox();
@@ -92,6 +93,8 @@
             this.clientConnectionSettingsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.backgroundColorToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.btnDistribute = new System.Windows.Forms.Button();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.groupBox1.SuspendLayout();
             this.panel1.SuspendLayout();
             this.menuStrip1.SuspendLayout();
@@ -104,8 +107,8 @@
             // textBox_CCL_UN_Value
             // 
             this.textBox_CCL_UN_Value.Font = new System.Drawing.Font("Microsoft Sans Serif", 23F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.textBox_CCL_UN_Value.Location = new System.Drawing.Point(215, 144);
-            this.textBox_CCL_UN_Value.Margin = new System.Windows.Forms.Padding(4);
+            this.textBox_CCL_UN_Value.Location = new System.Drawing.Point(399, 145);
+            this.textBox_CCL_UN_Value.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.textBox_CCL_UN_Value.Name = "textBox_CCL_UN_Value";
             this.textBox_CCL_UN_Value.Size = new System.Drawing.Size(159, 51);
             this.textBox_CCL_UN_Value.TabIndex = 2;
@@ -114,8 +117,8 @@
             // checkBox_US_ZG
             // 
             this.checkBox_US_ZG.AutoSize = true;
-            this.checkBox_US_ZG.Location = new System.Drawing.Point(30, 115);
-            this.checkBox_US_ZG.Margin = new System.Windows.Forms.Padding(4);
+            this.checkBox_US_ZG.Location = new System.Drawing.Point(29, 114);
+            this.checkBox_US_ZG.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.checkBox_US_ZG.Name = "checkBox_US_ZG";
             this.checkBox_US_ZG.Size = new System.Drawing.Size(49, 21);
             this.checkBox_US_ZG.TabIndex = 5;
@@ -123,29 +126,29 @@
             this.checkBox_US_ZG.UseVisualStyleBackColor = true;
             this.checkBox_US_ZG.CheckedChanged += new System.EventHandler(this.checkBox_US_ZG_CheckedChanged);
             // 
-            // checkBox_UN_ZG
-            // 
-            this.checkBox_UN_ZG.AutoSize = true;
-            this.checkBox_UN_ZG.Location = new System.Drawing.Point(215, 115);
-            this.checkBox_UN_ZG.Margin = new System.Windows.Forms.Padding(4);
-            this.checkBox_UN_ZG.Name = "checkBox_UN_ZG";
-            this.checkBox_UN_ZG.Size = new System.Drawing.Size(53, 21);
-            this.checkBox_UN_ZG.TabIndex = 6;
-            this.checkBox_UN_ZG.Text = "UW";
-            this.checkBox_UN_ZG.UseVisualStyleBackColor = true;
-            this.checkBox_UN_ZG.CheckedChanged += new System.EventHandler(this.checkBox_UN_ZG_CheckedChanged);
-            // 
             // checkBox_UW_ZG
             // 
             this.checkBox_UW_ZG.AutoSize = true;
-            this.checkBox_UW_ZG.Location = new System.Drawing.Point(400, 115);
-            this.checkBox_UW_ZG.Margin = new System.Windows.Forms.Padding(4);
+            this.checkBox_UW_ZG.Location = new System.Drawing.Point(215, 114);
+            this.checkBox_UW_ZG.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.checkBox_UW_ZG.Name = "checkBox_UW_ZG";
-            this.checkBox_UW_ZG.Size = new System.Drawing.Size(50, 21);
-            this.checkBox_UW_ZG.TabIndex = 7;
-            this.checkBox_UW_ZG.Text = "UN";
+            this.checkBox_UW_ZG.Size = new System.Drawing.Size(53, 21);
+            this.checkBox_UW_ZG.TabIndex = 6;
+            this.checkBox_UW_ZG.Text = "UW";
             this.checkBox_UW_ZG.UseVisualStyleBackColor = true;
-            this.checkBox_UW_ZG.CheckedChanged += new System.EventHandler(this.checkBox_UW_ZG_CheckedChanged);
+            this.checkBox_UW_ZG.CheckedChanged += new System.EventHandler(this.checkBox_UN_ZG_CheckedChanged);
+            // 
+            // checkBox_UN_ZG
+            // 
+            this.checkBox_UN_ZG.AutoSize = true;
+            this.checkBox_UN_ZG.Location = new System.Drawing.Point(400, 114);
+            this.checkBox_UN_ZG.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.checkBox_UN_ZG.Name = "checkBox_UN_ZG";
+            this.checkBox_UN_ZG.Size = new System.Drawing.Size(50, 21);
+            this.checkBox_UN_ZG.TabIndex = 7;
+            this.checkBox_UN_ZG.Text = "UN";
+            this.checkBox_UN_ZG.UseVisualStyleBackColor = true;
+            this.checkBox_UN_ZG.CheckedChanged += new System.EventHandler(this.checkBox_UW_ZG_CheckedChanged);
             // 
             // label1
             // 
@@ -162,8 +165,8 @@
             // textBox_CCL_UW_Value
             // 
             this.textBox_CCL_UW_Value.Font = new System.Drawing.Font("Microsoft Sans Serif", 23F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.textBox_CCL_UW_Value.Location = new System.Drawing.Point(399, 144);
-            this.textBox_CCL_UW_Value.Margin = new System.Windows.Forms.Padding(4);
+            this.textBox_CCL_UW_Value.Location = new System.Drawing.Point(215, 144);
+            this.textBox_CCL_UW_Value.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.textBox_CCL_UW_Value.Name = "textBox_CCL_UW_Value";
             this.textBox_CCL_UW_Value.Size = new System.Drawing.Size(159, 51);
             this.textBox_CCL_UW_Value.TabIndex = 3;
@@ -172,8 +175,8 @@
             // textBox_CCL_US_Value
             // 
             this.textBox_CCL_US_Value.Font = new System.Drawing.Font("Microsoft Sans Serif", 23F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.textBox_CCL_US_Value.Location = new System.Drawing.Point(30, 144);
-            this.textBox_CCL_US_Value.Margin = new System.Windows.Forms.Padding(4);
+            this.textBox_CCL_US_Value.Location = new System.Drawing.Point(29, 144);
+            this.textBox_CCL_US_Value.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.textBox_CCL_US_Value.Name = "textBox_CCL_US_Value";
             this.textBox_CCL_US_Value.Size = new System.Drawing.Size(159, 51);
             this.textBox_CCL_US_Value.TabIndex = 1;
@@ -182,8 +185,8 @@
             // textBox_CCL_LS_Value
             // 
             this.textBox_CCL_LS_Value.Font = new System.Drawing.Font("Microsoft Sans Serif", 23F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.textBox_CCL_LS_Value.Location = new System.Drawing.Point(30, 264);
-            this.textBox_CCL_LS_Value.Margin = new System.Windows.Forms.Padding(4);
+            this.textBox_CCL_LS_Value.Location = new System.Drawing.Point(29, 267);
+            this.textBox_CCL_LS_Value.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.textBox_CCL_LS_Value.Name = "textBox_CCL_LS_Value";
             this.textBox_CCL_LS_Value.Size = new System.Drawing.Size(159, 51);
             this.textBox_CCL_LS_Value.TabIndex = 13;
@@ -192,8 +195,8 @@
             // textBox_CCL_LW_Value
             // 
             this.textBox_CCL_LW_Value.Font = new System.Drawing.Font("Microsoft Sans Serif", 23F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.textBox_CCL_LW_Value.Location = new System.Drawing.Point(399, 264);
-            this.textBox_CCL_LW_Value.Margin = new System.Windows.Forms.Padding(4);
+            this.textBox_CCL_LW_Value.Location = new System.Drawing.Point(215, 267);
+            this.textBox_CCL_LW_Value.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.textBox_CCL_LW_Value.Name = "textBox_CCL_LW_Value";
             this.textBox_CCL_LW_Value.Size = new System.Drawing.Size(159, 51);
             this.textBox_CCL_LW_Value.TabIndex = 12;
@@ -202,42 +205,42 @@
             // textBox_CCL_LN_Value
             // 
             this.textBox_CCL_LN_Value.Font = new System.Drawing.Font("Microsoft Sans Serif", 23F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.textBox_CCL_LN_Value.Location = new System.Drawing.Point(212, 264);
-            this.textBox_CCL_LN_Value.Margin = new System.Windows.Forms.Padding(4);
+            this.textBox_CCL_LN_Value.Location = new System.Drawing.Point(399, 267);
+            this.textBox_CCL_LN_Value.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.textBox_CCL_LN_Value.Name = "textBox_CCL_LN_Value";
             this.textBox_CCL_LN_Value.Size = new System.Drawing.Size(159, 51);
             this.textBox_CCL_LN_Value.TabIndex = 11;
             this.textBox_CCL_LN_Value.WordWrap = false;
             // 
-            // checkBox_LW_ZG
-            // 
-            this.checkBox_LW_ZG.AutoSize = true;
-            this.checkBox_LW_ZG.Location = new System.Drawing.Point(400, 236);
-            this.checkBox_LW_ZG.Margin = new System.Windows.Forms.Padding(4);
-            this.checkBox_LW_ZG.Name = "checkBox_LW_ZG";
-            this.checkBox_LW_ZG.Size = new System.Drawing.Size(48, 21);
-            this.checkBox_LW_ZG.TabIndex = 16;
-            this.checkBox_LW_ZG.Text = "LN";
-            this.checkBox_LW_ZG.UseVisualStyleBackColor = true;
-            this.checkBox_LW_ZG.CheckedChanged += new System.EventHandler(this.checkBox_LW_ZG_CheckedChanged);
-            // 
             // checkBox_LN_ZG
             // 
             this.checkBox_LN_ZG.AutoSize = true;
-            this.checkBox_LN_ZG.Location = new System.Drawing.Point(215, 236);
-            this.checkBox_LN_ZG.Margin = new System.Windows.Forms.Padding(4);
+            this.checkBox_LN_ZG.Location = new System.Drawing.Point(400, 236);
+            this.checkBox_LN_ZG.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.checkBox_LN_ZG.Name = "checkBox_LN_ZG";
-            this.checkBox_LN_ZG.Size = new System.Drawing.Size(51, 21);
-            this.checkBox_LN_ZG.TabIndex = 15;
-            this.checkBox_LN_ZG.Text = "LW";
+            this.checkBox_LN_ZG.Size = new System.Drawing.Size(48, 21);
+            this.checkBox_LN_ZG.TabIndex = 16;
+            this.checkBox_LN_ZG.Text = "LN";
             this.checkBox_LN_ZG.UseVisualStyleBackColor = true;
-            this.checkBox_LN_ZG.CheckedChanged += new System.EventHandler(this.checkBox_LN_ZG_CheckedChanged);
+            this.checkBox_LN_ZG.CheckedChanged += new System.EventHandler(this.checkBox_LW_ZG_CheckedChanged);
+            // 
+            // checkBox_LW_ZG
+            // 
+            this.checkBox_LW_ZG.AutoSize = true;
+            this.checkBox_LW_ZG.Location = new System.Drawing.Point(215, 236);
+            this.checkBox_LW_ZG.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.checkBox_LW_ZG.Name = "checkBox_LW_ZG";
+            this.checkBox_LW_ZG.Size = new System.Drawing.Size(51, 21);
+            this.checkBox_LW_ZG.TabIndex = 15;
+            this.checkBox_LW_ZG.Text = "LW";
+            this.checkBox_LW_ZG.UseVisualStyleBackColor = true;
+            this.checkBox_LW_ZG.CheckedChanged += new System.EventHandler(this.checkBox_LN_ZG_CheckedChanged);
             // 
             // checkBox_LS_ZG
             // 
             this.checkBox_LS_ZG.AutoSize = true;
-            this.checkBox_LS_ZG.Location = new System.Drawing.Point(30, 236);
-            this.checkBox_LS_ZG.Margin = new System.Windows.Forms.Padding(4);
+            this.checkBox_LS_ZG.Location = new System.Drawing.Point(29, 236);
+            this.checkBox_LS_ZG.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.checkBox_LS_ZG.Name = "checkBox_LS_ZG";
             this.checkBox_LS_ZG.Size = new System.Drawing.Size(47, 21);
             this.checkBox_LS_ZG.TabIndex = 14;
@@ -248,8 +251,8 @@
             // checkBox_SMATSA_UN
             // 
             this.checkBox_SMATSA_UN.AutoSize = true;
-            this.checkBox_SMATSA_UN.Location = new System.Drawing.Point(783, 115);
-            this.checkBox_SMATSA_UN.Margin = new System.Windows.Forms.Padding(4);
+            this.checkBox_SMATSA_UN.Location = new System.Drawing.Point(783, 114);
+            this.checkBox_SMATSA_UN.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.checkBox_SMATSA_UN.Name = "checkBox_SMATSA_UN";
             this.checkBox_SMATSA_UN.Size = new System.Drawing.Size(50, 21);
             this.checkBox_SMATSA_UN.TabIndex = 17;
@@ -260,8 +263,8 @@
             // textBox_SMATSA_UW
             // 
             this.textBox_SMATSA_UW.Font = new System.Drawing.Font("Microsoft Sans Serif", 23F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.textBox_SMATSA_UW.Location = new System.Drawing.Point(598, 144);
-            this.textBox_SMATSA_UW.Margin = new System.Windows.Forms.Padding(4);
+            this.textBox_SMATSA_UW.Location = new System.Drawing.Point(597, 144);
+            this.textBox_SMATSA_UW.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.textBox_SMATSA_UW.Name = "textBox_SMATSA_UW";
             this.textBox_SMATSA_UW.Size = new System.Drawing.Size(159, 51);
             this.textBox_SMATSA_UW.TabIndex = 4;
@@ -271,7 +274,7 @@
             // 
             this.textBox_SMATSA_UN.Font = new System.Drawing.Font("Microsoft Sans Serif", 23F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.textBox_SMATSA_UN.Location = new System.Drawing.Point(783, 144);
-            this.textBox_SMATSA_UN.Margin = new System.Windows.Forms.Padding(4);
+            this.textBox_SMATSA_UN.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.textBox_SMATSA_UN.Name = "textBox_SMATSA_UN";
             this.textBox_SMATSA_UN.Size = new System.Drawing.Size(159, 51);
             this.textBox_SMATSA_UN.TabIndex = 19;
@@ -280,8 +283,8 @@
             // checkBox_SMATSA_UW
             // 
             this.checkBox_SMATSA_UW.AutoSize = true;
-            this.checkBox_SMATSA_UW.Location = new System.Drawing.Point(598, 115);
-            this.checkBox_SMATSA_UW.Margin = new System.Windows.Forms.Padding(4);
+            this.checkBox_SMATSA_UW.Location = new System.Drawing.Point(597, 114);
+            this.checkBox_SMATSA_UW.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.checkBox_SMATSA_UW.Name = "checkBox_SMATSA_UW";
             this.checkBox_SMATSA_UW.Size = new System.Drawing.Size(53, 21);
             this.checkBox_SMATSA_UW.TabIndex = 20;
@@ -292,8 +295,8 @@
             // textBox_SMATSA_LOWER
             // 
             this.textBox_SMATSA_LOWER.Font = new System.Drawing.Font("Microsoft Sans Serif", 23F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.textBox_SMATSA_LOWER.Location = new System.Drawing.Point(679, 264);
-            this.textBox_SMATSA_LOWER.Margin = new System.Windows.Forms.Padding(4);
+            this.textBox_SMATSA_LOWER.Location = new System.Drawing.Point(679, 263);
+            this.textBox_SMATSA_LOWER.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.textBox_SMATSA_LOWER.Name = "textBox_SMATSA_LOWER";
             this.textBox_SMATSA_LOWER.Size = new System.Drawing.Size(159, 51);
             this.textBox_SMATSA_LOWER.TabIndex = 21;
@@ -303,7 +306,7 @@
             // 
             this.checkBox_SMATSA_LOWER.AutoSize = true;
             this.checkBox_SMATSA_LOWER.Location = new System.Drawing.Point(679, 236);
-            this.checkBox_SMATSA_LOWER.Margin = new System.Windows.Forms.Padding(4);
+            this.checkBox_SMATSA_LOWER.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.checkBox_SMATSA_LOWER.Name = "checkBox_SMATSA_LOWER";
             this.checkBox_SMATSA_LOWER.Size = new System.Drawing.Size(81, 21);
             this.checkBox_SMATSA_LOWER.TabIndex = 22;
@@ -328,7 +331,7 @@
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.label4.ForeColor = System.Drawing.Color.Red;
-            this.label4.Location = new System.Drawing.Point(10, 534);
+            this.label4.Location = new System.Drawing.Point(11, 534);
             this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(91, 29);
@@ -340,7 +343,7 @@
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.label5.ForeColor = System.Drawing.Color.Red;
-            this.label5.Location = new System.Drawing.Point(10, 497);
+            this.label5.Location = new System.Drawing.Point(11, 497);
             this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(85, 29);
@@ -352,7 +355,7 @@
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.label6.ForeColor = System.Drawing.Color.Red;
-            this.label6.Location = new System.Drawing.Point(10, 460);
+            this.label6.Location = new System.Drawing.Point(11, 460);
             this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(83, 29);
@@ -389,7 +392,7 @@
             this.textBoxZGFIC.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.textBoxZGFIC.ForeColor = System.Drawing.Color.Red;
             this.textBoxZGFIC.Location = new System.Drawing.Point(119, 534);
-            this.textBoxZGFIC.Margin = new System.Windows.Forms.Padding(4);
+            this.textBoxZGFIC.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.textBoxZGFIC.Name = "textBoxZGFIC";
             this.textBoxZGFIC.Size = new System.Drawing.Size(117, 36);
             this.textBoxZGFIC.TabIndex = 33;
@@ -402,7 +405,7 @@
             this.textBoxLDDU.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.textBoxLDDU.ForeColor = System.Drawing.Color.Red;
             this.textBoxLDDU.Location = new System.Drawing.Point(119, 423);
-            this.textBoxLDDU.Margin = new System.Windows.Forms.Padding(4);
+            this.textBoxLDDU.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.textBoxLDDU.Name = "textBoxLDDU";
             this.textBoxLDDU.Size = new System.Drawing.Size(117, 36);
             this.textBoxLDDU.TabIndex = 34;
@@ -415,7 +418,7 @@
             this.textBoxLDSP.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.textBoxLDSP.ForeColor = System.Drawing.Color.Red;
             this.textBoxLDSP.Location = new System.Drawing.Point(119, 460);
-            this.textBoxLDSP.Margin = new System.Windows.Forms.Padding(4);
+            this.textBoxLDSP.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.textBoxLDSP.Name = "textBoxLDSP";
             this.textBoxLDSP.Size = new System.Drawing.Size(117, 36);
             this.textBoxLDSP.TabIndex = 35;
@@ -428,7 +431,7 @@
             this.textBoxLDOS.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.textBoxLDOS.ForeColor = System.Drawing.Color.Red;
             this.textBoxLDOS.Location = new System.Drawing.Point(119, 497);
-            this.textBoxLDOS.Margin = new System.Windows.Forms.Padding(4);
+            this.textBoxLDOS.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.textBoxLDOS.Name = "textBoxLDOS";
             this.textBoxLDOS.Size = new System.Drawing.Size(117, 36);
             this.textBoxLDOS.TabIndex = 36;
@@ -441,7 +444,7 @@
             this.textBoxLDZA.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.textBoxLDZA.ForeColor = System.Drawing.Color.Red;
             this.textBoxLDZA.Location = new System.Drawing.Point(119, 386);
-            this.textBoxLDZA.Margin = new System.Windows.Forms.Padding(4);
+            this.textBoxLDZA.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.textBoxLDZA.Name = "textBoxLDZA";
             this.textBoxLDZA.Size = new System.Drawing.Size(117, 36);
             this.textBoxLDZA.TabIndex = 37;
@@ -454,7 +457,7 @@
             this.textBoxLQSA.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.textBoxLQSA.ForeColor = System.Drawing.Color.Green;
             this.textBoxLQSA.Location = new System.Drawing.Point(116, 38);
-            this.textBoxLQSA.Margin = new System.Windows.Forms.Padding(4);
+            this.textBoxLQSA.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.textBoxLQSA.Name = "textBoxLQSA";
             this.textBoxLQSA.Size = new System.Drawing.Size(117, 36);
             this.textBoxLQSA.TabIndex = 47;
@@ -467,7 +470,7 @@
             this.textBoxLQBK.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.textBoxLQBK.ForeColor = System.Drawing.Color.Green;
             this.textBoxLQBK.Location = new System.Drawing.Point(116, 149);
-            this.textBoxLQBK.Margin = new System.Windows.Forms.Padding(4);
+            this.textBoxLQBK.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.textBoxLQBK.Name = "textBoxLQBK";
             this.textBoxLQBK.Size = new System.Drawing.Size(117, 36);
             this.textBoxLQBK.TabIndex = 46;
@@ -480,7 +483,7 @@
             this.textBoxLQTZ.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.textBoxLQTZ.ForeColor = System.Drawing.Color.Green;
             this.textBoxLQTZ.Location = new System.Drawing.Point(116, 112);
-            this.textBoxLQTZ.Margin = new System.Windows.Forms.Padding(4);
+            this.textBoxLQTZ.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.textBoxLQTZ.Name = "textBoxLQTZ";
             this.textBoxLQTZ.Size = new System.Drawing.Size(117, 36);
             this.textBoxLQTZ.TabIndex = 45;
@@ -493,7 +496,7 @@
             this.textBoxLQMO.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.textBoxLQMO.ForeColor = System.Drawing.Color.Green;
             this.textBoxLQMO.Location = new System.Drawing.Point(116, 75);
-            this.textBoxLQMO.Margin = new System.Windows.Forms.Padding(4);
+            this.textBoxLQMO.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.textBoxLQMO.Name = "textBoxLQMO";
             this.textBoxLQMO.Size = new System.Drawing.Size(117, 36);
             this.textBoxLQMO.TabIndex = 44;
@@ -506,7 +509,7 @@
             this.textBoxFIC.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.textBoxFIC.ForeColor = System.Drawing.Color.Green;
             this.textBoxFIC.Location = new System.Drawing.Point(116, 186);
-            this.textBoxFIC.Margin = new System.Windows.Forms.Padding(4);
+            this.textBoxFIC.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.textBoxFIC.Name = "textBoxFIC";
             this.textBoxFIC.Size = new System.Drawing.Size(117, 36);
             this.textBoxFIC.TabIndex = 43;
@@ -588,9 +591,9 @@
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.groupBox1.ForeColor = System.Drawing.Color.Green;
             this.groupBox1.Location = new System.Drawing.Point(312, 354);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(4);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(4);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.groupBox1.Size = new System.Drawing.Size(260, 229);
             this.groupBox1.TabIndex = 48;
             this.groupBox1.TabStop = false;
@@ -613,8 +616,8 @@
             this.textBoxLYBE.BackColor = System.Drawing.SystemColors.Control;
             this.textBoxLYBE.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.textBoxLYBE.ForeColor = System.Drawing.Color.Blue;
-            this.textBoxLYBE.Location = new System.Drawing.Point(839, 354);
-            this.textBoxLYBE.Margin = new System.Windows.Forms.Padding(4);
+            this.textBoxLYBE.Location = new System.Drawing.Point(837, 354);
+            this.textBoxLYBE.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.textBoxLYBE.Name = "textBoxLYBE";
             this.textBoxLYBE.Size = new System.Drawing.Size(117, 36);
             this.textBoxLYBE.TabIndex = 52;
@@ -626,8 +629,8 @@
             this.textBoxLYPG.BackColor = System.Drawing.SystemColors.Control;
             this.textBoxLYPG.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.textBoxLYPG.ForeColor = System.Drawing.Color.Blue;
-            this.textBoxLYPG.Location = new System.Drawing.Point(839, 391);
-            this.textBoxLYPG.Margin = new System.Windows.Forms.Padding(4);
+            this.textBoxLYPG.Location = new System.Drawing.Point(837, 391);
+            this.textBoxLYPG.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.textBoxLYPG.Name = "textBoxLYPG";
             this.textBoxLYPG.Size = new System.Drawing.Size(117, 36);
             this.textBoxLYPG.TabIndex = 51;
@@ -651,8 +654,8 @@
             this.textBoxSectorLYPG.BackColor = System.Drawing.SystemColors.Control;
             this.textBoxSectorLYPG.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.textBoxSectorLYPG.ForeColor = System.Drawing.Color.Blue;
-            this.textBoxSectorLYPG.Location = new System.Drawing.Point(624, 432);
-            this.textBoxSectorLYPG.Margin = new System.Windows.Forms.Padding(4);
+            this.textBoxSectorLYPG.Location = new System.Drawing.Point(620, 432);
+            this.textBoxSectorLYPG.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.textBoxSectorLYPG.Name = "textBoxSectorLYPG";
             this.textBoxSectorLYPG.Size = new System.Drawing.Size(335, 32);
             this.textBoxSectorLYPG.TabIndex = 53;
@@ -676,8 +679,8 @@
             this.textBoxFree_One.BackColor = System.Drawing.SystemColors.Control;
             this.textBoxFree_One.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.textBoxFree_One.ForeColor = System.Drawing.Color.Black;
-            this.textBoxFree_One.Location = new System.Drawing.Point(598, 503);
-            this.textBoxFree_One.Margin = new System.Windows.Forms.Padding(4);
+            this.textBoxFree_One.Location = new System.Drawing.Point(599, 503);
+            this.textBoxFree_One.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.textBoxFree_One.Name = "textBoxFree_One";
             this.textBoxFree_One.Size = new System.Drawing.Size(356, 36);
             this.textBoxFree_One.TabIndex = 55;
@@ -689,8 +692,8 @@
             this.textBoxFree_Two.BackColor = System.Drawing.SystemColors.Control;
             this.textBoxFree_Two.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.textBoxFree_Two.ForeColor = System.Drawing.Color.Black;
-            this.textBoxFree_Two.Location = new System.Drawing.Point(600, 547);
-            this.textBoxFree_Two.Margin = new System.Windows.Forms.Padding(4);
+            this.textBoxFree_Two.Location = new System.Drawing.Point(599, 546);
+            this.textBoxFree_Two.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.textBoxFree_Two.Name = "textBoxFree_Two";
             this.textBoxFree_Two.Size = new System.Drawing.Size(356, 36);
             this.textBoxFree_Two.TabIndex = 56;
@@ -700,7 +703,7 @@
             // End_X_UP_ZG
             // 
             this.End_X_UP_ZG.AutoSize = true;
-            this.End_X_UP_ZG.Location = new System.Drawing.Point(568, 45);
+            this.End_X_UP_ZG.Location = new System.Drawing.Point(568, 46);
             this.End_X_UP_ZG.Name = "End_X_UP_ZG";
             this.End_X_UP_ZG.Size = new System.Drawing.Size(0, 17);
             this.End_X_UP_ZG.TabIndex = 57;
@@ -708,7 +711,7 @@
             // End_X_DOWN_ZG
             // 
             this.End_X_DOWN_ZG.AutoSize = true;
-            this.End_X_DOWN_ZG.Location = new System.Drawing.Point(568, 333);
+            this.End_X_DOWN_ZG.Location = new System.Drawing.Point(568, 334);
             this.End_X_DOWN_ZG.Name = "End_X_DOWN_ZG";
             this.End_X_DOWN_ZG.Size = new System.Drawing.Size(0, 17);
             this.End_X_DOWN_ZG.TabIndex = 58;
@@ -720,10 +723,11 @@
             this.textBox_Division_Level.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.textBox_Division_Level.ForeColor = System.Drawing.Color.Green;
             this.textBox_Division_Level.Location = new System.Drawing.Point(37, 6);
-            this.textBox_Division_Level.Margin = new System.Windows.Forms.Padding(4);
+            this.textBox_Division_Level.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.textBox_Division_Level.Name = "textBox_Division_Level";
             this.textBox_Division_Level.Size = new System.Drawing.Size(51, 29);
             this.textBox_Division_Level.TabIndex = 26;
+            this.textBox_Division_Level.Text = "325";
             this.textBox_Division_Level.WordWrap = false;
             // 
             // panel1
@@ -731,8 +735,8 @@
             this.panel1.BackColor = System.Drawing.Color.Green;
             this.panel1.Controls.Add(this.textBox26);
             this.panel1.Controls.Add(this.textBox_Division_Level);
-            this.panel1.Location = new System.Drawing.Point(534, 203);
-            this.panel1.Margin = new System.Windows.Forms.Padding(4);
+            this.panel1.Location = new System.Drawing.Point(533, 203);
+            this.panel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(93, 41);
             this.panel1.TabIndex = 27;
@@ -744,7 +748,7 @@
             this.textBox26.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.textBox26.ForeColor = System.Drawing.Color.Green;
             this.textBox26.Location = new System.Drawing.Point(5, 6);
-            this.textBox26.Margin = new System.Windows.Forms.Padding(4);
+            this.textBox26.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.textBox26.Name = "textBox26";
             this.textBox26.ReadOnly = true;
             this.textBox26.Size = new System.Drawing.Size(35, 29);
@@ -758,7 +762,7 @@
             this.textBoxChief_Sup.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.textBoxChief_Sup.ForeColor = System.Drawing.Color.Purple;
             this.textBoxChief_Sup.Location = new System.Drawing.Point(119, 602);
-            this.textBoxChief_Sup.Margin = new System.Windows.Forms.Padding(4);
+            this.textBoxChief_Sup.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.textBoxChief_Sup.Name = "textBoxChief_Sup";
             this.textBoxChief_Sup.Size = new System.Drawing.Size(453, 36);
             this.textBoxChief_Sup.TabIndex = 59;
@@ -771,7 +775,7 @@
             this.textBoxFree_Three.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.textBoxFree_Three.ForeColor = System.Drawing.Color.Black;
             this.textBoxFree_Three.Location = new System.Drawing.Point(599, 591);
-            this.textBoxFree_Three.Margin = new System.Windows.Forms.Padding(4);
+            this.textBoxFree_Three.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.textBoxFree_Three.Name = "textBoxFree_Three";
             this.textBoxFree_Three.Size = new System.Drawing.Size(356, 36);
             this.textBoxFree_Three.TabIndex = 60;
@@ -829,12 +833,29 @@
             this.aboutToolStripMenuItem.Text = "About";
             this.aboutToolStripMenuItem.Click += new System.EventHandler(this.aboutToolStripMenuItem_Click);
             // 
+            // btnDistribute
+            // 
+            this.btnDistribute.Location = new System.Drawing.Point(873, 2);
+            this.btnDistribute.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnDistribute.Name = "btnDistribute";
+            this.btnDistribute.Size = new System.Drawing.Size(103, 34);
+            this.btnDistribute.TabIndex = 62;
+            this.btnDistribute.Text = "Distribute ";
+            this.btnDistribute.UseVisualStyleBackColor = true;
+            this.btnDistribute.Click += new System.EventHandler(this.btnDistribute_Click);
+            // 
+            // timer1
+            // 
+            this.timer1.Enabled = true;
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
             this.ClientSize = new System.Drawing.Size(979, 642);
+            this.Controls.Add(this.btnDistribute);
             this.Controls.Add(this.textBoxFree_Three);
             this.Controls.Add(this.textBoxChief_Sup);
             this.Controls.Add(this.End_X_DOWN_ZG);
@@ -865,8 +886,8 @@
             this.Controls.Add(this.textBox_SMATSA_UN);
             this.Controls.Add(this.textBox_SMATSA_UW);
             this.Controls.Add(this.checkBox_SMATSA_UN);
-            this.Controls.Add(this.checkBox_LW_ZG);
             this.Controls.Add(this.checkBox_LN_ZG);
+            this.Controls.Add(this.checkBox_LW_ZG);
             this.Controls.Add(this.checkBox_LS_ZG);
             this.Controls.Add(this.textBox_CCL_LS_Value);
             this.Controls.Add(this.textBox_CCL_LW_Value);
@@ -874,8 +895,8 @@
             this.Controls.Add(this.textBox_CCL_US_Value);
             this.Controls.Add(this.textBox_CCL_UW_Value);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.checkBox_UW_ZG);
             this.Controls.Add(this.checkBox_UN_ZG);
+            this.Controls.Add(this.checkBox_UW_ZG);
             this.Controls.Add(this.checkBox_US_ZG);
             this.Controls.Add(this.textBox_CCL_UN_Value);
             this.Controls.Add(this.panel1);
@@ -883,7 +904,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menuStrip1;
-            this.Margin = new System.Windows.Forms.Padding(4);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.MaximizeBox = false;
             this.Name = "Main";
             this.Text = "BHANSA - Frequency Managament";
@@ -906,16 +927,16 @@
         private System.Windows.Forms.OpenFileDialog openFileDialog1;
         private System.Windows.Forms.TextBox textBox_CCL_UN_Value;
         private System.Windows.Forms.CheckBox checkBox_US_ZG;
-        private System.Windows.Forms.CheckBox checkBox_UN_ZG;
         private System.Windows.Forms.CheckBox checkBox_UW_ZG;
+        private System.Windows.Forms.CheckBox checkBox_UN_ZG;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox textBox_CCL_UW_Value;
         private System.Windows.Forms.TextBox textBox_CCL_US_Value;
         private System.Windows.Forms.TextBox textBox_CCL_LS_Value;
         private System.Windows.Forms.TextBox textBox_CCL_LW_Value;
         private System.Windows.Forms.TextBox textBox_CCL_LN_Value;
-        private System.Windows.Forms.CheckBox checkBox_LW_ZG;
         private System.Windows.Forms.CheckBox checkBox_LN_ZG;
+        private System.Windows.Forms.CheckBox checkBox_LW_ZG;
         private System.Windows.Forms.CheckBox checkBox_LS_ZG;
         private System.Windows.Forms.CheckBox checkBox_SMATSA_UN;
         private System.Windows.Forms.TextBox textBox_SMATSA_UW;
@@ -966,6 +987,8 @@
         private System.Windows.Forms.ToolStripMenuItem aboutToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem connectionSettingsToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem clientConnectionSettingsToolStripMenuItem;
+        private System.Windows.Forms.Button btnDistribute;
+        private System.Windows.Forms.Timer timer1;
     }
 }
 

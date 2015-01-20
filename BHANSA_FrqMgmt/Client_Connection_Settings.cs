@@ -104,10 +104,15 @@ namespace BHANSA_FrqMgmt
                         // Lets receive data in an array of bytes 
                         // (an octet, of course composed of 8bits)
                         UDPBuffer = rcv_sock.Receive(ref rcv_iep);
+                        Shared_Data.Received_Data_List_From_Server.Clear();
                         BytesProcessed = BytesProcessed + UDPBuffer.Length;
 
-                        Shared_Data.Received_Data_List_From_CWP1.Add(System.Text.Encoding.Default.GetString(UDPBuffer));
-                        Shared_Data.New_Data_Has_Arrived = true;
+                        string[] words = System.Text.Encoding.Default.GetString(UDPBuffer).Split(',');
+
+                        foreach (string S in words)
+                        Shared_Data.Received_Data_List_From_Server.Add(S);
+                        Shared_Data.Update_Log_Window = true;
+                        Shared_Data.Update_Main_Data_Display = true;
                     }
                     catch
                     {
@@ -204,14 +209,14 @@ namespace BHANSA_FrqMgmt
 
         private void timer1_Tick(object sender, EventArgs e)
         {
-            if (Shared_Data.New_Data_Has_Arrived == true)
+            if (Shared_Data.Update_Log_Window == true)
             {
-                foreach (string s in Shared_Data.Received_Data_List_From_CWP1)
+                foreach (string s in Shared_Data.Received_Data_List_From_Server)
                 {
                     listBoxRcvData.Items.Add(s);
                 }
-                Shared_Data.Received_Data_List_From_CWP1.Clear();
-                Shared_Data.New_Data_Has_Arrived = false;
+                Shared_Data.Update_Log_Window = false;
+                
             }
         }
 

@@ -7,10 +7,22 @@ namespace BHANSA_FrqMgmt
 {
     public static class Shared_Data
     {
-        public static bool New_Data_Has_Arrived = false;
+        public static bool New_Distribution_Requested = false;
+        
+        public static bool Update_Log_Window = false;
+        public static bool Update_Main_Data_Display = false;
+
         public static List<string> Received_Data_List_From_CWP1 = new List<string>();
         public static List<string> Received_Data_List_From_CWP2 = new List<string>();
         public static List<string> Received_Data_List_From_CWP3 = new List<string>();
+        
         public static List<string> Received_Data_List_From_Server = new List<string>();
+
+        public static string Last_Data_Out = "";
+
+        public static void Data_To_Distribute(string Data_String)
+        {
+            Last_Data_Out = Data_String;
+        }
     }
 }

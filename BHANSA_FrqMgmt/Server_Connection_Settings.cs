@@ -15,10 +15,10 @@ namespace BHANSA_FrqMgmt
 {
     public partial class Server_Connection_Settings : Form
     {
-        private static bool KeepGoing = true;
-        private static bool KeepGoingCWP1 = true;
-        private static bool KeepGoingCWP2 = true;
-        private static bool KeepGoingCWP3 = true;
+        private static bool KeepGoing = false;
+        private static bool KeepGoingCWP1 = false;
+        private static bool KeepGoingCWP2 = false;
+        private static bool KeepGoingCWP3 = false;
 
 
         // Define the main listener thread
@@ -35,7 +35,6 @@ namespace BHANSA_FrqMgmt
         // Define UDP-Multicast TX connection variables
         private static UdpClient tx_sock;
         private static IPEndPoint tx_iep;
-        private static bool Broadcast_Enabled = false;
 
         // Define UDP-Multicast RCV connection variables
         private static UdpClient rcv_sock_CWP1;
@@ -57,6 +56,11 @@ namespace BHANSA_FrqMgmt
 
         // Same buffer is used for sending and receiving
         private static byte[] UDPBuffer_CWP3;
+
+        public static bool Is_Server_Connected()
+        {
+            return KeepGoing;
+        }
 
         public Server_Connection_Settings()
         {
@@ -197,13 +201,16 @@ namespace BHANSA_FrqMgmt
 
                 try
                 {
-                    byte[] byData = System.Text.Encoding.ASCII.GetBytes("TEST STRING");
-                    tx_sock.Send(byData, byData.Length, tx_iep);
-
+                    if (Shared_Data.New_Distribution_Requested == true)
+                    {
+                        byte[] byData = System.Text.Encoding.ASCII.GetBytes(Shared_Data.Last_Data_Out);
+                        tx_sock.Send(byData, byData.Length, tx_iep);
+                        Shared_Data.New_Distribution_Requested = false;
+                    }
                 }
-                catch
+                catch (Exception e)
                 {
-
+                    MessageBox.Show("Server Connection: " + e.Message);
                 }
 
                 Thread.Sleep(1000);
@@ -338,7 +345,7 @@ namespace BHANSA_FrqMgmt
                     // (an octet, of course composed of 8bits)
                     UDPBuffer_CWP1 = rcv_sock_CWP1.Receive(ref rcv_iep_CWP1);
                     Shared_Data.Received_Data_List_From_CWP1.Add(System.Text.Encoding.Default.GetString(UDPBuffer_CWP1));
-                    Shared_Data.New_Data_Has_Arrived = true;
+                    Shared_Data.Update_Log_Window = true;
                 }
                 catch
                 {
@@ -466,7 +473,7 @@ namespace BHANSA_FrqMgmt
                     // (an octet, of course composed of 8bits)
                     UDPBuffer_CWP2 = rcv_sock_CWP2.Receive(ref rcv_iep_CWP2);
                     Shared_Data.Received_Data_List_From_CWP2.Add(System.Text.Encoding.Default.GetString(UDPBuffer_CWP2));
-                    Shared_Data.New_Data_Has_Arrived = true;
+                    Shared_Data.Update_Log_Window = true;
                 }
                 catch
                 {
@@ -594,7 +601,7 @@ namespace BHANSA_FrqMgmt
                     // (an octet, of course composed of 8bits)
                     UDPBuffer_CWP3 = rcv_sock_CWP3.Receive(ref rcv_iep_CWP3);
                     Shared_Data.Received_Data_List_From_CWP3.Add(System.Text.Encoding.Default.GetString(UDPBuffer_CWP3));
-                    Shared_Data.New_Data_Has_Arrived = true;
+                    Shared_Data.Update_Log_Window = true;
                 }
                 catch
                 {

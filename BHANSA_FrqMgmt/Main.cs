@@ -17,22 +17,23 @@ namespace BHANSA_FrqMgmt
         public Main()
         {
             InitializeComponent();
+
         }
 
         private void Main_Load(object sender, EventArgs e)
         {
-           
+
             Server_Connection_Settings_Form.Show();
             Clinet_Connection_Settings_Form.Show();
             Server_Connection_Settings_Form.Visible = false;
             Clinet_Connection_Settings_Form.Visible = false;
 
             this.checkBox_US_ZG.Checked = Properties.Settings.Default.CCL_US_Checked;
-            this.checkBox_UN_ZG.Checked = Properties.Settings.Default.CCL_UN_Checked;
-            this.checkBox_UW_ZG.Checked = Properties.Settings.Default.CCL_UW_Checked;
+            this.checkBox_UW_ZG.Checked = Properties.Settings.Default.CCL_UN_Checked;
+            this.checkBox_UN_ZG.Checked = Properties.Settings.Default.CCL_UW_Checked;
             this.checkBox_LS_ZG.Checked = Properties.Settings.Default.CCL_LS_Checked;
-            this.checkBox_LN_ZG.Checked = Properties.Settings.Default.CCL_LN_Checked;
-            this.checkBox_LW_ZG.Checked = Properties.Settings.Default.CCL_LW_Checked;
+            this.checkBox_LW_ZG.Checked = Properties.Settings.Default.CCL_LN_Checked;
+            this.checkBox_LN_ZG.Checked = Properties.Settings.Default.CCL_LW_Checked;
 
             if (this.checkBox_US_ZG.Checked)
             {
@@ -44,7 +45,7 @@ namespace BHANSA_FrqMgmt
                 this.textBox_CCL_US_Value.Enabled = false;
             }
 
-            if (this.checkBox_UN_ZG.Checked)
+            if (this.checkBox_UW_ZG.Checked)
             {
                 this.textBox_CCL_UN_Value.Text = Properties.Settings.Default.CCL_UN_Value;
             }
@@ -54,7 +55,7 @@ namespace BHANSA_FrqMgmt
                 this.textBox_CCL_UN_Value.Enabled = false;
             }
 
-            if (this.checkBox_UW_ZG.Checked)
+            if (this.checkBox_UN_ZG.Checked)
             {
                 this.textBox_CCL_UW_Value.Text = Properties.Settings.Default.CCL_UW_Value;
             }
@@ -74,7 +75,7 @@ namespace BHANSA_FrqMgmt
                 this.textBox_CCL_LS_Value.Enabled = false;
             }
 
-            if (this.checkBox_LN_ZG.Checked)
+            if (this.checkBox_LW_ZG.Checked)
             {
                 this.textBox_CCL_LN_Value.Text = Properties.Settings.Default.CCL_LN_Value;
             }
@@ -84,7 +85,7 @@ namespace BHANSA_FrqMgmt
                 this.textBox_CCL_LN_Value.Enabled = false;
             }
 
-            if (this.checkBox_LW_ZG.Checked)
+            if (this.checkBox_LN_ZG.Checked)
             {
                 this.textBox_CCL_LW_Value.Text = Properties.Settings.Default.CCL_LW_Value;
             }
@@ -186,13 +187,13 @@ namespace BHANSA_FrqMgmt
             e.Graphics.DrawLine(redPen, p1, p2);
 
             // Draw line using Point structure
-            p1 = new Point(checkBox_UN_ZG.Location.X - 10, 32);
-            p2 = new Point(checkBox_UN_ZG.Location.X - 10, this.End_X_DOWN_ZG.Location.Y);
+            p1 = new Point(checkBox_UW_ZG.Location.X - 10, 32);
+            p2 = new Point(checkBox_UW_ZG.Location.X - 10, this.End_X_DOWN_ZG.Location.Y);
             e.Graphics.DrawLine(redPen, p1, p2);
 
             // Draw line using Point structure
-            p1 = new Point(checkBox_UW_ZG.Location.X - 10, 32);
-            p2 = new Point(checkBox_UW_ZG.Location.X - 10, this.End_X_DOWN_ZG.Location.Y);
+            p1 = new Point(checkBox_UN_ZG.Location.X - 10, 32);
+            p2 = new Point(checkBox_UN_ZG.Location.X - 10, this.End_X_DOWN_ZG.Location.Y);
             e.Graphics.DrawLine(redPen, p1, p2);
 
             // Draw line using Point structure
@@ -264,20 +265,20 @@ namespace BHANSA_FrqMgmt
 
         private void checkBox_UN_ZG_CheckedChanged(object sender, EventArgs e)
         {
-            if (this.checkBox_UN_ZG.Checked)
+            if (this.checkBox_UW_ZG.Checked)
             {
-                this.textBox_CCL_UN_Value.Text = Properties.Settings.Default.CCL_UN_Value;
-                this.textBox_CCL_UN_Value.Enabled = true;
+                this.textBox_CCL_UW_Value.Text = Properties.Settings.Default.CCL_UW_Value;
+                this.textBox_CCL_UW_Value.Enabled = true;
             }
             else
             {
 
-                Properties.Settings.Default.CCL_UN_Value = this.textBox_CCL_UN_Value.Text;
-                this.textBox_CCL_UN_Value.Text = "";
+                Properties.Settings.Default.CCL_UW_Value = this.textBox_CCL_UW_Value.Text;
+                this.textBox_CCL_UW_Value.Text = "";
                 this.textBox_CCL_UN_Value.Enabled = false;
             }
 
-            Properties.Settings.Default.CCL_UN_Checked = this.checkBox_UN_ZG.Checked;
+            Properties.Settings.Default.CCL_UN_Checked = this.checkBox_UW_ZG.Checked;
             Properties.Settings.Default.Save();
         }
 
@@ -303,19 +304,19 @@ namespace BHANSA_FrqMgmt
 
         private void checkBox_UW_ZG_CheckedChanged(object sender, EventArgs e)
         {
-            if (this.checkBox_UW_ZG.Checked)
+            if (this.checkBox_UN_ZG.Checked)
             {
-                this.textBox_CCL_UW_Value.Text = Properties.Settings.Default.CCL_UW_Value;
-                this.textBox_CCL_UW_Value.Enabled = true;
+                this.textBox_CCL_UN_Value.Text = Properties.Settings.Default.CCL_UN_Value;
+                this.textBox_CCL_UN_Value.Enabled = true;
             }
             else
             {
-                Properties.Settings.Default.CCL_UW_Value = this.textBox_CCL_UW_Value.Text;
-                this.textBox_CCL_UW_Value.Text = "";
-                this.textBox_CCL_UW_Value.Enabled = false;
+                Properties.Settings.Default.CCL_UN_Value = this.textBox_CCL_UN_Value.Text;
+                this.textBox_CCL_UN_Value.Text = "";
+                this.textBox_CCL_UN_Value.Enabled = false;
             }
 
-            Properties.Settings.Default.CCL_UW_Checked = this.checkBox_UW_ZG.Checked;
+            Properties.Settings.Default.CCL_UW_Checked = this.checkBox_UN_ZG.Checked;
             Properties.Settings.Default.Save();
         }
 
@@ -340,24 +341,6 @@ namespace BHANSA_FrqMgmt
 
         private void checkBox_LN_ZG_CheckedChanged(object sender, EventArgs e)
         {
-            if (this.checkBox_LN_ZG.Checked)
-            {
-                this.textBox_CCL_LN_Value.Text = Properties.Settings.Default.CCL_LN_Value;
-                this.textBox_CCL_LN_Value.Enabled = true;
-            }
-            else
-            {
-                Properties.Settings.Default.CCL_LN_Value = this.textBox_CCL_LN_Value.Text;
-                this.textBox_CCL_LN_Value.Text = "";
-                this.textBox_CCL_LN_Value.Enabled = false;
-            }
-
-            Properties.Settings.Default.CCL_LN_Checked = this.checkBox_LN_ZG.Checked;
-            Properties.Settings.Default.Save();
-        }
-
-        private void checkBox_LW_ZG_CheckedChanged(object sender, EventArgs e)
-        {
             if (this.checkBox_LW_ZG.Checked)
             {
                 this.textBox_CCL_LW_Value.Text = Properties.Settings.Default.CCL_LW_Value;
@@ -365,12 +348,30 @@ namespace BHANSA_FrqMgmt
             }
             else
             {
-                Properties.Settings.Default.CCL_LW_Value = this.textBox_CCL_LW_Value.Text;
+                Properties.Settings.Default.CCL_LN_Value = this.textBox_CCL_LW_Value.Text;
                 this.textBox_CCL_LW_Value.Text = "";
                 this.textBox_CCL_LW_Value.Enabled = false;
             }
 
-            Properties.Settings.Default.CCL_LW_Checked = this.checkBox_LW_ZG.Checked;
+            Properties.Settings.Default.CCL_LN_Checked = this.checkBox_LW_ZG.Checked;
+            Properties.Settings.Default.Save();
+        }
+
+        private void checkBox_LW_ZG_CheckedChanged(object sender, EventArgs e)
+        {
+            if (this.checkBox_LN_ZG.Checked)
+            {
+                this.textBox_CCL_LN_Value.Text = Properties.Settings.Default.CCL_LN_Value;
+                this.textBox_CCL_LN_Value.Enabled = true;
+            }
+            else
+            {
+                Properties.Settings.Default.CCL_LW_Value = this.textBox_CCL_LN_Value.Text;
+                this.textBox_CCL_LN_Value.Text = "";
+                this.textBox_CCL_LN_Value.Enabled = false;
+            }
+
+            Properties.Settings.Default.CCL_LW_Checked = this.checkBox_LN_ZG.Checked;
             Properties.Settings.Default.Save();
         }
 
@@ -433,7 +434,7 @@ namespace BHANSA_FrqMgmt
         private void Update_And_Save()
         {
 
-            if (this.checkBox_UN_ZG.Checked)
+            if (this.checkBox_UW_ZG.Checked)
             {
                 Properties.Settings.Default.CCL_UN_Value = this.textBox_CCL_UN_Value.Text;
             }
@@ -441,7 +442,7 @@ namespace BHANSA_FrqMgmt
             {
                 Properties.Settings.Default.CCL_US_Value = this.textBox_CCL_US_Value.Text;
             }
-            if (this.checkBox_UW_ZG.Checked)
+            if (this.checkBox_UN_ZG.Checked)
             {
                 Properties.Settings.Default.CCL_UW_Value = this.textBox_CCL_UW_Value.Text;
             }
@@ -449,11 +450,11 @@ namespace BHANSA_FrqMgmt
             {
                 Properties.Settings.Default.CCL_LS_Value = this.textBox_CCL_LS_Value.Text;
             }
-            if (this.checkBox_LN_ZG.Checked)
+            if (this.checkBox_LW_ZG.Checked)
             {
                 Properties.Settings.Default.CCL_LN_Value = this.textBox_CCL_LN_Value.Text;
             }
-            if (this.checkBox_LW_ZG.Checked)
+            if (this.checkBox_LN_ZG.Checked)
             {
                 Properties.Settings.Default.CCL_LW_Value = this.textBox_CCL_LW_Value.Text;
             }
@@ -536,6 +537,255 @@ namespace BHANSA_FrqMgmt
         private void toolsToolStripMenuItem_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnDistribute_Click(object sender, EventArgs e)
+        {
+            if (Server_Connection_Settings.Is_Server_Connected() == true)
+            {
+                Shared_Data.Data_To_Distribute(Get_Current_Data_Set());
+                Shared_Data.New_Distribution_Requested = true;
+
+            }
+            else
+                MessageBox.Show("Server not running !");
+        }
+
+        private string Get_Current_Data_Set()
+        {
+            string Data_Out = "";
+
+            Data_Out =
+                // CCL
+
+                "ZG_US: " + this.checkBox_US_ZG.CheckState.ToString() + "," +
+                "ZG_US_VALUE: " + this.textBox_CCL_US_Value.Text + "," +
+
+                "ZG_UW: " + this.checkBox_UW_ZG.CheckState.ToString() + "," +
+                "ZG_UW_VALUE: " + this.textBox_CCL_UW_Value.Text + "," +
+
+                "ZG_UN: " + this.checkBox_UN_ZG.CheckState.ToString() + "," +
+                "ZG_UN_VALUE: " + this.textBox_CCL_UN_Value.Text + "," +
+
+                "ZG_LS: " + this.checkBox_LS_ZG.CheckState.ToString() + "," +
+                "ZG_LS_VALUE: " + this.textBox_CCL_LS_Value.Text + "," +
+
+                "ZG_LW: " + this.checkBox_LW_ZG.CheckState.ToString() + "," +
+                "ZG_LW_VALUE: " + this.textBox_CCL_LW_Value.Text + "," +
+
+                "ZG_LN: " + this.checkBox_LN_ZG.CheckState.ToString() + "," +
+                "ZG_LN_VALUE: " + this.textBox_CCL_LN_Value.Text + "," +
+
+                "LDZA: " + textBoxLDZA.Text + "," +
+                "LDDU: " + textBoxLDDU.Text + "," +
+                "LDSP: " + textBoxLDSP.Text + "," +
+                "LDOS: " + textBoxLDOS.Text + "," +
+                "ZGFIC: " + textBoxZGFIC.Text + "," +
+
+                // SMATSA
+
+                "BG_UW: " + this.checkBox_SMATSA_UW.CheckState.ToString() + "," +
+                "BG_UW_VALUE: " + this.textBox_SMATSA_UW.Text + "," +
+
+                "BG_UN: " + this.checkBox_SMATSA_UN.CheckState.ToString() + "," +
+                "BG_UN_VALUE: " + this.textBox_SMATSA_UN.Text + "," +
+
+                "BG_LOWER: " + this.checkBox_SMATSA_LOWER.CheckState.ToString() + "," +
+                "BG_LOWER_VALUE: " + this.textBox_SMATSA_LOWER.Text + "," +
+
+                "LYBE: " + this.textBoxLYBE.Text + "," +
+                "LYPG: " + this.textBoxLYPG.Text + "," +
+                "SEC_LYPG: " + this.textBoxSectorLYPG.Text + "," +
+
+                // GENERAL     
+                "DFL: " + this.textBox_Division_Level.Text + "," +
+
+                // BHANSA
+                "LQSA: " + this.textBoxLQSA.Text + "," +
+                "LQMO: " + this.textBoxLQMO.Text + "," +
+                "LQTZ: " + this.textBoxLQTZ.Text + "," +
+                "LQBK: " + this.textBoxLQBK.Text + "," +
+                "FIC: " + this.textBoxFIC.Text + "," +
+
+                "CHF_SUP: " + this.textBoxChief_Sup.Text + "," +
+                "FREE_1: " + this.textBoxFree_One.Text + "," +
+                "FREE_2: " + this.textBoxFree_Two.Text + "," +
+                "FREE_3: " + this.textBoxFree_Three.Text;
+
+            return Data_Out;
+        }
+
+        private CheckState Check_State_From_String(string Value)
+        {
+            if (Value == "Checked")
+                return CheckState.Checked;
+            else
+                return CheckState.Unchecked;
+        }
+
+        private string[] Check_For_Multiple_Strings(string[] S)
+        {
+            string[] Result = new string[] { " ", "" };
+
+            if (S.Length < 3)
+                Result = S;
+            else
+            {
+
+                Result[0] = S[0];
+
+                for (int I = 1; I < S.Length; I++)
+                {
+                    Result[1] = Result[1] + S[I] + " ";
+                }
+
+                Result[1].Remove(Result.Length - 1);
+            }
+            return Result;
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+
+            if (Shared_Data.Update_Main_Data_Display == true)
+            {
+                timer1.Enabled = false;
+                System.Windows.Forms.DialogResult T = MessageBox.Show("New data set available, Proceed with the update?", "Confirm", MessageBoxButtons.YesNo);
+                if (T == System.Windows.Forms.DialogResult.Yes)
+                {
+                    foreach (string S in Shared_Data.Received_Data_List_From_Server)
+                    {
+                        string[] words = S.Split(' ');
+
+                        // Check if the string has more than two strings
+                        words = Check_For_Multiple_Strings(words);
+
+                        switch (words[0])
+                        {
+                            /////////////////////////////////////////////////////////////////////////////////
+                            // CCL
+                            case "ZG_US:":
+                                this.checkBox_US_ZG.CheckState = Check_State_From_String(words[1]);
+                                break;
+                            case "ZG_US_VALUE:":
+                                this.textBox_CCL_US_Value.Text = words[1];
+                                break;
+                            case "ZG_UW:":
+                                this.checkBox_UW_ZG.CheckState = Check_State_From_String(words[1]);
+                                break;
+                            case "ZG_UW_VALUE:":
+                                this.textBox_CCL_UW_Value.Text = words[1];
+                                break;
+                            case "ZG_UN:":
+                                this.checkBox_UN_ZG.CheckState = Check_State_From_String(words[1]);
+                                break;
+                            case "ZG_UN_VALUE:":
+                                this.textBox_CCL_UN_Value.Text = words[1];
+                                break;
+                            case "ZG_LS:":
+                                this.checkBox_LS_ZG.CheckState = Check_State_From_String(words[1]);
+                                break;
+                            case "ZG_LS_VALUE:":
+                                this.textBox_CCL_LS_Value.Text = words[1];
+                                break;
+                            case "ZG_LW:":
+                                this.checkBox_LW_ZG.CheckState = Check_State_From_String(words[1]);
+                                break;
+                            case "ZG_LW_VALUE:":
+                                this.textBox_CCL_LW_Value.Text = words[1];
+                                break;
+                            case "ZG_LN:":
+                                this.checkBox_LN_ZG.CheckState = Check_State_From_String(words[1]);
+                                break;
+                            case "ZG_LN_VALUE:":
+                                this.textBox_CCL_LN_Value.Text = words[1];
+                                break;
+                            case "LDZA:":
+                                textBoxLDZA.Text = words[1];
+                                break;
+                            case "LDDU:":
+                                textBoxLDDU.Text = words[1];
+                                break;
+                            case "LDSP:":
+                                textBoxLDSP.Text = words[1];
+                                break;
+                            case "LDOS:":
+                                textBoxLDOS.Text = words[1];
+                                break;
+                            case "ZGFIC:":
+                                textBoxZGFIC.Text = words[1];
+                                break;
+                            /////////////////////////////////////////////////////////////////////////////////
+                            // SMATSA
+                            case "BG_UW:":
+                                this.checkBox_SMATSA_UW.CheckState = Check_State_From_String(words[1]);
+                                break;
+                            case "BG_UW_VALUE:":
+                                this.textBox_SMATSA_UW.Text = words[1];
+                                break;
+                            case "BG_UN:":
+                                this.checkBox_SMATSA_UN.CheckState = Check_State_From_String(words[1]);
+                                break;
+                            case "BG_UN_VALUE:":
+                                this.textBox_SMATSA_UN.Text = words[1];
+                                break;
+                            case "BG_LOWER:":
+                                this.checkBox_SMATSA_LOWER.CheckState = Check_State_From_String(words[1]);
+                                break;
+                            case "BG_LOWER_VALUE:":
+                                this.textBox_SMATSA_LOWER.Text = words[1];
+                                break;
+                            case "LYBE:":
+                                this.textBoxLYBE.Text = words[1];
+                                break;
+                            case "LYPG:":
+                                this.textBoxLYPG.Text = words[1];
+                                break;
+                            case "SEC_LYPG:":
+                                this.textBoxSectorLYPG.Text = words[1];
+                                break;
+                            /////////////////////////////////////////////////////////////////////////////////
+                            // GENERAL     
+                            case "DFL:":
+                                this.textBox_Division_Level.Text = words[1];
+                                break;
+
+                            /////////////////////////////////////////////////////////////////////////////////
+                            // BHANSA
+                            case "LQSA:":
+                                this.textBoxLQSA.Text = words[1];
+                                break;
+                            case "LQMO:":
+                                this.textBoxLQMO.Text = words[1];
+                                break;
+                            case "LQTZ:":
+                                this.textBoxLQTZ.Text = words[1];
+                                break;
+                            case "LQBK:":
+                                this.textBoxLQBK.Text = words[1];
+                                break;
+                            case "FIC:":
+                                this.textBoxFIC.Text = words[1];
+                                break;
+
+                            case "CHF_SUP:":
+                                this.textBoxChief_Sup.Text = words[1];
+                                break;
+                            case "FREE_1:":
+                                this.textBoxFree_One.Text = words[1];
+                                break;
+                            case "FREE_2:":
+                                this.textBoxFree_Two.Text = words[1];
+                                break;
+                            case "FREE_3:":
+                                this.textBoxFree_Three.Text = words[1];
+                                break;
+                        }
+                    }
+                }
+                Shared_Data.Update_Main_Data_Display = false;
+                timer1.Enabled = true;
+            }
         }
     }
 }
