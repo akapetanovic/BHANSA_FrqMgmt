@@ -20,3 +20,10 @@ C:\Users\Amer\Documents\Visual Studio 2010\Projects\BHANSA_FrqMgmt\BHANSA_FrqMgm
 C:\Users\Amer\Documents\Visual Studio 2010\Projects\BHANSA_FrqMgmt\BHANSA_FrqMgmt\obj\x86\Debug\BHANSA_FrqMgmt.application
 C:\Users\Amer\Documents\Visual Studio 2010\Projects\BHANSA_FrqMgmt\BHANSA_FrqMgmt\obj\x86\Debug\BHANSA_FrqMgmt.exe
 C:\Users\Amer\Documents\Visual Studio 2010\Projects\BHANSA_FrqMgmt\BHANSA_FrqMgmt\obj\x86\Debug\BHANSA_FrqMgmt.pdb
+C:\Users\Amer.Kapetanovic\Documents\Visual Studio 2013\Projects\BHANSA_FrqMgmt\BHANSA_FrqMgmt\bin\Debug\BHANSA_FrqMgmt.exe.manifest
+C:\Users\Amer.Kapetanovic\Documents\Visual Studio 2013\Projects\BHANSA_FrqMgmt\BHANSA_FrqMgmt\bin\Debug\BHANSA_FrqMgmt.application
+C:\Users\Amer.Kapetanovic\Documents\Visual Studio 2013\Projects\BHANSA_FrqMgmt\BHANSA_FrqMgmt\obj\x86\Debug\BHANSA_FrqMgmt.Client_Connection_Settings.resources
+C:\Users\Amer.Kapetanovic\Documents\Visual Studio 2013\Projects\BHANSA_FrqMgmt\BHANSA_FrqMgmt\obj\x86\Debug\BHANSA_FrqMgmt.General_Settings.resources
+C:\Users\Amer.Kapetanovic\Documents\Visual Studio 2013\Projects\BHANSA_FrqMgmt\BHANSA_FrqMgmt\obj\x86\Debug\BHANSA_FrqMgmt.Server_Connection_Settings.resources
+C:\Users\Amer.Kapetanovic\Documents\Visual Studio 2013\Projects\BHANSA_FrqMgmt\BHANSA_FrqMgmt\obj\x86\Debug\BHANSA_FrqMgmt.exe.manifest
+C:\Users\Amer.Kapetanovic\Documents\Visual Studio 2013\Projects\BHANSA_FrqMgmt\BHANSA_FrqMgmt\obj\x86\Debug\BHANSA_FrqMgmt.application

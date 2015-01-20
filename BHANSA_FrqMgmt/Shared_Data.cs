@@ -27,7 +27,7 @@ namespace BHANSA_FrqMgmt
         }
 
         // General Settings
-        public static string Position_Name = "Not Defined";
+        public static string Position_Name = "N/A";
         public static bool I_Am_Server = true;
 
     }

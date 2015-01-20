@@ -454,5 +454,29 @@ namespace BHANSA_FrqMgmt.Properties {
                 this["CCL_LW_Value"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("True")]
+        public bool I_am_Server {
+            get {
+                return ((bool)(this["I_am_Server"]));
+            }
+            set {
+                this["I_am_Server"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("N/A")]
+        public string Position_Name {
+            get {
+                return ((string)(this["Position_Name"]));
+            }
+            set {
+                this["Position_Name"] = value;
+            }
+        }
     }
 }
