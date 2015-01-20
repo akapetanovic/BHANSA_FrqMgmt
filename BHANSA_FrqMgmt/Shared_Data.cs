@@ -6,7 +6,8 @@ using System.Text;
 namespace BHANSA_FrqMgmt
 {
     public static class Shared_Data
-    {
+    {   
+        
         public static bool New_Distribution_Requested = false;
         
         public static bool Update_Log_Window = false;
@@ -24,5 +25,10 @@ namespace BHANSA_FrqMgmt
         {
             Last_Data_Out = Data_String;
         }
+
+        // General Settings
+        public static string Position_Name = "Not Defined";
+        public static bool I_Am_Server = true;
+
     }
 }
