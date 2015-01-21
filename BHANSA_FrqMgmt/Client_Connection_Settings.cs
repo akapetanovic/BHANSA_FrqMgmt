@@ -15,7 +15,7 @@ namespace BHANSA_FrqMgmt
 {
     public partial class Client_Connection_Settings : Form
     {
-        private static bool KeepGoing = true;
+        private static bool KeepGoing = false;
         private static bool RequestStop = false;
 
         // Define UDP-Multicast RCV connection variables
@@ -85,6 +85,7 @@ namespace BHANSA_FrqMgmt
             }
 
             KeepGoing = true;
+            Shared_Data.Is_Connected = true;
             RequestStop = false;
             ListenForDataThread = new Thread(new ThreadStart(DOWork));
             ListenForDataThread.Start();
@@ -119,7 +120,7 @@ namespace BHANSA_FrqMgmt
                     }
                     catch
                     {
-                        MessageBox.Show("Issue in DoWork");
+                        //MessageBox.Show("Issue in DoWork");
                     }
                 }
             }
@@ -203,9 +204,11 @@ namespace BHANSA_FrqMgmt
             else
             {
                 KeepGoing = false;
+                Shared_Data.Is_Connected = false;
                 this.btnConnectServerBroadcast.Text = "Connect";
                 this.btnConnectServerBroadcast.BackColor = Color.Red;
                 timer1.Enabled = false;
+                Cleanup();
 
             }
         }
@@ -233,6 +236,11 @@ namespace BHANSA_FrqMgmt
             Properties.Settings.Default.Save();
 
             this.Visible = false;
+        }
+
+        private void Client_Connection_Settings_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Cleanup();
         }
     }
 }

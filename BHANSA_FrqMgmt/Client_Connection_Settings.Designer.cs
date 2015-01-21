@@ -162,6 +162,7 @@
             this.Controls.Add(this.groupBox1);
             this.Name = "Client_Connection_Settings";
             this.Text = "Connection Settings";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Client_Connection_Settings_FormClosed);
             this.Load += new System.EventHandler(this.Client_Connection_Settings_Load);
             this.VisibleChanged += new System.EventHandler(this.Client_Connection_Settings_VisibleChanged);
             this.groupBox1.ResumeLayout(false);

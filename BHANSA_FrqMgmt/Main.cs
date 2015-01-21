@@ -796,14 +796,14 @@ namespace BHANSA_FrqMgmt
                 this.toolsToolStripMenuItem.DropDownItems[1].Enabled = true;
                 this.toolsToolStripMenuItem.DropDownItems[2].Enabled = false;
                 this.Text = "BHANSA Frequency Managament " + Shared_Data.Position_Name + " (Server)";
-                this.btnDistribute.Visible = true;
+                distributeDataToolStripMenuItem.Enabled = true;
             }
             else
             {
                 this.toolsToolStripMenuItem.DropDownItems[1].Enabled = false;
                 this.toolsToolStripMenuItem.DropDownItems[2].Enabled = true;
                 this.Text = "BHANSA Frequency Managament " + Shared_Data.Position_Name + " (Client)";
-                this.btnDistribute.Visible = false;
+                distributeDataToolStripMenuItem.Enabled = false;
             }
 
             if (Shared_Data.Server_Client_Mode_Changed == true)
@@ -824,11 +824,34 @@ namespace BHANSA_FrqMgmt
 
                 Shared_Data.Server_Client_Mode_Changed = false;
             }
+
+            if (Shared_Data.Is_Connected == false)
+            {
+                this.labelConnectionStatus.ForeColor = Color.Red;
+                this.labelConnectionStatus.Text = "Disconnected";
+            }
+            else
+            {
+                this.labelConnectionStatus.ForeColor = Color.Green;
+                this.labelConnectionStatus.Text = "Connected";
+            }
         }
 
         private void generalSettingsToolStripMenuItem_Click(object sender, EventArgs e)
         {
             GS.Visible = true;
+        }
+
+        private void distributeDataToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (Server_Connection_Settings.Is_Server_Connected() == true)
+            {
+                Shared_Data.Data_To_Distribute(Get_Current_Data_Set());
+                Shared_Data.New_Distribution_Requested = true;
+
+            }
+            else
+                MessageBox.Show("Server not running !");
         }
     }
 }

@@ -174,6 +174,7 @@ namespace BHANSA_FrqMgmt
             else
             {
                 KeepGoing = false;
+                Shared_Data.Is_Connected = false;
                 this.btnConnectServerBroadcast.Text = "Connect";
                 this.btnConnectServerBroadcast.BackColor = Color.Red;
                 Cleanup();
@@ -201,6 +202,7 @@ namespace BHANSA_FrqMgmt
             }
 
             KeepGoing = true;
+            Shared_Data.Is_Connected = true;
             ListenForDataThread = new Thread(new ThreadStart(DOWork));
             ListenForDataThread.Start();
             return true;
