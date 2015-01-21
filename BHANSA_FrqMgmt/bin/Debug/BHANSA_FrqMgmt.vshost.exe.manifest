@@ -47,24 +47,24 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="BHANSA_FrqMgmt.exe" size="67584">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="BHANSA_FrqMgmt.exe" size="71680">
       <assemblyIdentity name="BHANSA_FrqMgmt" version="1.0.0.0" language="neutral" processorArchitecture="x86" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-        <dsig:DigestValue>9Q/u1qU22S4YDBKIZsruq89e8b4=</dsig:DigestValue>
+        <dsig:DigestValue>r4DS4f52yv0SdRyX5+VslMFra2s=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
-  <file name="BHANSA_FrqMgmt.exe.config" size="5371">
+  <file name="BHANSA_FrqMgmt.exe.config" size="6953">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-      <dsig:DigestValue>wPsW1d7CQGhrxiIsr4EVjIFjfuk=</dsig:DigestValue>
+      <dsig:DigestValue>LkB8ak1SmqmsJlLI88Zkee7MWcw=</dsig:DigestValue>
     </hash>
   </file>
 </asmv1:assembly>

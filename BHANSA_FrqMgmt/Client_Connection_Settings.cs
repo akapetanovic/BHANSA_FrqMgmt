@@ -58,7 +58,10 @@ namespace BHANSA_FrqMgmt
                 }
             }
             if (comboBoxNetworkInterface.Items.Count > 0)
-                comboBoxNetworkInterface.SelectedIndex = 0;
+                comboBoxNetworkInterface.SelectedIndex = Properties.Settings.Default.Client_Interface_Index;
+
+            txtboxIPAddress.Text = Properties.Settings.Default.Client_Multicast_Address;
+            textboxPort.Text = Properties.Settings.Default.Client_Port;
         }
 
         public static bool StartListening(IPAddress Interface_Addres,  // IP address of the interface where the data is expected
@@ -222,6 +225,13 @@ namespace BHANSA_FrqMgmt
 
         private void button1_Click(object sender, EventArgs e)
         {
+
+            Properties.Settings.Default.Client_Interface_Index = comboBoxNetworkInterface.SelectedIndex;
+            Properties.Settings.Default.Client_Multicast_Address = txtboxIPAddress.Text;
+            Properties.Settings.Default.Client_Port = textboxPort.Text;
+
+            Properties.Settings.Default.Save();
+
             this.Visible = false;
         }
     }

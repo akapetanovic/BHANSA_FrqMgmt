@@ -11,8 +11,9 @@ namespace BHANSA_FrqMgmt
 {
     public partial class Main : Form
     {
-        public static Server_Connection_Settings Server_Connection_Settings_Form = new Server_Connection_Settings();
-        public static Client_Connection_Settings Clinet_Connection_Settings_Form = new Client_Connection_Settings();
+        private static Server_Connection_Settings Server_Connection_Settings_Form = new Server_Connection_Settings();
+        private static Client_Connection_Settings Clinet_Connection_Settings_Form = new Client_Connection_Settings();
+        private static General_Settings GS = new General_Settings();
 
         public Main()
         {
@@ -28,11 +29,7 @@ namespace BHANSA_FrqMgmt
 
             Server_Connection_Settings_Form.Visible = false;
             Clinet_Connection_Settings_Form.Visible = false;
-
-            //Server_Connection_Settings_Form.Show();
-            //Clinet_Connection_Settings_Form.Show();
-            //Server_Connection_Settings_Form.Visible = false;
-            //Clinet_Connection_Settings_Form.Visible = false;
+            GS.Visible = false;
 
             this.checkBox_US_ZG.Checked = Properties.Settings.Default.CCL_US_Checked;
             this.checkBox_UW_ZG.Checked = Properties.Settings.Default.CCL_UN_Checked;
@@ -527,7 +524,7 @@ namespace BHANSA_FrqMgmt
         private void aboutToolStripMenuItem_Click(object sender, EventArgs e)
         {
 
-            MessageBox.Show("Amer Kapetanovic\namer.kapetanovic@bhansa.gov.ba\nVersion 1.0\n25.12.2014");
+            MessageBox.Show("Amer Kapetanovic\namer.kapetanovic@bhansa.gov.ba\nVersion 1.0\n21.01.2014");
         }
 
         private void connectionSettingsToolStripMenuItem_Click(object sender, EventArgs e)
@@ -791,6 +788,7 @@ namespace BHANSA_FrqMgmt
                 }
                 Shared_Data.Update_Main_Data_Display = false;
                 timer1.Enabled = true;
+
             }
 
             if (Shared_Data.I_Am_Server == true)
@@ -807,12 +805,30 @@ namespace BHANSA_FrqMgmt
                 this.Text = "BHANSA Frequency Managament " + Shared_Data.Position_Name + " (Client)";
                 this.btnDistribute.Visible = false;
             }
+
+            if (Shared_Data.Server_Client_Mode_Changed == true)
+            {
+                Server_Connection_Settings_Form.Close();
+                Clinet_Connection_Settings_Form.Close();
+
+                Server_Connection_Settings_Form = new Server_Connection_Settings();
+                Clinet_Connection_Settings_Form = new Client_Connection_Settings();
+
+                Server_Connection_Settings_Form.Visible = false;
+                Clinet_Connection_Settings_Form.Visible = false;
+
+                if (Shared_Data.I_Am_Server == true)
+                    Server_Connection_Settings_Form.Visible = true;
+                else
+                    Clinet_Connection_Settings_Form.Visible = true;
+
+                Shared_Data.Server_Client_Mode_Changed = false;
+            }
         }
 
         private void generalSettingsToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            General_Settings GS = new General_Settings();
-            GS.Show();
+            GS.Visible = true;
         }
     }
 }

@@ -478,5 +478,149 @@ namespace BHANSA_FrqMgmt.Properties {
                 this["Position_Name"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public int Server_Interface_Index {
+            get {
+                return ((int)(this["Server_Interface_Index"]));
+            }
+            set {
+                this["Server_Interface_Index"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("238.1.1.1")]
+        public string Server_Multicast_Address {
+            get {
+                return ((string)(this["Server_Multicast_Address"]));
+            }
+            set {
+                this["Server_Multicast_Address"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("2000")]
+        public string Server_Port {
+            get {
+                return ((string)(this["Server_Port"]));
+            }
+            set {
+                this["Server_Port"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("238.1.1.1")]
+        public string CWP1_Multicast_Address {
+            get {
+                return ((string)(this["CWP1_Multicast_Address"]));
+            }
+            set {
+                this["CWP1_Multicast_Address"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("2000")]
+        public string CWP1_Port {
+            get {
+                return ((string)(this["CWP1_Port"]));
+            }
+            set {
+                this["CWP1_Port"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("238.1.1.1")]
+        public string CWP2_Multicast_Address {
+            get {
+                return ((string)(this["CWP2_Multicast_Address"]));
+            }
+            set {
+                this["CWP2_Multicast_Address"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("2000")]
+        public string CWP2_Port {
+            get {
+                return ((string)(this["CWP2_Port"]));
+            }
+            set {
+                this["CWP2_Port"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("238.1.1.1")]
+        public string CWP3_Multicast_Address {
+            get {
+                return ((string)(this["CWP3_Multicast_Address"]));
+            }
+            set {
+                this["CWP3_Multicast_Address"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("2000")]
+        public string CWP3_Port {
+            get {
+                return ((string)(this["CWP3_Port"]));
+            }
+            set {
+                this["CWP3_Port"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public int Client_Interface_Index {
+            get {
+                return ((int)(this["Client_Interface_Index"]));
+            }
+            set {
+                this["Client_Interface_Index"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("238.1.1.1")]
+        public string Client_Multicast_Address {
+            get {
+                return ((string)(this["Client_Multicast_Address"]));
+            }
+            set {
+                this["Client_Multicast_Address"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("2000")]
+        public string Client_Port {
+            get {
+                return ((string)(this["Client_Port"]));
+            }
+            set {
+                this["Client_Port"] = value;
+            }
+        }
     }
 }

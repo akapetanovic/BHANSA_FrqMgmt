@@ -54,7 +54,7 @@
             this.groupBox1.Controls.Add(this.Server_Interface);
             this.groupBox1.Location = new System.Drawing.Point(12, 12);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(432, 190);
+            this.groupBox1.Size = new System.Drawing.Size(357, 190);
             this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Server Broadcast Connection Settings";
@@ -65,7 +65,7 @@
             this.btnConnectServerBroadcast.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnConnectServerBroadcast.Location = new System.Drawing.Point(10, 139);
             this.btnConnectServerBroadcast.Name = "btnConnectServerBroadcast";
-            this.btnConnectServerBroadcast.Size = new System.Drawing.Size(404, 35);
+            this.btnConnectServerBroadcast.Size = new System.Drawing.Size(333, 35);
             this.btnConnectServerBroadcast.TabIndex = 63;
             this.btnConnectServerBroadcast.Text = "Connect";
             this.btnConnectServerBroadcast.UseVisualStyleBackColor = false;
@@ -77,7 +77,7 @@
             this.comboBoxNetworkInterface.Location = new System.Drawing.Point(145, 29);
             this.comboBoxNetworkInterface.Margin = new System.Windows.Forms.Padding(4);
             this.comboBoxNetworkInterface.Name = "comboBoxNetworkInterface";
-            this.comboBoxNetworkInterface.Size = new System.Drawing.Size(269, 24);
+            this.comboBoxNetworkInterface.Size = new System.Drawing.Size(198, 24);
             this.comboBoxNetworkInterface.TabIndex = 62;
             // 
             // txtboxIPAddress
@@ -85,7 +85,7 @@
             this.txtboxIPAddress.Location = new System.Drawing.Point(145, 66);
             this.txtboxIPAddress.Margin = new System.Windows.Forms.Padding(4);
             this.txtboxIPAddress.Name = "txtboxIPAddress";
-            this.txtboxIPAddress.Size = new System.Drawing.Size(269, 22);
+            this.txtboxIPAddress.Size = new System.Drawing.Size(198, 22);
             this.txtboxIPAddress.TabIndex = 60;
             this.txtboxIPAddress.Text = "238.1.1.1";
             // 
@@ -94,7 +94,7 @@
             this.textboxPort.Location = new System.Drawing.Point(145, 99);
             this.textboxPort.Margin = new System.Windows.Forms.Padding(4);
             this.textboxPort.Name = "textboxPort";
-            this.textboxPort.Size = new System.Drawing.Size(269, 22);
+            this.textboxPort.Size = new System.Drawing.Size(198, 22);
             this.textboxPort.TabIndex = 61;
             this.textboxPort.Text = "2000";
             // 
@@ -134,7 +134,7 @@
             this.listBoxRcvData.ItemHeight = 16;
             this.listBoxRcvData.Location = new System.Drawing.Point(12, 218);
             this.listBoxRcvData.Name = "listBoxRcvData";
-            this.listBoxRcvData.Size = new System.Drawing.Size(432, 244);
+            this.listBoxRcvData.Size = new System.Drawing.Size(357, 244);
             this.listBoxRcvData.TabIndex = 2;
             // 
             // timer1
@@ -145,7 +145,7 @@
             // 
             this.button1.Location = new System.Drawing.Point(13, 467);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(431, 23);
+            this.button1.Size = new System.Drawing.Size(356, 23);
             this.button1.TabIndex = 3;
             this.button1.Text = "Close";
             this.button1.UseVisualStyleBackColor = true;
@@ -155,7 +155,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(469, 502);
+            this.ClientSize = new System.Drawing.Size(381, 497);
             this.ControlBox = false;
             this.Controls.Add(this.button1);
             this.Controls.Add(this.listBoxRcvData);

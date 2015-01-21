@@ -89,8 +89,20 @@ namespace BHANSA_FrqMgmt
                     }
                 }
             }
+
             if (comboBoxNetworkInterface.Items.Count > 0)
-                comboBoxNetworkInterface.SelectedIndex = 0;
+                comboBoxNetworkInterface.SelectedIndex = Properties.Settings.Default.Server_Interface_Index;
+
+            txtboxIPAddress.Text = Properties.Settings.Default.Server_Multicast_Address;
+            textboxPort.Text = Properties.Settings.Default.Server_Port;
+
+            txtMulticastCWP1.Text = Properties.Settings.Default.CWP1_Multicast_Address;
+            txtMulticastCWP2.Text = Properties.Settings.Default.CWP2_Multicast_Address;
+            txtMulticastCWP3.Text = Properties.Settings.Default.CWP3_Multicast_Address;
+
+            txtPortCWP1.Text = Properties.Settings.Default.CWP1_Port;
+            txtPortCWP2.Text = Properties.Settings.Default.CWP2_Port;
+            txtPortCWP3.Text = Properties.Settings.Default.CWP3_Port;
         }
 
         private void btnConnectServerBroadcast_Click(object sender, EventArgs e)
@@ -618,7 +630,38 @@ namespace BHANSA_FrqMgmt
 
         private void button1_Click(object sender, EventArgs e)
         {
+            Properties.Settings.Default.Server_Interface_Index = comboBoxNetworkInterface.SelectedIndex;
+            Properties.Settings.Default.Server_Multicast_Address = txtboxIPAddress.Text;
+            Properties.Settings.Default.Server_Port = textboxPort.Text;
+
+            Properties.Settings.Default.CWP1_Multicast_Address = txtMulticastCWP1.Text;
+            Properties.Settings.Default.CWP2_Multicast_Address = txtMulticastCWP2.Text;
+            Properties.Settings.Default.CWP3_Multicast_Address = txtMulticastCWP3.Text;
+
+            Properties.Settings.Default.CWP1_Port = txtPortCWP1.Text;
+            Properties.Settings.Default.CWP2_Port = txtPortCWP2.Text;
+            Properties.Settings.Default.CWP3_Port = txtPortCWP3.Text;
+
+            Properties.Settings.Default.Save();
+
             this.Visible = false;
+        }
+
+        private void Server_Connection_Settings_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Properties.Settings.Default.Server_Interface_Index = comboBoxNetworkInterface.SelectedIndex;
+            Properties.Settings.Default.Server_Multicast_Address = txtboxIPAddress.Text;
+            Properties.Settings.Default.Server_Port = textboxPort.Text;
+
+            Properties.Settings.Default.CWP1_Multicast_Address = txtMulticastCWP1.Text;
+            Properties.Settings.Default.CWP2_Multicast_Address = txtMulticastCWP2.Text;
+            Properties.Settings.Default.CWP3_Multicast_Address = txtMulticastCWP3.Text;
+
+            Properties.Settings.Default.CWP1_Port = txtPortCWP1.Text;
+            Properties.Settings.Default.CWP2_Port = txtPortCWP2.Text;
+            Properties.Settings.Default.CWP3_Port = txtPortCWP3.Text;
+
+            Properties.Settings.Default.Save();
         }
     }
 }

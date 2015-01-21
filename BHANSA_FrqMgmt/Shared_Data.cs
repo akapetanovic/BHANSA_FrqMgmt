@@ -6,7 +6,8 @@ using System.Text;
 namespace BHANSA_FrqMgmt
 {
     public static class Shared_Data
-    {   
+    {
+        public static bool Server_Client_Mode_Changed = false;
         
         public static bool New_Distribution_Requested = false;
         

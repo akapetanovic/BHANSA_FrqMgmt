@@ -23,7 +23,7 @@ namespace BHANSA_FrqMgmt
             this.checkBox1.Checked = Shared_Data.I_Am_Server;
         }
 
-        
+
 
         private void textBoxPositionName_MouseLeave(object sender, EventArgs e)
         {
@@ -36,9 +36,16 @@ namespace BHANSA_FrqMgmt
 
         private void checkBox1_CheckedChanged(object sender, EventArgs e)
         {
-           Shared_Data.I_Am_Server = this.checkBox1.Checked;
-           Properties.Settings.Default.I_am_Server = Shared_Data.I_Am_Server;
-           Properties.Settings.Default.Save();
+            MessageBox.Show("Changing mode will close current connections!");
+            Shared_Data.I_Am_Server = this.checkBox1.Checked;
+            Properties.Settings.Default.I_am_Server = Shared_Data.I_Am_Server;
+            Properties.Settings.Default.Save();
+            Shared_Data.Server_Client_Mode_Changed = true;
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            this.Visible = false;
         }
     }
 }

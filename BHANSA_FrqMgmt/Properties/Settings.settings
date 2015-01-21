@@ -116,5 +116,41 @@
     <Setting Name="Position_Name" Type="System.String" Scope="User">
       <Value Profile="(Default)">N/A</Value>
     </Setting>
+    <Setting Name="Server_Interface_Index" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">0</Value>
+    </Setting>
+    <Setting Name="Server_Multicast_Address" Type="System.String" Scope="User">
+      <Value Profile="(Default)">238.1.1.1</Value>
+    </Setting>
+    <Setting Name="Server_Port" Type="System.String" Scope="User">
+      <Value Profile="(Default)">2000</Value>
+    </Setting>
+    <Setting Name="CWP1_Multicast_Address" Type="System.String" Scope="User">
+      <Value Profile="(Default)">238.1.1.1</Value>
+    </Setting>
+    <Setting Name="CWP1_Port" Type="System.String" Scope="User">
+      <Value Profile="(Default)">2000</Value>
+    </Setting>
+    <Setting Name="CWP2_Multicast_Address" Type="System.String" Scope="User">
+      <Value Profile="(Default)">238.1.1.1</Value>
+    </Setting>
+    <Setting Name="CWP2_Port" Type="System.String" Scope="User">
+      <Value Profile="(Default)">2000</Value>
+    </Setting>
+    <Setting Name="CWP3_Multicast_Address" Type="System.String" Scope="User">
+      <Value Profile="(Default)">238.1.1.1</Value>
+    </Setting>
+    <Setting Name="CWP3_Port" Type="System.String" Scope="User">
+      <Value Profile="(Default)">2000</Value>
+    </Setting>
+    <Setting Name="Client_Interface_Index" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">0</Value>
+    </Setting>
+    <Setting Name="Client_Multicast_Address" Type="System.String" Scope="User">
+      <Value Profile="(Default)">238.1.1.1</Value>
+    </Setting>
+    <Setting Name="Client_Port" Type="System.String" Scope="User">
+      <Value Profile="(Default)">2000</Value>
+    </Setting>
   </Settings>
 </SettingsFile>
