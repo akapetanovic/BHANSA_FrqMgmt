@@ -69,11 +69,11 @@
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox1.Location = new System.Drawing.Point(12, 43);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.groupBox1.Location = new System.Drawing.Point(9, 35);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.groupBox1.Size = new System.Drawing.Size(299, 131);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox1.Size = new System.Drawing.Size(210, 105);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Server Broadcast Connection Settings";
@@ -82,10 +82,10 @@
             // 
             this.btnConnectServerBroadcast.BackColor = System.Drawing.Color.Red;
             this.btnConnectServerBroadcast.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnConnectServerBroadcast.Location = new System.Drawing.Point(11, 93);
-            this.btnConnectServerBroadcast.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnConnectServerBroadcast.Location = new System.Drawing.Point(8, 76);
+            this.btnConnectServerBroadcast.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnConnectServerBroadcast.Name = "btnConnectServerBroadcast";
-            this.btnConnectServerBroadcast.Size = new System.Drawing.Size(279, 34);
+            this.btnConnectServerBroadcast.Size = new System.Drawing.Size(202, 28);
             this.btnConnectServerBroadcast.TabIndex = 63;
             this.btnConnectServerBroadcast.Text = "Connect";
             this.btnConnectServerBroadcast.UseVisualStyleBackColor = false;
@@ -93,19 +93,17 @@
             // 
             // txtboxIPAddress
             // 
-            this.txtboxIPAddress.Location = new System.Drawing.Point(146, 32);
-            this.txtboxIPAddress.Margin = new System.Windows.Forms.Padding(4);
+            this.txtboxIPAddress.Location = new System.Drawing.Point(110, 26);
             this.txtboxIPAddress.Name = "txtboxIPAddress";
-            this.txtboxIPAddress.Size = new System.Drawing.Size(144, 23);
+            this.txtboxIPAddress.Size = new System.Drawing.Size(98, 20);
             this.txtboxIPAddress.TabIndex = 60;
             this.txtboxIPAddress.Text = "238.1.1.0";
             // 
             // textboxPort
             // 
-            this.textboxPort.Location = new System.Drawing.Point(146, 64);
-            this.textboxPort.Margin = new System.Windows.Forms.Padding(4);
+            this.textboxPort.Location = new System.Drawing.Point(110, 52);
             this.textboxPort.Name = "textboxPort";
-            this.textboxPort.Size = new System.Drawing.Size(144, 23);
+            this.textboxPort.Size = new System.Drawing.Size(98, 20);
             this.textboxPort.TabIndex = 61;
             this.textboxPort.Text = "2000";
             // 
@@ -113,10 +111,9 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(8, 31);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1.Location = new System.Drawing.Point(6, 25);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(101, 17);
+            this.label1.Size = new System.Drawing.Size(77, 13);
             this.label1.TabIndex = 24;
             this.label1.Text = "Multicast Addr:";
             // 
@@ -124,30 +121,27 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(8, 64);
-            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label2.Location = new System.Drawing.Point(6, 52);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(38, 17);
+            this.label2.Size = new System.Drawing.Size(29, 13);
             this.label2.TabIndex = 25;
             this.label2.Text = "Port:";
             // 
             // comboBoxNetworkInterface
             // 
             this.comboBoxNetworkInterface.FormattingEnabled = true;
-            this.comboBoxNetworkInterface.Location = new System.Drawing.Point(157, 13);
-            this.comboBoxNetworkInterface.Margin = new System.Windows.Forms.Padding(4);
+            this.comboBoxNetworkInterface.Location = new System.Drawing.Point(118, 11);
             this.comboBoxNetworkInterface.Name = "comboBoxNetworkInterface";
-            this.comboBoxNetworkInterface.Size = new System.Drawing.Size(129, 24);
+            this.comboBoxNetworkInterface.Size = new System.Drawing.Size(101, 21);
             this.comboBoxNetworkInterface.TabIndex = 62;
             // 
             // Server_Interface
             // 
             this.Server_Interface.AutoSize = true;
             this.Server_Interface.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Server_Interface.Location = new System.Drawing.Point(19, 15);
-            this.Server_Interface.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.Server_Interface.Location = new System.Drawing.Point(6, 14);
             this.Server_Interface.Name = "Server_Interface";
-            this.Server_Interface.Size = new System.Drawing.Size(139, 17);
+            this.Server_Interface.Size = new System.Drawing.Size(106, 13);
             this.Server_Interface.TabIndex = 26;
             this.Server_Interface.Text = "Local Interface Addr:";
             // 
@@ -159,11 +153,11 @@
             this.groupBox2.Controls.Add(this.label3);
             this.groupBox2.Controls.Add(this.label4);
             this.groupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox2.Location = new System.Drawing.Point(317, 43);
-            this.groupBox2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.groupBox2.Location = new System.Drawing.Point(233, 35);
+            this.groupBox2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.groupBox2.Size = new System.Drawing.Size(270, 131);
+            this.groupBox2.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox2.Size = new System.Drawing.Size(210, 105);
             this.groupBox2.TabIndex = 1;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Client (CWP 1)";
@@ -172,10 +166,10 @@
             // 
             this.btnConnectCWP1.BackColor = System.Drawing.Color.Red;
             this.btnConnectCWP1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnConnectCWP1.Location = new System.Drawing.Point(5, 89);
-            this.btnConnectCWP1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnConnectCWP1.Location = new System.Drawing.Point(4, 76);
+            this.btnConnectCWP1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnConnectCWP1.Name = "btnConnectCWP1";
-            this.btnConnectCWP1.Size = new System.Drawing.Size(255, 34);
+            this.btnConnectCWP1.Size = new System.Drawing.Size(202, 28);
             this.btnConnectCWP1.TabIndex = 63;
             this.btnConnectCWP1.Text = "Connect";
             this.btnConnectCWP1.UseVisualStyleBackColor = false;
@@ -183,20 +177,18 @@
             // 
             // txtMulticastCWP1
             // 
-            this.txtMulticastCWP1.Location = new System.Drawing.Point(145, 26);
-            this.txtMulticastCWP1.Margin = new System.Windows.Forms.Padding(4);
+            this.txtMulticastCWP1.Location = new System.Drawing.Point(109, 21);
             this.txtMulticastCWP1.Name = "txtMulticastCWP1";
-            this.txtMulticastCWP1.Size = new System.Drawing.Size(115, 23);
+            this.txtMulticastCWP1.Size = new System.Drawing.Size(98, 20);
             this.txtMulticastCWP1.TabIndex = 60;
             this.txtMulticastCWP1.Text = "238.1.1.1";
             this.txtMulticastCWP1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // txtPortCWP1
             // 
-            this.txtPortCWP1.Location = new System.Drawing.Point(145, 59);
-            this.txtPortCWP1.Margin = new System.Windows.Forms.Padding(4);
+            this.txtPortCWP1.Location = new System.Drawing.Point(109, 48);
             this.txtPortCWP1.Name = "txtPortCWP1";
-            this.txtPortCWP1.Size = new System.Drawing.Size(115, 23);
+            this.txtPortCWP1.Size = new System.Drawing.Size(98, 20);
             this.txtPortCWP1.TabIndex = 61;
             this.txtPortCWP1.Text = "2001";
             // 
@@ -204,10 +196,9 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(7, 25);
-            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label3.Location = new System.Drawing.Point(5, 20);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(101, 17);
+            this.label3.Size = new System.Drawing.Size(77, 13);
             this.label3.TabIndex = 24;
             this.label3.Text = "Multicast Addr:";
             // 
@@ -215,10 +206,9 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(7, 58);
-            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label4.Location = new System.Drawing.Point(5, 47);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(38, 17);
+            this.label4.Size = new System.Drawing.Size(29, 13);
             this.label4.TabIndex = 25;
             this.label4.Text = "Port:";
             // 
@@ -230,11 +220,11 @@
             this.groupBox3.Controls.Add(this.label6);
             this.groupBox3.Controls.Add(this.label7);
             this.groupBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox3.Location = new System.Drawing.Point(12, 178);
-            this.groupBox3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.groupBox3.Location = new System.Drawing.Point(9, 145);
+            this.groupBox3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.groupBox3.Size = new System.Drawing.Size(299, 130);
+            this.groupBox3.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox3.Size = new System.Drawing.Size(210, 105);
             this.groupBox3.TabIndex = 2;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Client (CWP 2)";
@@ -243,10 +233,10 @@
             // 
             this.btnConnectCWP2.BackColor = System.Drawing.Color.Red;
             this.btnConnectCWP2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnConnectCWP2.Location = new System.Drawing.Point(11, 89);
-            this.btnConnectCWP2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnConnectCWP2.Location = new System.Drawing.Point(8, 72);
+            this.btnConnectCWP2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnConnectCWP2.Name = "btnConnectCWP2";
-            this.btnConnectCWP2.Size = new System.Drawing.Size(279, 34);
+            this.btnConnectCWP2.Size = new System.Drawing.Size(202, 28);
             this.btnConnectCWP2.TabIndex = 63;
             this.btnConnectCWP2.Text = "Connect";
             this.btnConnectCWP2.UseVisualStyleBackColor = false;
@@ -254,19 +244,17 @@
             // 
             // txtMulticastCWP2
             // 
-            this.txtMulticastCWP2.Location = new System.Drawing.Point(145, 26);
-            this.txtMulticastCWP2.Margin = new System.Windows.Forms.Padding(4);
+            this.txtMulticastCWP2.Location = new System.Drawing.Point(109, 21);
             this.txtMulticastCWP2.Name = "txtMulticastCWP2";
-            this.txtMulticastCWP2.Size = new System.Drawing.Size(145, 23);
+            this.txtMulticastCWP2.Size = new System.Drawing.Size(98, 20);
             this.txtMulticastCWP2.TabIndex = 60;
             this.txtMulticastCWP2.Text = "238.1.1.2";
             // 
             // txtPortCWP2
             // 
-            this.txtPortCWP2.Location = new System.Drawing.Point(145, 59);
-            this.txtPortCWP2.Margin = new System.Windows.Forms.Padding(4);
+            this.txtPortCWP2.Location = new System.Drawing.Point(109, 48);
             this.txtPortCWP2.Name = "txtPortCWP2";
-            this.txtPortCWP2.Size = new System.Drawing.Size(145, 23);
+            this.txtPortCWP2.Size = new System.Drawing.Size(98, 20);
             this.txtPortCWP2.TabIndex = 61;
             this.txtPortCWP2.Text = "2002";
             // 
@@ -274,10 +262,9 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(7, 25);
-            this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label6.Location = new System.Drawing.Point(5, 20);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(101, 17);
+            this.label6.Size = new System.Drawing.Size(77, 13);
             this.label6.TabIndex = 24;
             this.label6.Text = "Multicast Addr:";
             // 
@@ -285,10 +272,9 @@
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(7, 58);
-            this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label7.Location = new System.Drawing.Point(5, 47);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(38, 17);
+            this.label7.Size = new System.Drawing.Size(29, 13);
             this.label7.TabIndex = 25;
             this.label7.Text = "Port:";
             // 
@@ -300,11 +286,11 @@
             this.groupBox4.Controls.Add(this.label9);
             this.groupBox4.Controls.Add(this.label10);
             this.groupBox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox4.Location = new System.Drawing.Point(317, 184);
-            this.groupBox4.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.groupBox4.Location = new System.Drawing.Point(233, 150);
+            this.groupBox4.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.groupBox4.Size = new System.Drawing.Size(270, 124);
+            this.groupBox4.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox4.Size = new System.Drawing.Size(210, 105);
             this.groupBox4.TabIndex = 64;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Client (CWP 3)";
@@ -313,10 +299,10 @@
             // 
             this.btnConnectCWP3.BackColor = System.Drawing.Color.Red;
             this.btnConnectCWP3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnConnectCWP3.Location = new System.Drawing.Point(11, 81);
-            this.btnConnectCWP3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnConnectCWP3.Location = new System.Drawing.Point(4, 67);
+            this.btnConnectCWP3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnConnectCWP3.Name = "btnConnectCWP3";
-            this.btnConnectCWP3.Size = new System.Drawing.Size(249, 34);
+            this.btnConnectCWP3.Size = new System.Drawing.Size(202, 28);
             this.btnConnectCWP3.TabIndex = 63;
             this.btnConnectCWP3.Text = "Connect";
             this.btnConnectCWP3.UseVisualStyleBackColor = false;
@@ -324,19 +310,17 @@
             // 
             // txtMulticastCWP3
             // 
-            this.txtMulticastCWP3.Location = new System.Drawing.Point(145, 18);
-            this.txtMulticastCWP3.Margin = new System.Windows.Forms.Padding(4);
+            this.txtMulticastCWP3.Location = new System.Drawing.Point(109, 15);
             this.txtMulticastCWP3.Name = "txtMulticastCWP3";
-            this.txtMulticastCWP3.Size = new System.Drawing.Size(115, 23);
+            this.txtMulticastCWP3.Size = new System.Drawing.Size(98, 20);
             this.txtMulticastCWP3.TabIndex = 60;
             this.txtMulticastCWP3.Text = "238.1.1.3";
             // 
             // txtPortCWP3
             // 
-            this.txtPortCWP3.Location = new System.Drawing.Point(145, 52);
-            this.txtPortCWP3.Margin = new System.Windows.Forms.Padding(4);
+            this.txtPortCWP3.Location = new System.Drawing.Point(109, 42);
             this.txtPortCWP3.Name = "txtPortCWP3";
-            this.txtPortCWP3.Size = new System.Drawing.Size(115, 23);
+            this.txtPortCWP3.Size = new System.Drawing.Size(98, 20);
             this.txtPortCWP3.TabIndex = 61;
             this.txtPortCWP3.Text = "2003";
             // 
@@ -344,10 +328,9 @@
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(7, 25);
-            this.label9.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label9.Location = new System.Drawing.Point(5, 20);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(101, 17);
+            this.label9.Size = new System.Drawing.Size(77, 13);
             this.label9.TabIndex = 24;
             this.label9.Text = "Multicast Addr:";
             // 
@@ -355,19 +338,18 @@
             // 
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(7, 50);
-            this.label10.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label10.Location = new System.Drawing.Point(5, 41);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(38, 17);
+            this.label10.Size = new System.Drawing.Size(29, 13);
             this.label10.TabIndex = 25;
             this.label10.Text = "Port:";
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(12, 312);
-            this.button1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.button1.Location = new System.Drawing.Point(9, 254);
+            this.button1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(575, 34);
+            this.button1.Size = new System.Drawing.Size(431, 28);
             this.button1.TabIndex = 67;
             this.button1.Text = "Close";
             this.button1.UseVisualStyleBackColor = true;
@@ -375,9 +357,9 @@
             // 
             // Server_Connection_Settings
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(594, 356);
+            this.ClientSize = new System.Drawing.Size(446, 289);
             this.ControlBox = false;
             this.Controls.Add(this.button1);
             this.Controls.Add(this.comboBoxNetworkInterface);
@@ -386,7 +368,7 @@
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.Server_Interface);
-            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "Server_Connection_Settings";
             this.Text = "Connection Settings";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Server_Connection_Settings_FormClosing);
