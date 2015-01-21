@@ -129,19 +129,19 @@
       <Value Profile="(Default)">238.1.1.1</Value>
     </Setting>
     <Setting Name="CWP1_Port" Type="System.String" Scope="User">
-      <Value Profile="(Default)">2000</Value>
+      <Value Profile="(Default)">2001</Value>
     </Setting>
     <Setting Name="CWP2_Multicast_Address" Type="System.String" Scope="User">
       <Value Profile="(Default)">238.1.1.1</Value>
     </Setting>
     <Setting Name="CWP2_Port" Type="System.String" Scope="User">
-      <Value Profile="(Default)">2000</Value>
+      <Value Profile="(Default)">2002</Value>
     </Setting>
     <Setting Name="CWP3_Multicast_Address" Type="System.String" Scope="User">
       <Value Profile="(Default)">238.1.1.1</Value>
     </Setting>
     <Setting Name="CWP3_Port" Type="System.String" Scope="User">
-      <Value Profile="(Default)">2000</Value>
+      <Value Profile="(Default)">2003</Value>
     </Setting>
     <Setting Name="Client_Interface_Index" Type="System.Int32" Scope="User">
       <Value Profile="(Default)">0</Value>
@@ -151,6 +151,12 @@
     </Setting>
     <Setting Name="Client_Port" Type="System.String" Scope="User">
       <Value Profile="(Default)">2000</Value>
+    </Setting>
+    <Setting Name="Client_Brodacast_Address" Type="System.String" Scope="User">
+      <Value Profile="(Default)">238.1.1.1</Value>
+    </Setting>
+    <Setting Name="Client_Broadcast_Port" Type="System.String" Scope="User">
+      <Value Profile="(Default)">2001</Value>
     </Setting>
   </Settings>
 </SettingsFile>

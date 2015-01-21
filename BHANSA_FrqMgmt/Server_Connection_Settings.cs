@@ -239,6 +239,8 @@ namespace BHANSA_FrqMgmt
             if (tx_sock != null)
                 tx_sock.Close();
 
+
+
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)
@@ -664,6 +666,17 @@ namespace BHANSA_FrqMgmt
             Properties.Settings.Default.CWP3_Port = txtPortCWP3.Text;
 
             Properties.Settings.Default.Save();
+
+            if (rcv_sock_CWP1 != null)
+                rcv_sock_CWP1.Close();
+
+            if (rcv_sock_CWP2 != null)
+                rcv_sock_CWP2.Close();
+
+            if (rcv_sock_CWP3 != null)
+                rcv_sock_CWP3.Close();
+
+            Cleanup();
         }
     }
 }

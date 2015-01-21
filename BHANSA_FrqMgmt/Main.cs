@@ -506,6 +506,10 @@ namespace BHANSA_FrqMgmt
         private void Main_FormClosing(object sender, FormClosingEventArgs e)
         {
             Update_And_Save();
+            Server_Connection_Settings_Form.Close();
+            Clinet_Connection_Settings_Form.Close();
+            GS.Close();
+           
         }
 
         private void backgroundColorToolStripMenuItem_Click(object sender, EventArgs e)

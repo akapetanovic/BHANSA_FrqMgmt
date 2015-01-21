@@ -60,8 +60,10 @@ namespace BHANSA_FrqMgmt
             if (comboBoxNetworkInterface.Items.Count > 0)
                 comboBoxNetworkInterface.SelectedIndex = Properties.Settings.Default.Client_Interface_Index;
 
-            txtboxIPAddress.Text = Properties.Settings.Default.Client_Multicast_Address;
-            textboxPort.Text = Properties.Settings.Default.Client_Port;
+            txtboxServerMulticastAddress.Text = Properties.Settings.Default.Client_Multicast_Address;
+            textboxServerMulticastPort.Text = Properties.Settings.Default.Client_Port;
+            textBoxClientMulticastAddress.Text = Properties.Settings.Default.Client_Brodacast_Address;
+            textBoxClientMulticastPort.Text = Properties.Settings.Default.Client_Broadcast_Port;
         }
 
         public static bool StartListening(IPAddress Interface_Addres,  // IP address of the interface where the data is expected
@@ -142,14 +144,14 @@ namespace BHANSA_FrqMgmt
                 bool Input_Validated = true;
 
                 // First make sure that all boxes are filled out
-                if ((!string.IsNullOrEmpty(this.txtboxIPAddress.Text)) &&
+                if ((!string.IsNullOrEmpty(this.txtboxServerMulticastAddress.Text)) &&
                      (!string.IsNullOrEmpty(this.comboBoxNetworkInterface.Text)) &&
-                    (!string.IsNullOrEmpty(this.textboxPort.Text)))
+                    (!string.IsNullOrEmpty(this.textboxServerMulticastPort.Text)))
                 {
                     IPAddress IP;
                     IPAddress Multicast;
                     // Validate that a valid IP address is entered
-                    if ((IPAddress.TryParse(this.txtboxIPAddress.Text, out Multicast) != true) || (IPAddress.TryParse(this.comboBoxNetworkInterface.Text, out IP) != true))
+                    if ((IPAddress.TryParse(this.txtboxServerMulticastAddress.Text, out Multicast) != true) || (IPAddress.TryParse(this.comboBoxNetworkInterface.Text, out IP) != true))
                     {
                         MessageBox.Show("Not a valid IP address");
                         Input_Validated = false;
@@ -173,7 +175,7 @@ namespace BHANSA_FrqMgmt
                     }
 
                     int PortNumber;
-                    if (int.TryParse(this.textboxPort.Text, out PortNumber) && (PortNumber >= 1 && PortNumber <= 65535))
+                    if (int.TryParse(this.textboxServerMulticastPort.Text, out PortNumber) && (PortNumber >= 1 && PortNumber <= 65535))
                     {
                     }
                     else
@@ -191,8 +193,8 @@ namespace BHANSA_FrqMgmt
                 if (Input_Validated == true)
                 {
                     if (StartListening(IPAddress.Parse(this.comboBoxNetworkInterface.Items[this.comboBoxNetworkInterface.SelectedIndex].ToString()),
-                                 IPAddress.Parse(this.txtboxIPAddress.Text),
-                                 int.Parse(this.textboxPort.Text)) == true)
+                                 IPAddress.Parse(this.txtboxServerMulticastAddress.Text),
+                                 int.Parse(this.textboxServerMulticastPort.Text)) == true)
                     {
 
                         this.btnConnectServerBroadcast.Text = "Disconnect";
@@ -230,8 +232,10 @@ namespace BHANSA_FrqMgmt
         {
 
             Properties.Settings.Default.Client_Interface_Index = comboBoxNetworkInterface.SelectedIndex;
-            Properties.Settings.Default.Client_Multicast_Address = txtboxIPAddress.Text;
-            Properties.Settings.Default.Client_Port = textboxPort.Text;
+            Properties.Settings.Default.Client_Multicast_Address = txtboxServerMulticastAddress.Text;
+            Properties.Settings.Default.Client_Port = textboxServerMulticastPort.Text;
+            Properties.Settings.Default.Client_Brodacast_Address = textBoxClientMulticastAddress.Text;
+            Properties.Settings.Default.Client_Broadcast_Port = textBoxClientMulticastPort.Text;
 
             Properties.Settings.Default.Save();
 
@@ -239,6 +243,16 @@ namespace BHANSA_FrqMgmt
         }
 
         private void Client_Connection_Settings_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Cleanup();
+        }
+
+        private void textBoxClientMulticastPort_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Client_Connection_Settings_FormClosing(object sender, FormClosingEventArgs e)
         {
             Cleanup();
         }

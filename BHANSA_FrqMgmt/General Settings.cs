@@ -36,7 +36,6 @@ namespace BHANSA_FrqMgmt
 
         private void checkBox1_CheckedChanged(object sender, EventArgs e)
         {
-            MessageBox.Show("Changing mode will close current connections!");
             Shared_Data.I_Am_Server = this.checkBox1.Checked;
             Properties.Settings.Default.I_am_Server = Shared_Data.I_Am_Server;
             Properties.Settings.Default.Save();

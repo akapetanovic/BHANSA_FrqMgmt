@@ -529,7 +529,7 @@ namespace BHANSA_FrqMgmt.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("2000")]
+        [global::System.Configuration.DefaultSettingValueAttribute("2001")]
         public string CWP1_Port {
             get {
                 return ((string)(this["CWP1_Port"]));
@@ -553,7 +553,7 @@ namespace BHANSA_FrqMgmt.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("2000")]
+        [global::System.Configuration.DefaultSettingValueAttribute("2002")]
         public string CWP2_Port {
             get {
                 return ((string)(this["CWP2_Port"]));
@@ -577,7 +577,7 @@ namespace BHANSA_FrqMgmt.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("2000")]
+        [global::System.Configuration.DefaultSettingValueAttribute("2003")]
         public string CWP3_Port {
             get {
                 return ((string)(this["CWP3_Port"]));
@@ -620,6 +620,30 @@ namespace BHANSA_FrqMgmt.Properties {
             }
             set {
                 this["Client_Port"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("238.1.1.1")]
+        public string Client_Brodacast_Address {
+            get {
+                return ((string)(this["Client_Brodacast_Address"]));
+            }
+            set {
+                this["Client_Brodacast_Address"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("2001")]
+        public string Client_Broadcast_Port {
+            get {
+                return ((string)(this["Client_Broadcast_Port"]));
+            }
+            set {
+                this["Client_Broadcast_Port"] = value;
             }
         }
     }

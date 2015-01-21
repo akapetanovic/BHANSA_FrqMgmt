@@ -30,11 +30,11 @@
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.btnConnectServerBroadcast = new System.Windows.Forms.Button();
-            this.comboBoxNetworkInterface = new System.Windows.Forms.ComboBox();
             this.txtboxIPAddress = new System.Windows.Forms.TextBox();
             this.textboxPort = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
+            this.comboBoxNetworkInterface = new System.Windows.Forms.ComboBox();
             this.Server_Interface = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.btnConnectCWP1 = new System.Windows.Forms.Button();
@@ -64,59 +64,48 @@
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.btnConnectServerBroadcast);
-            this.groupBox1.Controls.Add(this.comboBoxNetworkInterface);
             this.groupBox1.Controls.Add(this.txtboxIPAddress);
             this.groupBox1.Controls.Add(this.textboxPort);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Controls.Add(this.label2);
-            this.groupBox1.Controls.Add(this.Server_Interface);
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox1.Location = new System.Drawing.Point(12, 12);
+            this.groupBox1.Location = new System.Drawing.Point(12, 43);
             this.groupBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.groupBox1.Size = new System.Drawing.Size(315, 172);
+            this.groupBox1.Size = new System.Drawing.Size(299, 131);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Server Settings";
+            this.groupBox1.Text = "Server Broadcast Connection Settings";
             // 
             // btnConnectServerBroadcast
             // 
             this.btnConnectServerBroadcast.BackColor = System.Drawing.Color.Red;
             this.btnConnectServerBroadcast.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnConnectServerBroadcast.Location = new System.Drawing.Point(11, 128);
+            this.btnConnectServerBroadcast.Location = new System.Drawing.Point(11, 93);
             this.btnConnectServerBroadcast.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnConnectServerBroadcast.Name = "btnConnectServerBroadcast";
-            this.btnConnectServerBroadcast.Size = new System.Drawing.Size(288, 34);
+            this.btnConnectServerBroadcast.Size = new System.Drawing.Size(279, 34);
             this.btnConnectServerBroadcast.TabIndex = 63;
             this.btnConnectServerBroadcast.Text = "Connect";
             this.btnConnectServerBroadcast.UseVisualStyleBackColor = false;
             this.btnConnectServerBroadcast.Click += new System.EventHandler(this.btnConnectServerBroadcast_Click);
             // 
-            // comboBoxNetworkInterface
-            // 
-            this.comboBoxNetworkInterface.FormattingEnabled = true;
-            this.comboBoxNetworkInterface.Location = new System.Drawing.Point(145, 30);
-            this.comboBoxNetworkInterface.Margin = new System.Windows.Forms.Padding(4);
-            this.comboBoxNetworkInterface.Name = "comboBoxNetworkInterface";
-            this.comboBoxNetworkInterface.Size = new System.Drawing.Size(153, 24);
-            this.comboBoxNetworkInterface.TabIndex = 62;
-            // 
             // txtboxIPAddress
             // 
-            this.txtboxIPAddress.Location = new System.Drawing.Point(145, 66);
+            this.txtboxIPAddress.Location = new System.Drawing.Point(146, 32);
             this.txtboxIPAddress.Margin = new System.Windows.Forms.Padding(4);
             this.txtboxIPAddress.Name = "txtboxIPAddress";
-            this.txtboxIPAddress.Size = new System.Drawing.Size(153, 23);
+            this.txtboxIPAddress.Size = new System.Drawing.Size(144, 23);
             this.txtboxIPAddress.TabIndex = 60;
-            this.txtboxIPAddress.Text = "238.1.1.1";
+            this.txtboxIPAddress.Text = "238.1.1.0";
             // 
             // textboxPort
             // 
-            this.textboxPort.Location = new System.Drawing.Point(145, 98);
+            this.textboxPort.Location = new System.Drawing.Point(146, 64);
             this.textboxPort.Margin = new System.Windows.Forms.Padding(4);
             this.textboxPort.Name = "textboxPort";
-            this.textboxPort.Size = new System.Drawing.Size(153, 23);
+            this.textboxPort.Size = new System.Drawing.Size(144, 23);
             this.textboxPort.TabIndex = 61;
             this.textboxPort.Text = "2000";
             // 
@@ -124,7 +113,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(7, 65);
+            this.label1.Location = new System.Drawing.Point(8, 31);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(101, 17);
@@ -135,18 +124,27 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(7, 98);
+            this.label2.Location = new System.Drawing.Point(8, 64);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(38, 17);
             this.label2.TabIndex = 25;
             this.label2.Text = "Port:";
             // 
+            // comboBoxNetworkInterface
+            // 
+            this.comboBoxNetworkInterface.FormattingEnabled = true;
+            this.comboBoxNetworkInterface.Location = new System.Drawing.Point(157, 13);
+            this.comboBoxNetworkInterface.Margin = new System.Windows.Forms.Padding(4);
+            this.comboBoxNetworkInterface.Name = "comboBoxNetworkInterface";
+            this.comboBoxNetworkInterface.Size = new System.Drawing.Size(129, 24);
+            this.comboBoxNetworkInterface.TabIndex = 62;
+            // 
             // Server_Interface
             // 
             this.Server_Interface.AutoSize = true;
             this.Server_Interface.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Server_Interface.Location = new System.Drawing.Point(7, 32);
+            this.Server_Interface.Location = new System.Drawing.Point(19, 15);
             this.Server_Interface.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.Server_Interface.Name = "Server_Interface";
             this.Server_Interface.Size = new System.Drawing.Size(139, 17);
@@ -161,11 +159,11 @@
             this.groupBox2.Controls.Add(this.label3);
             this.groupBox2.Controls.Add(this.label4);
             this.groupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox2.Location = new System.Drawing.Point(12, 190);
+            this.groupBox2.Location = new System.Drawing.Point(317, 43);
             this.groupBox2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.groupBox2.Size = new System.Drawing.Size(315, 130);
+            this.groupBox2.Size = new System.Drawing.Size(270, 131);
             this.groupBox2.TabIndex = 1;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Client (CWP 1)";
@@ -177,7 +175,7 @@
             this.btnConnectCWP1.Location = new System.Drawing.Point(5, 89);
             this.btnConnectCWP1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnConnectCWP1.Name = "btnConnectCWP1";
-            this.btnConnectCWP1.Size = new System.Drawing.Size(288, 34);
+            this.btnConnectCWP1.Size = new System.Drawing.Size(255, 34);
             this.btnConnectCWP1.TabIndex = 63;
             this.btnConnectCWP1.Text = "Connect";
             this.btnConnectCWP1.UseVisualStyleBackColor = false;
@@ -188,7 +186,7 @@
             this.txtMulticastCWP1.Location = new System.Drawing.Point(145, 26);
             this.txtMulticastCWP1.Margin = new System.Windows.Forms.Padding(4);
             this.txtMulticastCWP1.Name = "txtMulticastCWP1";
-            this.txtMulticastCWP1.Size = new System.Drawing.Size(153, 23);
+            this.txtMulticastCWP1.Size = new System.Drawing.Size(115, 23);
             this.txtMulticastCWP1.TabIndex = 60;
             this.txtMulticastCWP1.Text = "238.1.1.1";
             this.txtMulticastCWP1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
@@ -198,7 +196,7 @@
             this.txtPortCWP1.Location = new System.Drawing.Point(145, 59);
             this.txtPortCWP1.Margin = new System.Windows.Forms.Padding(4);
             this.txtPortCWP1.Name = "txtPortCWP1";
-            this.txtPortCWP1.Size = new System.Drawing.Size(153, 23);
+            this.txtPortCWP1.Size = new System.Drawing.Size(115, 23);
             this.txtPortCWP1.TabIndex = 61;
             this.txtPortCWP1.Text = "2001";
             // 
@@ -232,11 +230,11 @@
             this.groupBox3.Controls.Add(this.label6);
             this.groupBox3.Controls.Add(this.label7);
             this.groupBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox3.Location = new System.Drawing.Point(12, 319);
+            this.groupBox3.Location = new System.Drawing.Point(12, 178);
             this.groupBox3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.groupBox3.Size = new System.Drawing.Size(315, 130);
+            this.groupBox3.Size = new System.Drawing.Size(299, 130);
             this.groupBox3.TabIndex = 2;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Client (CWP 2)";
@@ -248,7 +246,7 @@
             this.btnConnectCWP2.Location = new System.Drawing.Point(11, 89);
             this.btnConnectCWP2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnConnectCWP2.Name = "btnConnectCWP2";
-            this.btnConnectCWP2.Size = new System.Drawing.Size(288, 34);
+            this.btnConnectCWP2.Size = new System.Drawing.Size(279, 34);
             this.btnConnectCWP2.TabIndex = 63;
             this.btnConnectCWP2.Text = "Connect";
             this.btnConnectCWP2.UseVisualStyleBackColor = false;
@@ -259,16 +257,16 @@
             this.txtMulticastCWP2.Location = new System.Drawing.Point(145, 26);
             this.txtMulticastCWP2.Margin = new System.Windows.Forms.Padding(4);
             this.txtMulticastCWP2.Name = "txtMulticastCWP2";
-            this.txtMulticastCWP2.Size = new System.Drawing.Size(153, 23);
+            this.txtMulticastCWP2.Size = new System.Drawing.Size(145, 23);
             this.txtMulticastCWP2.TabIndex = 60;
-            this.txtMulticastCWP2.Text = "238.1.1.1";
+            this.txtMulticastCWP2.Text = "238.1.1.2";
             // 
             // txtPortCWP2
             // 
             this.txtPortCWP2.Location = new System.Drawing.Point(145, 59);
             this.txtPortCWP2.Margin = new System.Windows.Forms.Padding(4);
             this.txtPortCWP2.Name = "txtPortCWP2";
-            this.txtPortCWP2.Size = new System.Drawing.Size(153, 23);
+            this.txtPortCWP2.Size = new System.Drawing.Size(145, 23);
             this.txtPortCWP2.TabIndex = 61;
             this.txtPortCWP2.Text = "2002";
             // 
@@ -302,11 +300,11 @@
             this.groupBox4.Controls.Add(this.label9);
             this.groupBox4.Controls.Add(this.label10);
             this.groupBox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox4.Location = new System.Drawing.Point(12, 455);
+            this.groupBox4.Location = new System.Drawing.Point(317, 184);
             this.groupBox4.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.groupBox4.Name = "groupBox4";
             this.groupBox4.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.groupBox4.Size = new System.Drawing.Size(315, 124);
+            this.groupBox4.Size = new System.Drawing.Size(270, 124);
             this.groupBox4.TabIndex = 64;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Client (CWP 3)";
@@ -318,7 +316,7 @@
             this.btnConnectCWP3.Location = new System.Drawing.Point(11, 81);
             this.btnConnectCWP3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnConnectCWP3.Name = "btnConnectCWP3";
-            this.btnConnectCWP3.Size = new System.Drawing.Size(288, 34);
+            this.btnConnectCWP3.Size = new System.Drawing.Size(249, 34);
             this.btnConnectCWP3.TabIndex = 63;
             this.btnConnectCWP3.Text = "Connect";
             this.btnConnectCWP3.UseVisualStyleBackColor = false;
@@ -329,16 +327,16 @@
             this.txtMulticastCWP3.Location = new System.Drawing.Point(145, 18);
             this.txtMulticastCWP3.Margin = new System.Windows.Forms.Padding(4);
             this.txtMulticastCWP3.Name = "txtMulticastCWP3";
-            this.txtMulticastCWP3.Size = new System.Drawing.Size(153, 23);
+            this.txtMulticastCWP3.Size = new System.Drawing.Size(115, 23);
             this.txtMulticastCWP3.TabIndex = 60;
-            this.txtMulticastCWP3.Text = "238.1.1.1";
+            this.txtMulticastCWP3.Text = "238.1.1.3";
             // 
             // txtPortCWP3
             // 
             this.txtPortCWP3.Location = new System.Drawing.Point(145, 52);
             this.txtPortCWP3.Margin = new System.Windows.Forms.Padding(4);
             this.txtPortCWP3.Name = "txtPortCWP3";
-            this.txtPortCWP3.Size = new System.Drawing.Size(153, 23);
+            this.txtPortCWP3.Size = new System.Drawing.Size(115, 23);
             this.txtPortCWP3.TabIndex = 61;
             this.txtPortCWP3.Text = "2003";
             // 
@@ -366,10 +364,10 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(12, 583);
+            this.button1.Location = new System.Drawing.Point(12, 312);
             this.button1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(315, 34);
+            this.button1.Size = new System.Drawing.Size(575, 34);
             this.button1.TabIndex = 67;
             this.button1.Text = "Close";
             this.button1.UseVisualStyleBackColor = true;
@@ -379,13 +377,15 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(342, 623);
+            this.ClientSize = new System.Drawing.Size(594, 356);
             this.ControlBox = false;
             this.Controls.Add(this.button1);
+            this.Controls.Add(this.comboBoxNetworkInterface);
             this.Controls.Add(this.groupBox4);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
+            this.Controls.Add(this.Server_Interface);
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "Server_Connection_Settings";
             this.Text = "Connection Settings";
@@ -401,6 +401,7 @@
             this.groupBox4.ResumeLayout(false);
             this.groupBox4.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
