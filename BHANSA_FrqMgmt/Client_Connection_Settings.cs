@@ -35,8 +35,6 @@ namespace BHANSA_FrqMgmt
         private static Thread ListenForDataThread;
         private static Thread BroadcastDataThread;
 
-        private static int BytesProcessed;
-
         public Client_Connection_Settings()
         {
             InitializeComponent();
@@ -118,7 +116,6 @@ namespace BHANSA_FrqMgmt
                         // (an octet, of course composed of 8bits)
                         UDPBuffer = rcv_sock.Receive(ref rcv_iep);
                         Shared_Data.Received_Data_List_From_Server.Clear();
-                        BytesProcessed = BytesProcessed + UDPBuffer.Length;
 
                         string[] words = System.Text.Encoding.Default.GetString(UDPBuffer).Split(',');
 
@@ -231,14 +228,18 @@ namespace BHANSA_FrqMgmt
 
         private void timer1_Tick(object sender, EventArgs e)
         {
-            if (Shared_Data.Update_Log_Window == true)
+            if (checkBoxEnableLogging.Checked == true)
             {
-                foreach (string s in Shared_Data.Received_Data_List_From_Server)
-                {
-                    listBoxRcvData.Items.Add(s);
-                }
-                Shared_Data.Update_Log_Window = false;
 
+                if (Shared_Data.Update_Log_Window == true)
+                {
+                    foreach (string s in Shared_Data.Received_Data_List_From_Server)
+                    {
+                        listBoxRcvData.Items.Add(s);
+                    }
+                    Shared_Data.Update_Log_Window = false;
+
+                }
             }
         }
 
@@ -394,7 +395,16 @@ namespace BHANSA_FrqMgmt
             {
                 try
                 {
-                    byte[] byData = System.Text.Encoding.ASCII.GetBytes(Properties.Settings.Default.Client_Broadcast_Port);
+                    byte[] byData = null;
+                    if (Shared_Data.Notify_Main_Display_Updated == true)
+                    {
+                        byData = System.Text.Encoding.ASCII.GetBytes("UPDATED_DISPLAY");
+                        Shared_Data.Notify_Main_Display_Updated = false;
+                    }
+                    else
+                    {
+                        byData = System.Text.Encoding.ASCII.GetBytes(Properties.Settings.Default.Client_Broadcast_Port);
+                    }
                     tx_sock.Send(byData, byData.Length, tx_iep);
                     Shared_Data.New_Distribution_Requested = false;
                 }
@@ -408,6 +418,11 @@ namespace BHANSA_FrqMgmt
             }
 
             Cleanup_Broadcast();
+        }
+
+        private void button2_Click_1(object sender, EventArgs e)
+        {
+            listBoxRcvData.Items.Clear();
         }
     }
 }

@@ -93,11 +93,9 @@
             this.connectionSettingsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.clientConnectionSettingsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.backgroundColorToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.distributeDataToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.label3 = new System.Windows.Forms.Label();
-            this.labelConnectionStatus = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.panel1.SuspendLayout();
             this.menuStrip1.SuspendLayout();
@@ -784,6 +782,13 @@
             this.backgroundColorToolStripMenuItem.Text = "Background color";
             this.backgroundColorToolStripMenuItem.Click += new System.EventHandler(this.backgroundColorToolStripMenuItem_Click);
             // 
+            // distributeDataToolStripMenuItem
+            // 
+            this.distributeDataToolStripMenuItem.Name = "distributeDataToolStripMenuItem";
+            this.distributeDataToolStripMenuItem.Size = new System.Drawing.Size(139, 20);
+            this.distributeDataToolStripMenuItem.Text = "Status and Distribution";
+            this.distributeDataToolStripMenuItem.Click += new System.EventHandler(this.distributeDataToolStripMenuItem_Click);
+            // 
             // aboutToolStripMenuItem
             // 
             this.aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
@@ -791,39 +796,10 @@
             this.aboutToolStripMenuItem.Text = "About";
             this.aboutToolStripMenuItem.Click += new System.EventHandler(this.aboutToolStripMenuItem_Click);
             // 
-            // distributeDataToolStripMenuItem
-            // 
-            this.distributeDataToolStripMenuItem.Name = "distributeDataToolStripMenuItem";
-            this.distributeDataToolStripMenuItem.Size = new System.Drawing.Size(97, 20);
-            this.distributeDataToolStripMenuItem.Text = "Distribute Data";
-            this.distributeDataToolStripMenuItem.Click += new System.EventHandler(this.distributeDataToolStripMenuItem_Click);
-            // 
             // timer1
             // 
             this.timer1.Enabled = true;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(557, 7);
-            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(100, 13);
-            this.label3.TabIndex = 63;
-            this.label3.Text = "Connection Status: ";
-            // 
-            // labelConnectionStatus
-            // 
-            this.labelConnectionStatus.AutoSize = true;
-            this.labelConnectionStatus.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelConnectionStatus.ForeColor = System.Drawing.Color.Red;
-            this.labelConnectionStatus.Location = new System.Drawing.Point(652, 7);
-            this.labelConnectionStatus.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.labelConnectionStatus.Name = "labelConnectionStatus";
-            this.labelConnectionStatus.Size = new System.Drawing.Size(78, 13);
-            this.labelConnectionStatus.TabIndex = 64;
-            this.labelConnectionStatus.Text = "Disconected";
             // 
             // Main
             // 
@@ -831,8 +807,6 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
             this.ClientSize = new System.Drawing.Size(734, 522);
-            this.Controls.Add(this.labelConnectionStatus);
-            this.Controls.Add(this.label3);
             this.Controls.Add(this.textBoxFree_Three);
             this.Controls.Add(this.textBoxChief_Sup);
             this.Controls.Add(this.End_X_DOWN_ZG);
@@ -965,8 +939,6 @@
         private System.Windows.Forms.ToolStripMenuItem clientConnectionSettingsToolStripMenuItem;
         private System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.ToolStripMenuItem generalSettingsToolStripMenuItem;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label labelConnectionStatus;
         private System.Windows.Forms.ToolStripMenuItem distributeDataToolStripMenuItem;
     }
 }

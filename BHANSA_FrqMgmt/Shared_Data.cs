@@ -19,6 +19,7 @@ namespace BHANSA_FrqMgmt
 
         public static bool Update_Log_Window = false;
         public static bool Update_Main_Data_Display = false;
+        public static bool Notify_Main_Display_Updated = false;
 
         public static List<string> Received_Data_List_From_CWP1 = new List<string>();
         public static List<string> Received_Data_List_From_CWP2 = new List<string>();
@@ -53,5 +54,15 @@ namespace BHANSA_FrqMgmt
 
         //    return CWP_Out;
         //}
+
+        public class CWP_Update_Pair
+        {
+            public bool Updated_Succefully = false;
+            public DateTime Last_Succefull_Update = DateTime.Now;
+        }
+
+        public static CWP_Update_Pair CWP1_Update_Status = new CWP_Update_Pair();
+        public static CWP_Update_Pair CWP2_Update_Status = new CWP_Update_Pair();
+        public static CWP_Update_Pair CWP3_Update_Status = new CWP_Update_Pair();
     }
 }

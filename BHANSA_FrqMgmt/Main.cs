@@ -791,6 +791,7 @@ namespace BHANSA_FrqMgmt
                     }
                 }
                 Shared_Data.Update_Main_Data_Display = false;
+                Shared_Data.Notify_Main_Display_Updated = true;
                 timer1.Enabled = true;
 
             }
@@ -829,17 +830,6 @@ namespace BHANSA_FrqMgmt
                 Shared_Data.Server_Client_Mode_Changed = false;
             }
 
-            if (Shared_Data.Is_Connected == false)
-            {
-                this.labelConnectionStatus.ForeColor = Color.Red;
-                this.labelConnectionStatus.Text = "Disconnected";
-            }
-            else
-            {
-                this.labelConnectionStatus.ForeColor = Color.Green;
-                this.labelConnectionStatus.Text = "Connected";
-            }
-
             if (Shared_Data.Initiate_Data_Distribution == true)
             {
                 Shared_Data.Data_To_Distribute(Get_Current_Data_Set());
@@ -858,6 +848,11 @@ namespace BHANSA_FrqMgmt
 
             DataDistributionForm DF = new DataDistributionForm();
             DF.Show();
+        }
+
+        private void cWPStatusToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+           
         }
     }
 }

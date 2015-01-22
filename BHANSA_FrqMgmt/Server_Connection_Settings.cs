@@ -362,7 +362,17 @@ namespace BHANSA_FrqMgmt
                     // Lets receive data in an array of bytes 
                     // (an octet, of course composed of 8bits)
                     UDPBuffer_CWP1 = rcv_sock_CWP1.Receive(ref rcv_iep_CWP1);
+
+                    string[] words = System.Text.Encoding.Default.GetString(UDPBuffer_CWP1).Split(',');
+
+                    if (words[0] == "UPDATED_DISPLAY")
+                    {
+                        Shared_Data.CWP1_Update_Status.Updated_Succefully = true;
+                        Shared_Data.CWP1_Update_Status.Last_Succefull_Update = DateTime.Now;
+                    }
+
                     Shared_Data.Received_Data_List_From_CWP1.Add(System.Text.Encoding.Default.GetString(UDPBuffer_CWP1));
+                   
                     Shared_Data.CWP1_Connected = true;
                     Shared_Data.Update_Log_Window = true;
                 }
@@ -491,6 +501,15 @@ namespace BHANSA_FrqMgmt
                     // Lets receive data in an array of bytes 
                     // (an octet, of course composed of 8bits)
                     UDPBuffer_CWP2 = rcv_sock_CWP2.Receive(ref rcv_iep_CWP2);
+
+                    string[] words = System.Text.Encoding.Default.GetString(UDPBuffer_CWP2).Split(',');
+
+                    if (words[0] == "UPDATED_DISPLAY")
+                    {
+                        Shared_Data.CWP2_Update_Status.Updated_Succefully = true;
+                        Shared_Data.CWP2_Update_Status.Last_Succefull_Update = DateTime.Now;
+                    }
+
                     Shared_Data.Received_Data_List_From_CWP2.Add(System.Text.Encoding.Default.GetString(UDPBuffer_CWP2));
                     Shared_Data.CWP2_Connected = true;
                     Shared_Data.Update_Log_Window = true;
@@ -620,6 +639,15 @@ namespace BHANSA_FrqMgmt
                     // Lets receive data in an array of bytes 
                     // (an octet, of course composed of 8bits)
                     UDPBuffer_CWP3 = rcv_sock_CWP3.Receive(ref rcv_iep_CWP3);
+
+                    string[] words = System.Text.Encoding.Default.GetString(UDPBuffer_CWP3).Split(',');
+
+                    if (words[0] == "UPDATED_DISPLAY")
+                    {
+                        Shared_Data.CWP3_Update_Status.Updated_Succefully = true;
+                        Shared_Data.CWP3_Update_Status.Last_Succefull_Update = DateTime.Now;
+                    }
+
                     Shared_Data.Received_Data_List_From_CWP3.Add(System.Text.Encoding.Default.GetString(UDPBuffer_CWP3));
                     Shared_Data.CWP3_Connected = true;
                     Shared_Data.Update_Log_Window = true;
@@ -712,8 +740,11 @@ namespace BHANSA_FrqMgmt
         {
             if (Shared_Data.Received_Data_List_From_CWP1.Count > 0)
             {
-                foreach (string S in Shared_Data.Received_Data_List_From_CWP1)
-                    this.listBoxLog.Items.Add("CWP1: " + S);
+                if (this.checkBoxEnableLogging.Checked == true)
+                {
+                    foreach (string S in Shared_Data.Received_Data_List_From_CWP1)
+                        this.listBoxLog.Items.Add("CWP1: " + S);
+                }
 
                 Shared_Data.Received_Data_List_From_CWP1.Clear();
             }
@@ -721,17 +752,22 @@ namespace BHANSA_FrqMgmt
             if (Shared_Data.Received_Data_List_From_CWP2.Count > 0)
             {
 
-                foreach (string S in Shared_Data.Received_Data_List_From_CWP2)
-                    this.listBoxLog.Items.Add("CWP2: " + S);
+                if (this.checkBoxEnableLogging.Checked == true)
+                {
+                    foreach (string S in Shared_Data.Received_Data_List_From_CWP2)
+                        this.listBoxLog.Items.Add("CWP2: " + S);
+                }
 
                 Shared_Data.Received_Data_List_From_CWP2.Clear();
             }
 
             if (Shared_Data.Received_Data_List_From_CWP3.Count > 0)
             {
-
-                foreach (string S in Shared_Data.Received_Data_List_From_CWP3)
-                    this.listBoxLog.Items.Add("CWP3: " + S);
+                if (this.checkBoxEnableLogging.Checked == true)
+                {
+                    foreach (string S in Shared_Data.Received_Data_List_From_CWP3)
+                        this.listBoxLog.Items.Add("CWP3: " + S);
+                }
 
                 Shared_Data.Received_Data_List_From_CWP3.Clear();
             }
@@ -753,6 +789,11 @@ namespace BHANSA_FrqMgmt
             Properties.Settings.Default.CWP3_Port = txtPortCWP3.Text;
 
             Properties.Settings.Default.Save();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            listBoxLog.Items.Clear();
         }
     }
 }
