@@ -245,7 +245,9 @@ namespace BHANSA_FrqMgmt
 
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
-
+            Properties.Settings.Default.CWP1_Port = txtPortCWP1.Text;
+           
+            Properties.Settings.Default.Save();
         }
 
         private void btnConnectCWP1_Click(object sender, EventArgs e)
@@ -361,12 +363,13 @@ namespace BHANSA_FrqMgmt
                     // (an octet, of course composed of 8bits)
                     UDPBuffer_CWP1 = rcv_sock_CWP1.Receive(ref rcv_iep_CWP1);
                     Shared_Data.Received_Data_List_From_CWP1.Add(System.Text.Encoding.Default.GetString(UDPBuffer_CWP1));
+                    Shared_Data.CWP1_Connected = true;
                     Shared_Data.Update_Log_Window = true;
                 }
                 catch
                 {
-                    if (KeepGoingCWP1 == true)
-                        MessageBox.Show("Issue in DoWork_CWP1");
+                    //if (KeepGoingCWP1 == true)
+                    //    MessageBox.Show("Issue in DoWork_CWP1");
                 }
 
             }
@@ -489,12 +492,13 @@ namespace BHANSA_FrqMgmt
                     // (an octet, of course composed of 8bits)
                     UDPBuffer_CWP2 = rcv_sock_CWP2.Receive(ref rcv_iep_CWP2);
                     Shared_Data.Received_Data_List_From_CWP2.Add(System.Text.Encoding.Default.GetString(UDPBuffer_CWP2));
+                    Shared_Data.CWP2_Connected = true;
                     Shared_Data.Update_Log_Window = true;
                 }
                 catch
                 {
-                    if (KeepGoingCWP2 == true)
-                        MessageBox.Show("Issue in DoWork_CWP2");
+                    //if (KeepGoingCWP2 == true)
+                    //    MessageBox.Show("Issue in DoWork_CWP2");
                 }
 
             }
@@ -617,12 +621,13 @@ namespace BHANSA_FrqMgmt
                     // (an octet, of course composed of 8bits)
                     UDPBuffer_CWP3 = rcv_sock_CWP3.Receive(ref rcv_iep_CWP3);
                     Shared_Data.Received_Data_List_From_CWP3.Add(System.Text.Encoding.Default.GetString(UDPBuffer_CWP3));
+                    Shared_Data.CWP3_Connected = true;
                     Shared_Data.Update_Log_Window = true;
                 }
                 catch
                 {
-                    if (KeepGoingCWP3 == true)
-                        MessageBox.Show("Issue in DoWork_CWP3");
+                    //if (KeepGoingCWP3 == true)
+                    //    MessageBox.Show("Issue in DoWork_CWP3");
                 }
 
             }
@@ -677,6 +682,77 @@ namespace BHANSA_FrqMgmt
                 rcv_sock_CWP3.Close();
 
             Cleanup();
+
+            if (ListenForDataThread != null)
+            {
+                ListenForDataThread.Abort();
+                ListenForDataThread.Join();
+            }
+
+            if (ListenForDataThread_CWP1 != null)
+            {
+                ListenForDataThread_CWP1.Abort();
+                ListenForDataThread_CWP1.Join();
+            }
+
+            if (ListenForDataThread_CWP2 != null)
+            {
+                ListenForDataThread_CWP2.Abort();
+                ListenForDataThread_CWP2.Join();
+            }
+
+            if (ListenForDataThread_CWP2 != null)
+            {
+                ListenForDataThread_CWP2.Abort();
+                ListenForDataThread_CWP2.Join();
+            }
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            if (Shared_Data.Received_Data_List_From_CWP1.Count > 0)
+            {
+                foreach (string S in Shared_Data.Received_Data_List_From_CWP1)
+                    this.listBoxLog.Items.Add("CWP1: " + S);
+
+                Shared_Data.Received_Data_List_From_CWP1.Clear();
+            }
+
+            if (Shared_Data.Received_Data_List_From_CWP2.Count > 0)
+            {
+
+                foreach (string S in Shared_Data.Received_Data_List_From_CWP2)
+                    this.listBoxLog.Items.Add("CWP2: " + S);
+
+                Shared_Data.Received_Data_List_From_CWP2.Clear();
+            }
+
+            if (Shared_Data.Received_Data_List_From_CWP3.Count > 0)
+            {
+
+                foreach (string S in Shared_Data.Received_Data_List_From_CWP3)
+                    this.listBoxLog.Items.Add("CWP3: " + S);
+
+                Shared_Data.Received_Data_List_From_CWP3.Clear();
+            }
+
+        }
+
+        private void txtPortCWP2_TextChanged(object sender, EventArgs e)
+        {
+           
+            Properties.Settings.Default.CWP2_Port = txtPortCWP2.Text;
+          
+
+            Properties.Settings.Default.Save();
+        }
+
+        private void txtPortCWP3_TextChanged(object sender, EventArgs e)
+        {
+           
+            Properties.Settings.Default.CWP3_Port = txtPortCWP3.Text;
+
+            Properties.Settings.Default.Save();
         }
     }
 }

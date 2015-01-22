@@ -15,18 +15,25 @@ namespace BHANSA_FrqMgmt
 {
     public partial class Client_Connection_Settings : Form
     {
-        private static bool KeepGoing = false;
-        private static bool RequestStop = false;
+        private static bool KeepGoing_Listen = false;
+        private static bool RequestStop_Listen = false;
+
+        private static bool KeepGoing_Broadcast = false;
 
         // Define UDP-Multicast RCV connection variables
         private static UdpClient rcv_sock;
         private static IPEndPoint rcv_iep;
+
+        // Define UDP-Multicast TX connection variables
+        private static UdpClient tx_sock;
+        private static IPEndPoint tx_iep;
 
         // Same buffer is used for sending and receiving
         private static byte[] UDPBuffer;
 
         // Define the main listener thread
         private static Thread ListenForDataThread;
+        private static Thread BroadcastDataThread;
 
         private static int BytesProcessed;
 
@@ -86,9 +93,9 @@ namespace BHANSA_FrqMgmt
                 return false;
             }
 
-            KeepGoing = true;
+            KeepGoing_Listen = true;
             Shared_Data.Is_Connected = true;
-            RequestStop = false;
+            RequestStop_Listen = false;
             ListenForDataThread = new Thread(new ThreadStart(DOWork));
             ListenForDataThread.Start();
 
@@ -97,12 +104,12 @@ namespace BHANSA_FrqMgmt
 
         private static void DOWork()
         {
-            while (KeepGoing)
+            while (KeepGoing_Listen)
             {
                 // OK user requested that we terminate 
                 // recording, so lets do it
-                if (RequestStop == true)
-                    KeepGoing = false;
+                if (RequestStop_Listen == true)
+                    KeepGoing_Listen = false;
                 else
                 {
                     try
@@ -116,7 +123,7 @@ namespace BHANSA_FrqMgmt
                         string[] words = System.Text.Encoding.Default.GetString(UDPBuffer).Split(',');
 
                         foreach (string S in words)
-                        Shared_Data.Received_Data_List_From_Server.Add(S);
+                            Shared_Data.Received_Data_List_From_Server.Add(S);
                         Shared_Data.Update_Log_Window = true;
                         Shared_Data.Update_Main_Data_Display = true;
                     }
@@ -127,14 +134,21 @@ namespace BHANSA_FrqMgmt
                 }
             }
 
-            Cleanup();
+            Cleanup_Listen();
         }
 
-        private static void Cleanup()
+        private static void Cleanup_Listen()
         {
             // Do a cleanup
             if (rcv_sock != null)
                 rcv_sock.Close();
+        }
+
+        private static void Cleanup_Broadcast()
+        {
+            // Do a cleanup
+            if (tx_sock != null)
+                tx_sock.Close();
         }
 
         private void btnConnectServerBroadcast_Click(object sender, EventArgs e)
@@ -205,12 +219,12 @@ namespace BHANSA_FrqMgmt
             }
             else
             {
-                KeepGoing = false;
+                KeepGoing_Listen = false;
                 Shared_Data.Is_Connected = false;
                 this.btnConnectServerBroadcast.Text = "Connect";
                 this.btnConnectServerBroadcast.BackColor = Color.Red;
                 timer1.Enabled = false;
-                Cleanup();
+                Cleanup_Listen();
 
             }
         }
@@ -224,7 +238,7 @@ namespace BHANSA_FrqMgmt
                     listBoxRcvData.Items.Add(s);
                 }
                 Shared_Data.Update_Log_Window = false;
-                
+
             }
         }
 
@@ -244,17 +258,156 @@ namespace BHANSA_FrqMgmt
 
         private void Client_Connection_Settings_FormClosed(object sender, FormClosedEventArgs e)
         {
-            Cleanup();
+            Cleanup_Listen();
+            Cleanup_Broadcast();
         }
 
         private void textBoxClientMulticastPort_TextChanged(object sender, EventArgs e)
         {
-
+           Properties.Settings.Default.Client_Broadcast_Port = textBoxClientMulticastPort.Text;
+           Properties.Settings.Default.Save();
         }
 
         private void Client_Connection_Settings_FormClosing(object sender, FormClosingEventArgs e)
         {
-            Cleanup();
+            Cleanup_Listen();
+            Cleanup_Broadcast();
+
+            if (BroadcastDataThread != null)
+            {
+                BroadcastDataThread.Abort();
+                BroadcastDataThread.Join();
+            }
+
+            if (ListenForDataThread != null)
+            {
+                ListenForDataThread.Abort();
+                ListenForDataThread.Join();
+            }
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            if (this.buttonClient_Broadcast_Connect.Text == "Connect")
+            {
+                bool Input_Validated = true;
+
+                // First make sure that all boxes are filled out
+                if ((!string.IsNullOrEmpty(this.textBoxClientMulticastAddress.Text)) &&
+                     (!string.IsNullOrEmpty(this.comboBoxNetworkInterface.Text)) &&
+                    (!string.IsNullOrEmpty(this.textBoxClientMulticastPort.Text)))
+                {
+                    IPAddress IP;
+                    IPAddress Multicast;
+                    // Validate that a valid IP address is entered
+                    if ((IPAddress.TryParse(this.textBoxClientMulticastAddress.Text, out Multicast) != true) || (IPAddress.TryParse(this.comboBoxNetworkInterface.Text, out IP) != true))
+                    {
+                        MessageBox.Show("Not a valid IP address");
+                        Input_Validated = false;
+                    }
+                    else // Add a check that this is a valid multicast address
+                    {
+                        UdpClient TempSock;
+                        TempSock = new UdpClient(4000);// Port does not matter
+                        // Open up a new socket with the net IP address and port number   
+                        try
+                        {
+                            TempSock.JoinMulticastGroup(Multicast, 50); // 50 is TTL value
+                        }
+                        catch
+                        {
+                            MessageBox.Show("Not valid Multicast address (has to be in range 224.0.0.0 to 239.255.255.255");
+                            Input_Validated = false;
+                            TempSock.Close();
+                        }
+                        TempSock.Close();
+                    }
+
+                    int PortNumber;
+                    if (int.TryParse(this.textBoxClientMulticastPort.Text, out PortNumber) && (PortNumber >= 1 && PortNumber <= 65535))
+                    {
+                    }
+                    else
+                    {
+                        MessageBox.Show("Invalid Port number");
+                        Input_Validated = false;
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Please fill out all data fileds");
+                    Input_Validated = false;
+                }
+
+                if (Input_Validated == true)
+                {
+                    if (StartBroadcast(IPAddress.Parse(this.comboBoxNetworkInterface.Items[this.comboBoxNetworkInterface.SelectedIndex].ToString()),
+                                 IPAddress.Parse(this.textBoxClientMulticastAddress.Text),
+                                 int.Parse(this.textBoxClientMulticastPort.Text)) == true)
+                    {
+
+                        this.buttonClient_Broadcast_Connect.Text = "Disconnect";
+                        this.buttonClient_Broadcast_Connect.BackColor = Color.Green;
+                    }
+                }
+            }
+            else
+            {
+                KeepGoing_Broadcast = false;
+                Shared_Data.Is_Connected = false;
+                this.buttonClient_Broadcast_Connect.Text = "Connect";
+                this.buttonClient_Broadcast_Connect.BackColor = Color.Red;
+                Cleanup_Broadcast();
+
+            }
+        }
+
+        public static bool StartBroadcast(IPAddress Local_Interface_Addres,  // IP address of the forward interface 
+                                         IPAddress Broadcast_Multicast_Address, // Multicast address of the forwarded data
+                                         int Broadcast_PortNumber)              // Port number of the forwarded data
+        {
+            // Open up outgoing socket
+            // Open up a new socket with the net IP address and port number   
+            try
+            {
+                tx_sock = new UdpClient();
+                tx_sock.JoinMulticastGroup(Broadcast_Multicast_Address, Local_Interface_Addres);
+                tx_iep = new IPEndPoint(Broadcast_Multicast_Address, Broadcast_PortNumber);
+
+            }
+            catch
+            {
+                MessageBox.Show("Not possible! Make sure given IP address/port is a valid one on your system or not already used by some other process");
+                return false;
+            }
+
+            KeepGoing_Broadcast = true;
+            Shared_Data.Is_Connected = true;
+            BroadcastDataThread = new Thread(new ThreadStart(DOWork_Broadcast));
+            BroadcastDataThread.Start();
+            return true;
+        }
+
+        private static void DOWork_Broadcast()
+        {
+            while (KeepGoing_Broadcast)
+            {
+                try
+                {
+                    byte[] byData = System.Text.Encoding.ASCII.GetBytes(Properties.Settings.Default.Client_Broadcast_Port);
+                    tx_sock.Send(byData, byData.Length, tx_iep);
+                    Shared_Data.New_Distribution_Requested = false;
+                }
+                catch (Exception e)
+                {
+                    MessageBox.Show("Server Connection: " + e.Message);
+                }
+
+                // Send data every 2 seconds
+                Thread.Sleep(2000);
+            }
+
+            Cleanup_Broadcast();
         }
     }
 }

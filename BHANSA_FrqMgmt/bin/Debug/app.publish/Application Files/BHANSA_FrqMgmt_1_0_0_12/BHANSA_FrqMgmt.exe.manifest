@@ -1,0 +1,70 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<asmv1:assembly xsi:schemaLocation="urn:schemas-microsoft-com:asm.v1 assembly.adaptive.xsd" manifestVersion="1.0" xmlns:asmv1="urn:schemas-microsoft-com:asm.v1" xmlns="urn:schemas-microsoft-com:asm.v2" xmlns:asmv2="urn:schemas-microsoft-com:asm.v2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:co.v1="urn:schemas-microsoft-com:clickonce.v1" xmlns:asmv3="urn:schemas-microsoft-com:asm.v3" xmlns:dsig="http://www.w3.org/2000/09/xmldsig#" xmlns:co.v2="urn:schemas-microsoft-com:clickonce.v2">
+  <asmv1:assemblyIdentity name="BHANSA_FrqMgmt.exe" version="1.0.0.12" publicKeyToken="956412eed4012b2b" language="neutral" processorArchitecture="x86" type="win32" />
+  <application />
+  <entryPoint>
+    <assemblyIdentity name="BHANSA_FrqMgmt" version="1.0.0.0" language="neutral" processorArchitecture="x86" />
+    <commandLine file="BHANSA_FrqMgmt.exe" parameters="" />
+  </entryPoint>
+  <trustInfo>
+    <security>
+      <applicationRequestMinimum>
+        <PermissionSet Unrestricted="true" ID="Custom" SameSite="site" />
+        <defaultAssemblyRequest permissionSetReference="Custom" />
+      </applicationRequestMinimum>
+      <requestedPrivileges xmlns="urn:schemas-microsoft-com:asm.v3">
+        <!--
+          UAC Manifest Options
+          If you want to change the Windows User Account Control level replace the 
+          requestedExecutionLevel node with one of the following.
+
+        <requestedExecutionLevel  level="asInvoker" uiAccess="false" />
+        <requestedExecutionLevel  level="requireAdministrator" uiAccess="false" />
+        <requestedExecutionLevel  level="highestAvailable" uiAccess="false" />
+
+         If you want to utilize File and Registry Virtualization for backward 
+         compatibility then delete the requestedExecutionLevel node.
+    -->
+        <requestedExecutionLevel level="asInvoker" uiAccess="false" />
+      </requestedPrivileges>
+    </security>
+  </trustInfo>
+  <dependency>
+    <dependentOS>
+      <osVersionInfo>
+        <os majorVersion="5" minorVersion="1" buildNumber="2600" servicePackMajor="0" />
+      </osVersionInfo>
+    </dependentOS>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="preRequisite" allowDelayedBinding="true">
+      <assemblyIdentity name="Microsoft.Windows.CommonLanguageRuntime" version="4.0.30319.0" />
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="preRequisite" allowDelayedBinding="true">
+      <assemblyIdentity name="Microsoft.VisualBasic.PowerPacks.Vs" version="10.0.0.0" publicKeyToken="B03F5F7F11D50A3A" language="neutral" processorArchitecture="msil" />
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="BHANSA_FrqMgmt.exe" size="83968">
+      <assemblyIdentity name="BHANSA_FrqMgmt" version="1.0.0.0" language="neutral" processorArchitecture="x86" />
+      <hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+        <dsig:DigestValue>618QOc5eF3QssEU6hGO04q4wglM=</dsig:DigestValue>
+      </hash>
+    </dependentAssembly>
+  </dependency>
+  <file name="BHANSA_FrqMgmt.exe.config" size="7229">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>VeKVtqo8AGhPZjeOlwkBlFVsXYE=</dsig:DigestValue>
+    </hash>
+  </file>
+<publisherIdentity name="CN=Amer-PC\Amer" issuerKeyHash="b3853aa07e161055c81dba57bd01897ccdac76cb" /><Signature Id="StrongNameSignature" xmlns="http://www.w3.org/2000/09/xmldsig#"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /><SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha1" /><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature" /><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /></Transforms><DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" /><DigestValue>rvH7p4Nekk9ibSpBwbKuB/hm86M=</DigestValue></Reference></SignedInfo><SignatureValue>lEWVtCm3HDzJ6WfOjtggGGOouCgVVretmxvBjsPP5E9WuOuoJmyjYZ4IHQS9bRIM0MnnFw2J1OL/NRhN80jBj/JDfjq/UeReL8nSi7FwynVofWOj3LJ2eVzGWNY7qAjZ/9RwVGJs930ZJTjrggKpr6QH+YS7z3Ul5SmzhKwac0k=</SignatureValue><KeyInfo Id="StrongNameKeyInfo"><KeyValue><RSAKeyValue><Modulus>n1NmFCby5Zj6dSx7e8kWF9ogc2C9yebsLqJ0pomrlTZQEpXWqHggDi3U0kdm9DqrWvKdJPpiSJYX/beAJUXKs+aKVzd21TLdC4khIujSRHe4mgvGCjnVWCUcFPZg5sdLKgC1iLYvRrcTcfy0DQWsF1Ua0CRcm3FYSVle695etvk=</Modulus><Exponent>AQAB</Exponent></RSAKeyValue></KeyValue><msrel:RelData xmlns:msrel="http://schemas.microsoft.com/windows/rel/2005/reldata"><r:license xmlns:r="urn:mpeg:mpeg21:2003:01-REL-R-NS" xmlns:as="http://schemas.microsoft.com/windows/pki/2005/Authenticode"><r:grant><as:ManifestInformation Hash="a3f366f807aeb2c1412a6d624f925e83a7fbf1ae" Description="" Url=""><as:assemblyIdentity name="BHANSA_FrqMgmt.exe" version="1.0.0.12" publicKeyToken="956412eed4012b2b" language="neutral" processorArchitecture="x86" type="win32" /></as:ManifestInformation><as:SignedBy /><as:AuthenticodePublisher><as:X509SubjectName>CN=Amer-PC\Amer</as:X509SubjectName></as:AuthenticodePublisher></r:grant><r:issuer><Signature Id="AuthenticodeSignature" xmlns="http://www.w3.org/2000/09/xmldsig#"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /><SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha1" /><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature" /><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /></Transforms><DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" /><DigestValue>GauT1fHIZtmBeP8siPsyHHtLFpg=</DigestValue></Reference></SignedInfo><SignatureValue>AeIaGcgYJmCSDKIseFV8JP8sHzYU17IchN0Tkd78lg+2bg3TvTjpn3i4oiqZdb8QuH7EdSO10Krl1tEyeG1I1Pa1557M3XqYLjeh06G2AMzNwWs3f7FjZAGgp/gAtny3ZAmFah8pimg4fYguLVl0XmhVAcf+9OpevcRQPCM5JRU=</SignatureValue><KeyInfo><KeyValue><RSAKeyValue><Modulus>n1NmFCby5Zj6dSx7e8kWF9ogc2C9yebsLqJ0pomrlTZQEpXWqHggDi3U0kdm9DqrWvKdJPpiSJYX/beAJUXKs+aKVzd21TLdC4khIujSRHe4mgvGCjnVWCUcFPZg5sdLKgC1iLYvRrcTcfy0DQWsF1Ua0CRcm3FYSVle695etvk=</Modulus><Exponent>AQAB</Exponent></RSAKeyValue></KeyValue><X509Data><X509Certificate>MIIByTCCATKgAwIBAgIQHhgx4q2Vn5NDnj56tkcoYDANBgkqhkiG9w0BAQUFADAjMSEwHwYDVQQDHhgAQQBtAGUAcgAtAFAAQwBcAEEAbQBlAHIwHhcNMTUwMTIwMTMzNjM4WhcNMTYwMTIwMTkzNjM4WjAjMSEwHwYDVQQDHhgAQQBtAGUAcgAtAFAAQwBcAEEAbQBlAHIwgZ8wDQYJKoZIhvcNAQEBBQADgY0AMIGJAoGBAJ9TZhQm8uWY+nUse3vJFhfaIHNgvcnm7C6idKaJq5U2UBKV1qh4IA4t1NJHZvQ6q1rynST6YkiWF/23gCVFyrPmilc3dtUy3QuJISLo0kR3uJoLxgo51VglHBT2YObHSyoAtYi2L0a3E3H8tA0FrBdVGtAkXJtxWElZXuveXrb5AgMBAAEwDQYJKoZIhvcNAQEFBQADgYEARD1+/gJ16xyH0MtQcqqi3/FIby4tHcjeC/BAl5qvjX12THPjMLAaAHOtaE689n/zBQtCrPtZ+gYePdXq/14HvlFDEKLLdeDbeNSWiYtS/mH12xmstLO8QBztCu70FFxtCtA8yMvifk7n2E/fQmL3Tc4rDijpeQkeiyWOLOMEh9k=</X509Certificate></X509Data></KeyInfo></Signature></r:issuer></r:license></msrel:RelData></KeyInfo></Signature></asmv1:assembly>

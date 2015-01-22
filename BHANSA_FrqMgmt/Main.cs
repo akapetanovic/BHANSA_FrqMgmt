@@ -839,6 +839,13 @@ namespace BHANSA_FrqMgmt
                 this.labelConnectionStatus.ForeColor = Color.Green;
                 this.labelConnectionStatus.Text = "Connected";
             }
+
+            if (Shared_Data.Initiate_Data_Distribution == true)
+            {
+                Shared_Data.Data_To_Distribute(Get_Current_Data_Set());
+                Shared_Data.New_Distribution_Requested = true;
+                Shared_Data.Initiate_Data_Distribution = false;
+            }
         }
 
         private void generalSettingsToolStripMenuItem_Click(object sender, EventArgs e)
@@ -848,14 +855,9 @@ namespace BHANSA_FrqMgmt
 
         private void distributeDataToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            if (Server_Connection_Settings.Is_Server_Connected() == true)
-            {
-                Shared_Data.Data_To_Distribute(Get_Current_Data_Set());
-                Shared_Data.New_Distribution_Requested = true;
 
-            }
-            else
-                MessageBox.Show("Server not running !");
+            DataDistributionForm DF = new DataDistributionForm();
+            DF.Show();
         }
     }
 }
